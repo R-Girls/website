@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      40px;
+  --body-size:       18px;
+  --code-size:       16px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #01161E;
+  --header-color:    #01161E;
+  --body-color:      #01161E;
+  --aside-color:     #01161E;
+  --fig-cap-color:   #01161E;
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    Amaranth;
+  --mono-font:       monospace;
+  --body-font:       "Open Sans";
+  --navbar-font:     Amaranth;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       28px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        25px;
+  --hover-color:      white;
+  --bkgd-color:       #C34A79;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+
+h1 {
+  color: #C34A79;
+  font-size: 38px;
+}
+
+h2 {
+  color: #C34A79;
+  font-size: 34px;
+}
+
+h3 {
+  color: #F2B6C1;
+  font-size: 30px;
+}
+
+/*change body color*/
+
+body {
+  color: #01161E;
+  font-size: 22px;
+}
+
+p {
+  color: #01161E;
+  font-size: 22px;
+}
+
+
+.btn {
+  background-color: #C34A79 !important; /*dark pink with white writting*/
+  color: #FFFFFF;
+}
+
+.rounded {
+  height: 25rem !important; /*make logo larger*/
+}
+
+/*remove search function*/
+.nav-search {
+  display: none !important;
+}
+
+.algolia-autocomplete {
+  display: none !important;
+}
+
+.nav-left {
+  padding: 0.35em;
+}
+
+.nav-right {
+  padding: 0.35em;
+}
+
+.d-flex.flex-column.col{
+    overflow-y: hidden !important;
+}
