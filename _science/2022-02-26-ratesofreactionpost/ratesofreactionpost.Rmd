@@ -1,0 +1,134 @@
+---
+title: "Rates of Reaction 2"
+description: |
+  The lesson starts with a worked example to introduce the R code needed to draw a graph of the mean time for the cross to disappear against the concentratrion of sodium thiosulphate and then allows the student to reproduce the graph using their own data.
+# author:
+#   - name: Unknown
+date: 2022-02-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.Rmd"), text = "Download .Rmd here")`
+
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.docx"), text = "Download word document here")`
+
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.docx"), text = "Download pdf here")`
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## GCSE: Chemistry Practical: Rates of Reaction Part 2 Observing a colour change
+
+## Lesson objectives
+
+To draw a graph in R of mean time for cross to disappear against concentration of sodium thiosulphate
+
+To use the graph to interpret your results
+
+## Success criteria
+
+I can use R to calculate means
+
+I can plot a line graph using R code
+
+## Keywords
+
+mean rate of reaction
+
+geom_point\
+geom_line\
+ylab\
+xlab\
+ggtitle
+
+## Worked Example
+
+This is a worked example for you to follow.
+
+This is how to calculate the mean time taken for the cross to disappear in seconds for each concentration of sodium thiosulphate.
+
+R is being told that when the concentration is 8 g/dm3, the times in each experiment for the cross to disappear in seconds was 810,545, 756, 720, 736.  R stores these times in a variable called c8 and then finds the mean of the times in c8.  This is repeated for each concentration of sodium thiosulphate used.
+
+Click on the little arrow on the left of the code chunk to run the code.  Check R has calculated the means.
+
+```{r chunk1}
+c8 <- c(810, 545, 756, 720, 736)
+mean(c8)
+c16 <- c(219, 229, 325, 210, 229)
+mean(c16)
+c24 <- c(127, 198, 146, 135)
+mean(c24)
+c32 <- c(97, 99, 109, 80, 140)
+mean(c32)
+c40<- c(60, 66, 70, 62)
+mean(c40)
+```
+
+Now we will plot a graph of the mean times calculated above for the cross to disappear (in seconds) against concentration of sodium thiosulfate (g/dm\^3)
+
+The code in chunk2 tells R to use the concentrations on the x axis and the mean times on the y axis.  Draw a table (called mydata) with the values of x and y in and then plot the points on a graph, draw a line between the points and label the x and y axis.  Finally give the graph a title.
+
+Click on the little arrow on the right of the code chunk.  Has R produced a graph?  Knit your document and check the output file.
+
+```{r chunk2}
+x <- c(8,16,24,32,40)
+y <- c(mean(c8), mean(c16), mean(c24), mean(c32), mean(c40))
+
+mydata <- tibble(x, y)
+
+ggplot (mydata, aes(x,y)) +
+  geom_point () +
+  geom_line() +
+  ylab ("Time for cross to disappear (seconds)") +
+  xlab ("Concentration of sodium thiosulphate (g/dm3)") +
+  ggtitle ("Rate of reaction")
+```
+
+## Activity:
+
+Now you are going to plot a graph using the data that you collected from your experiment. 
+
+First calculate the mean time taken for the cross to disappear for each concentration of sodium thiosulphate.
+
+Use code chunk1 from the example above to help you but remember to replace the example times with your own data.
+
+Run your code to check the means.
+
+```{r chunk3 }
+
+```
+
+Now using the calculated means, plot a graph of mean time taken for cross to disappear (in seconds)on the y axis and concentration of sodium thiosulphate (g/dm\^3) on the x axis. Use code chunk2 from the example above to help you.
+
+```{r chunk4 }
+
+```
+
+## Answer the following questions
+
+```{r chunk5 questions, echo=FALSE}
+cat ("Q1 Describe how concentration affects the rate of reaction")
+cat ("Q2 Explain your answer to Q1 by referring to the shape of your graph")
+cat ("Q3 If the rate of reaction doubled, what would happen to the time taken for the cross to disappear")
+cat ("Q4 Describe a possible source of error")
+cat ("Q5 Suggest a way of reducing the error")
+cat ("Q6 How do you use R to calculate the mean?")
+cat ("Q7 How do you use R to write the title?")
+```
+
+## Write your answers below
+
+
+
+
+
+
+
+
+NOW KNIT THE DOCUMENT for the final time.  This is the version of your work that your teacher will mark.
+
+## THE END                           

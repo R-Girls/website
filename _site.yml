@@ -23,5 +23,5 @@ navbar:
         - text: "R Lessons"
           href: r_lessons.html
         - text: "Geography Lessons"
-          href: geogrpahy_lessons.html  
+          href: geography_lessons.html  
 output: distill::distill_article

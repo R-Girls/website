@@ -1,0 +1,118 @@
+---
+title: "Mapping"
+author: "Write your name here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(leaflet)
+
+```
+
+## KS3: Using Coordinates to Plot a Map in R
+
+### Lesson objective
+
+To draw a map in R using coordinates
+
+### Success criteria
+
+I can find the coordinates from googlemaps and use them to draw the map in R
+
+### Keywords
+
+* latitude
+* longitude
+
+### Finding the coordinates
+
+Go to googlemaps on the internet.  Search for Green Oak Academy. Right click on the red dot which shows the location of the school.  This should show you the coordinates.  Click on the coordinates to copy them to the clipboard. 
+
+Paste the coordinates here
+
+latitude:
+
+longitude:
+
+(Hint:  The longitude coordinate will be a negative number)
+
+### Drawing a map showing the location of school
+
+Now carefully copy and paste the latitude and longitude readings into the correct place in code chunk1 replacing the zeroes.
+
+Run the code chunk by clicking on the little arrow on the right of the chunk.
+
+
+```{r chunk1}
+leaflet() %>%
+  addTiles() %>%
+  setView(lat = 000000, 
+          lng = 000000,  
+          zoom = 20)
+```
+
+Can you see the school on the map?  
+
+Now copy and paste the school's coordinates into chunk2 replacing the zeroes.
+
+Run the code.  Can you see the school? 
+
+```{r chunk2}
+leaflet() %>%
+  setView(lat = 00000, lng = 00000, zoom = 16) %>%
+  addProviderTiles(providers$Esri.WorldImagery)
+```
+
+How are the two maps different?
+
+Answer:
+
+Knit your document and check your output file.
+
+
+### Mystery Map
+
+Copy and paste the R code from chunk2 into chunk3.
+
+Replace the coordinates with the following
+
+latitude: 21.424931139508526
+longitude: 39.82589497119249
+
+
+Run the code.  What do you see?  Answer:
+
+```{r chunk3}
+
+```
+
+Knit your document and check the output file.
+
+
+### Extension
+
+Use googlemaps to find the coordinates of Al Masjid an Nabawi.
+
+Copy the code chunk from chunk3 into chunk4 and replace the coordinates with Al Masjid an Nabawi's coordinates
+
+```{r chunk4}
+
+```
+
+Use googlemaps to find the coordinates of Al-Aqsa Masjid, Jerusalem.
+
+Copy the R code chunk from chunk3 into chunk4 and replace the coordinates with Al-Aqsa Masjid's coordinates.
+
+
+
+```{r chunk5}
+
+```
+
+
+KNIT YOUR DOCUMENT for the final time.  Your teacher will check your work in the final knitted document.
+
+## THE END
