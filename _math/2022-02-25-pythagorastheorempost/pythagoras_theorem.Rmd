@@ -1,0 +1,192 @@
+---
+title: "Pythagoras' Theorem"
+author: "Write your name here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## KS3: Using Pythagoras' Theorem
+
+### Lesson Objective
+
+Use Pythagoras' Theorem to find the lengths of missing sides of a right angle triangle
+
+### Success criteria
+
+Write the R code to work out the missing side
+
+Calculate the missing side
+
+### Keywords
+
+* Pythagoras theorem
+* Length of a side
+* Hypotenuse
+* square
+* square root
+
+### Remember
+Knit your R markdown document frequently.  Knit for the final time when you have completed the lesson.  This final output file will be the one your teacher marks.
+
+Write your code in the code chunks.
+
+You can run your R code chunk in the Markdown file by clicking on the little arrow on the right of the chunk.
+
+#### Worked Example 1: Finding the hypotenuse
+
+First knit the document so that you can see images of the triangles and the formulae you will be working with.
+
+This is a worked example for you to follow.
+
+The formula to find c is: $$c = \sqrt{a^2 + b^2}$$
+
+Check how the formula is written in the output (knitted) file.
+
+Run the R code in chunk1 by clicking on the little arrow to the right of the code chunk. This will draw you the triangle that you are working with below the code chunk.
+
+```{r chunk1, echo=FALSE}
+x <- c(0, 0.5, 0)
+y <- c(0, 0, 1.5)
+plot(x,y,axes=F, ylab='', xlab='', xlim=c(-0.3,2), ylim=c(-0.3,2))
+polygon(x, y, col = 'deeppink')
+text(0.2,-0.1, "b=14cm")
+text(-0.2,0.5, "a=20cm")
+text(0.5,0.5, "c")
+```
+
+The length of side c is missing.
+
+The R code in chunk2 below works out the missing side c. Click on the little arrow on the right of the chunk to run the code.  
+
+The answer will be shown below the code chunk.
+
+```{r chunk2}
+a <- 20
+b <- 14
+c <- sqrt(a^2+b^2)
+c
+```
+
+The length of c = `r round(c,2)` cm
+
+The inline code above tells R to round c to 2 decimal places. Knit the document to check this.
+
+#### Activity1: Your turn
+
+Run R code chunk3. This will draw you the triangle with the length of side c missing.
+
+```{r chunk3, echo=F}
+x <- c(0, 0.5, 0.5)
+y <- c(0, 0, 1.5)
+plot(x,y,axes=F, ylab='', xlab='', xlim=c(-0.3,2), ylim=c(-0.3,2))
+polygon(x, y, col = 'deeppink')
+text(0.2,-0.1, "b=4cm")
+text(0.7,0.5, "a=15cm")
+text(0.1,0.5, "c")
+```
+
+Write your own code in chunk4 to find length c in the triangle where a = 15 cm and b = 4 cm.
+
+Use the code in chunk2 to help you.
+
+```{r chunk4}
+
+
+```
+
+The length of c (cm) to 2 decimal places = `r round(c,2)` cm
+
+#### Worked Example 2
+
+Use Pythagoras' theorem to find one of the other sides.
+
+So find the length of side a when b = 14 cm and c = 25 cm.
+
+Knit the document to see the formula and triangle.
+
+The formula to find the length of side a is: $$a= \sqrt{c^2 - b^2}$$
+
+The code in chunk5 will draw the triangle for you.
+
+```{r chunk5, echo=F}
+x <- c(0, 0.8, 0)
+y <- c(0, 0, 1.5)
+plot(x,y,axes=F, ylab='', xlab='', xlim=c(-0.3,2), ylim=c(-0.3,2))
+polygon(x, y, col = 'deeppink')
+text(0.4,-0.1, "b=14cm")
+text(-0.2,0.5, "a")
+text(0.6,0.9, "c=25cm")
+```
+
+The code in Chunk6 calculates the length of side a when b and c are known.
+
+Run the code by clicking on the little arrow on the right of the code.
+
+```{r chunk6}
+b <- 14
+c <- 25
+a <- sqrt(c^2-b^2)
+a
+```
+
+The length of a = `r round(a,2)` cm
+
+Knit the document to see your answer rounded to 2 decimal places.
+
+#### Activity2: Your turn
+
+Use the R code from the above examples to help you find the missing sides in the table below
+
+| a   | b   | c   |
+|-----|-----|-----|
+| 36  |     | 81  |
+|     | 9   | 49  |
+| 10  | 10  |     |
+
+
+Find length b when a=36 and c=81
+
+```{r chunk7}
+
+```
+
+Answer b =
+
+Find length a when b=9 and c=49
+
+```{r chunk8}
+
+```
+
+Answer a =
+
+Find length c when a=10 and b=10
+
+```{r chunk9}
+
+```
+
+Answer c =
+
+Knit your document
+
+### Extension
+
+Can you round your answers from code chunks 7, 8 and 9 to 2 decimal places?  Use the space below and knit the document to see if you have been successful.
+
+
+
+
+
+
+
+KNIT YOUR DOCUMENT for the final time.  This will be the version your teacher will mark
+
+## THE END
+
+

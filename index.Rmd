@@ -9,33 +9,16 @@ links:
   - label: '<i class="fab fa-slack"></i> Join Us on Slack' 
     url: 'https://r-girls.slack.com target="_blank"'    
   - label: '<i class="fas fa-envelope"></i> Contact Us'
-    url: "mailto:rgirlsschoolnetwork@gmail.com" 
+    url: "mailto:rgirlsschool@gmail.com" 
 output:
   postcards::trestles
 site: distill::distill_website
 ---
- 
-## Bio
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+# Welcome to R Website!
+We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.
 
-## Education
 
-**Massachusetts Institute of Technology** | Cambridge, MA
 
-Ph.D. in Computer Science | September 2009 - May 2014
-
-**The University of California, Berkeley** | Berkeley, CA
-
-B.S. in Computer Science | September 2005 - May 2009
-
-## Experience
-
-**Google Brain** | Principal Investigator | January 2018 - Present
-
-**Netflix** | Research Scientist | June 2014 - December 2017
+<br><br><br>
+*This website was built completely in R using the `distill` package* 

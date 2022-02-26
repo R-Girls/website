@@ -1,0 +1,168 @@
+---
+title: "Equations of Straight Line Graphs - Part 2"
+author: "Type your name here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### KS3: Plotting and finding the equations of straight line graphs (y=mx+c) - Part 2
+
+### Lesson objectives
+Plotting and finding the equations of straight line graphs y=mx+c
+
+### Success criteria
+* Plot a straight line graph y = mx+c
+* Plot straight line graphs y = mx+c with different intercepts
+* Plot a straight line graph y = mx+c with a negative gradient
+* Find the equations of straight line graphs
+
+### Keywords
+* slope
+* gradient
+* intercept
+* x-axis
+* y-axis
+
+#### Worked Example 1
+This is a worked example for you to follow.
+
+We will show you how to plot the line graph for y=2x + 5.
+
+```{r chunk1}
+x <- seq(from=-4, to=4, by=1) # sequence the x-axis from -4 to 4
+y <- 2*x+5
+mydata <- tibble (x,y)
+ggplot(mydata) +
+  aes(x,y) +
+  geom_point () +
+  geom_line (col='red')+
+  geom_vline (xintercept = 0, col='black')+
+  geom_hline (yintercept = 0, col='black')
+
+```
+
+
+#### Worked Example 2
+We will now see what happens when you change the intercept c to a negative value.
+
+1. y=3x+5
+2. y=3x-5
+
+Run the code in chunk2 by clicking on the little arrow on the right of the code chunk.
+
+
+```{r chunk2}
+x <- seq(-4, 4) # sequence from -4 to 4
+y1 <- 3*x+5
+y2 <- 3*x-5
+mydata <- tibble (x,y1,y2,y)
+ggplot(mydata) +
+  geom_line (aes(x=x, y=y1), col='red')+
+  geom_line (aes(x=x, y=y2), col='blue')+
+  geom_vline (xintercept = 0, col='black')+
+  geom_hline (yintercept = 0, col='black')
+
+```
+Question: What is the same and what is different about these lines?
+
+Answer:
+
+
+
+Knit your document and check the output.
+
+
+#### Activity 1
+
+Draw these lines on a graph.  Use the R code from chunk2 to help you.  Remember to update the code with these new lines.
+
+1. y=x+10
+2. y=x-10
+
+```{r chunk3}
+
+
+```
+Question: What is the same and what is different about these lines?
+
+Answer:
+
+
+
+
+#### Activity 2
+Now we will investigate m (the gradient). Draw these lines on a graph. Use R code from chunk2 to help you. 
+
+Run the code and knit the document.
+
+1. y=-2x+5
+2. y= 2x+5
+
+```{r chunk4}
+
+
+```
+Question: What is the same and what is different about these lines?
+
+Answer:
+
+
+
+
+
+
+
+
+#### Activity 3 Answer the following questions
+
+```{r chunk5 questions, echo=FALSE}
+cat ("Q1 In the equation y=mx+c, what happens when you change c?")
+cat ("Q2 What happens when you change m?")
+```
+
+Write your answers here\
+Q1:
+
+Q2:
+
+
+#### Activity 4: Work out the equation from a line graph
+
+Write down the equations of the following four lines on the graph below.
+
+Knit the document to get a good view of the graph.
+
+```{r chunk6, echo=FALSE}
+x <- seq(-10, 10)
+y <- x
+ggplot() +
+  aes(x,y)+
+  geom_blank()+
+  geom_abline(slope=1, intercept=0, col='red')+
+  geom_abline(slope=-1, intercept=2.5, col='cyan')+
+  geom_abline(slope=2, intercept=10, col='blue')+
+  geom_abline(slope=0, intercept=5, col='orange')+
+  geom_vline (xintercept=0, col='black')+
+  geom_hline (yintercept=0, col='black')
+
+```
+
+Write your answers here
+
+Cyan line:
+
+Red line:
+
+Blue line:
+
+Orange line:
+
+
+KNIT YOUR DOCUMENT for the final time.  This will be the version that your teacher will mark.
+#### THE END
+

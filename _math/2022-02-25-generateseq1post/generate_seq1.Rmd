@@ -1,0 +1,136 @@
+---
+title: "Generating Sequences Part 1"
+author: "Type your name here"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### KS3: Generating Sequences Part 1
+
+### Lesson objectives
+Generating sequences using R code
+
+### Success criteria
+* Generate different sequences using R code
+
+### Keywords
+* sequence
+* term = the numbers in the sequence
+* nth term
+
+
+### Remember
+Knit your R markdown document frequently.  Knit for the final time when you have completed the lesson.  This final output file will be the one your teacher marks.
+
+Write your code in the code chunks.
+
+You can run your R code chunk in the Markdown file by clicking on the little arrow on the right of the chunk.
+
+
+#### Worked Example 1
+
+First we will tell R to generate a sequence.
+
+This is how you generate a sequence of numbers from 1 to 100 where the terms increase by 1.
+```{r chunk1}
+seq(from=1,to=100,by=1)
+```
+
+Use the above example R code in chunk1 to generate the following sequences.  Remember to edit the numbers in the code. 
+
+Knit your document after each question to check your sequence.
+
+##### Activity 1 Questions
+Q1 Generate a sequence from 1 to 100 where the terms increase by 10
+
+```{r chunk2}
+
+```
+
+Q2 Generate a sequence from 5 to 95 where the terms increase by 5.
+```{r chunk3}
+
+```
+
+Q3 Generate a sequence from 3 to 399 where the terms increase by 4.
+```{r chunk4}
+
+```
+
+Q4 Generate a sequence from 1 to 9 where the terms increase by 3.
+```{r chunk5}
+
+```
+
+
+#### Worked Example 2
+Now we will generate a sequence that starts from a number and goes up to the nth term, where the nth term is for example 10.
+
+For example a sequence from 1 where the terms go up by 1 till the 10th term.
+```{r chunk6}
+seq(from=1, length.out=10, by=1)
+```
+
+Use the above example R code in chunk6 to generate the following sequences.  
+
+Knit your document after each question to check your sequence.
+
+##### Activity 2 Questions
+Q1 Generate a sequence from 1 where the terms go up by 4 up to the 100th term
+
+```{r chunk7}
+
+```
+
+Q2 Generate a sequence from 5 where the terms go up by 10 up to the 89th term
+```{r chunk8}
+
+```
+
+Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term
+```{r chunk9}
+
+```
+
+
+#### Worked Example 3
+So the terms have increased by a particular number, but we can also decrease by a number and produce a backward sequence.
+
+For example, we can sequence from 100 to 1 by -1
+
+```{r chunk10}
+seq(from=100, to=1, by=-1)
+```
+
+
+Use the above example R code in chunk10 to answer the following questions.
+
+Knit your document after each question to check your sequence is correct.
+
+##### Activity 3 Questions
+
+Q1 Generate a sequence that goes down from 50 to 0 where the terms go down by 5.
+```{r chunk11}
+
+```
+
+Q2 Generate a sequence from 10 to -10 where the terms go down by 1.
+```{r chunk12}
+
+```
+
+Q3 Generate a sequence that goes down from 20 to 10 where the terms go down by 2.
+```{r chunk14}
+
+```
+
+
+KNIT YOUR DOCUMENT for the final time.  This will be the version your teacher marks.
+
+## THE END
+

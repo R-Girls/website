@@ -1,13 +1,27 @@
 name: "."
-title: "R Girls Website"
+title: "Home"
 description: |
   R Girls Website
 output_dir: "docs"
 theme: rgirls-theme.css
 navbar:
   right:
-    - text: "Home"
-      href: index.html
-    - text: "About"
-      href: about.html
+    # - text: "Home"
+    #   href: index.html
+    # - text: "About"
+    #   href: about.html
+    - text: "Getting Started"
+      href: getting_started.html
+    - text: "Showcase"
+      href: showcase.html      
+    - text: "Lesson Plans"
+      menu:
+        - text: "Math Lessons"
+          href: math_lessons.html
+        - text: "Science Lessons"
+          href: science_lessons.html 
+        - text: "R Lessons"
+          href: r_lessons.html
+        - text: "Geography Lessons"
+          href: geogrpahy_lessons.html  
 output: distill::distill_article
