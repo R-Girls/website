@@ -19,6 +19,12 @@ site: distill::distill_website
 We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.
 
 
-
-<br><br><br>
+<br><br>
 *This website was built completely in R using the `distill` package* 
+<br>
+
+<!-- if we want twitter embedded  -->
+
+<div style="text-align:center;">
+<a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
