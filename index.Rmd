@@ -14,31 +14,50 @@ output:
   postcards::trestles
 site: distill::distill_website
 ---
+<!-- <div style="display:flex;"> -->
 
+<!--   <div> -->
+<!-- # Welcome! -->
+<!--   <br> -->
+
+<!--   We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls. -->
+<!--   <br> -->
+
+<!--   This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack. -->
+
+<!--   </div> -->
+
+<!--   <div style="display:flex; justify-content:center; float:right"> -->
+
+<!--   <a class="twitter-timeline" data-width="400px" data-height="500px" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a>   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+<!--   </div> -->
+
+<!-- </div> -->
+
+
+</div>
 # Welcome!
 We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.
 
 This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack.
 
-<div class="green-oaks" style="display:flex; justify-content:center">
+<div style="display:flex; justify-content:center">
 
-<a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a>   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-width="650px" data-height="250px" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a>   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p style="margin: 50px 50px 50px 100px;">
-<a style="font-size:25px; font-family:Amaranth" href="https://greenoak.bham.sch.uk/">Founded by Green Oak</a>
-  <br>
-  <img src='images/greenoak_logo.png' />
-</p>  
 </div>
 
-<!-- if we want twitter embedded  -->
 
-<div style="display:block; text-align:center; clear:both">
-  <br>
+<div style="display:flex; justify-content:center;">
+
+  <div style="float:left; text-align: center;">
   *This website was built completely in R using the `distill` package* 
+  </div>
+  
+  <div style="float:right; text-align: center">
+  <a class="green-oaks" style="font-size:18px; font-family:Amaranth" href="https://greenoak.bham.sch.uk/">Founded by Green Oak <img src='images/greenoak_logo.png' width="62%" /></a>
+
+  
+  </div>
+  
 </div>
-
-
-<!-- <br><br> -->
-<!-- *This website was built completely in R using the `distill` package*  -->
-<!-- <br> -->

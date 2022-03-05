@@ -135,3 +135,9 @@ p {
 .d-flex.flex-column.col{
     overflow-y: hidden !important;
 }
+
+.timeline-Widget{
+  width: 40%;
+  min-width: 200px;
+  max-width: 500px;
+}

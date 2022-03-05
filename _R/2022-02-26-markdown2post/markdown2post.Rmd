@@ -9,11 +9,40 @@ output:
     self_contained: false
 ---
 
+<div style="text-align: center">
+
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.Rmd"), text = "Download .Rmd here")`
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.docx"), text = "Download word document here")`
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.docx"), text = "Download pdf here")`
+
+</div>
+
+
+<div style="text-align: center">
+
+<img src="markdown2_feedback.jpg" width="600px" min-width="300px" max-width="300px" />
+
+</div>
+
+<!-- <div style="display:flex; justify-content:center;"> -->
+
+<!--   <div style="float:left; text-align: center; font-size:18px; font-color:#0000EE"> -->
+
+<!-- `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.Rmd"), text = "Download .Rmd here")` -->
+
+<!-- `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.docx"), text = "Download word document here")` -->
+
+<!-- `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.docx"), text = "Download pdf here")` -->
+
+<!--   </div> -->
+
+<!--   <div style="float:right;"> -->
+<!--   <img src="markdown2_feedback.jpg" width="400px" /> -->
+<!--   </div> -->
+
+<!-- </div> -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set
@@ -112,15 +141,17 @@ geom_bar(stat = 'identity')
  
 ## What does this code mean?
 
-ggplot means 'draw me a graph'
-mydata means 'use the numbers in the mydata tibble'
-aes is short for aesthetics and means 'what I want to see is...'
-x=blood_group means 'plot blood group on the x axis'
-y=pop_percentage means 'plot percentage of people on the y axis'
-geom_bar means 'the graph I want is a bar chart'
-stat = 'identity' means 'make the bars as tall as the y values in the tibble'
- ```{r chunk7}
+- ggplot means 'draw me a graph'
+- mydata means 'use the numbers in the mydata tibble'
+- aes is short for aesthetics and means 'what I want to see is...'
+- x=blood_group means 'plot blood group on the x axis'
+- y=pop_percentage means 'plot percentage of people on the y axis'
+- geom_bar means 'the graph I want is a bar chart'
+- stat = 'identity' means 'make the bars as tall as the y values in the tibble'
+
+```{r chunk7}
 ```
+
 Check your bar chart.  Are the bars black?  
 
 ## Writing labels and title
@@ -141,6 +172,7 @@ Note how there is a plus sign after each command
  
 ```{r chunk8}
 ```
+
 Check your bar chart.  Are the labels correct?  Is the title correct?  Are the bars still black?
 Well done!
 
@@ -160,7 +192,7 @@ ggplot(mydata) +
 ```{r chunk9}
 ```
 
-  Are the bars red?  Suggest what part of the code told R to make the bars red.
+Are the bars red?  Suggest what part of the code told R to make the bars red.
 Let's make it even prettier.  Copy and paste the following code into chunk10
 ggplot(mydata) +
   aes(x=blood_group, y=pop_percentage, fill = blood_group) +

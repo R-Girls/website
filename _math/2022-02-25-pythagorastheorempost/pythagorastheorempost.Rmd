@@ -7,6 +7,7 @@ date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: pythagoras_theorem_photo.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-pythagorastheorempost", "pythagoras_theorem.Rmd"), text = "Download .Rmd here")`

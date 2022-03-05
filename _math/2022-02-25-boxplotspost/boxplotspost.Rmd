@@ -8,6 +8,7 @@ date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: testphoto.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-boxplotspost", "boxplots.Rmd"), text = "Download .Rmd here")`

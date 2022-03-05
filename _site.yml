@@ -20,8 +20,8 @@ navbar:
           href: math_lessons.html
         - text: "Science Lessons"
           href: science_lessons.html 
-        - text: "R Lessons"
-          href: r_lessons.html
         - text: "Geography Lessons"
-          href: geography_lessons.html  
+          href: geography_lessons.html 
+        - text: "R Lessons"
+          href: r_lessons.html  
 output: distill::distill_article

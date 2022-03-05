@@ -1,20 +1,18 @@
 ---
-title: "Rates of Reaction 2"
+title: "Rate of reaction chemistry practical - monitoring a change in turbidity"
 description: |
-  The lesson starts with a worked example to introduce the R code needed to draw a graph of the mean time for the cross to disappear against the concentratrion of sodium thiosulphate and then allows the student to reproduce the graph using their own data.
-# author:
-#   - name: Unknown
-date: 2022-02-26
+   The lesson starts with a worked example to introduce the R code needed to draw a graph of the mean time for the cross to disappear against the concentratrion of sodium thiosulphate and then allows the student to reproduce the graph using their own data.
+date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.Rmd"), text = "Download .Rmd here")`
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreactionpost", "rates_of_reaction.Rmd"), text = "Download .Rmd here")`
 
-`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.docx"), text = "Download word document here")`
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreactionpost", "rates_of_reaction.docx"), text = "Download word document here")`
 
-`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreaction", "rates_of_reaction.docx"), text = "Download pdf here")`
+`r xfun::embed_file(here::here("_science", "2022-02-26-ratesofreactionpost", "rates_of_reaction.docx"), text = "Download pdf here")`
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

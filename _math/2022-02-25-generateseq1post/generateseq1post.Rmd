@@ -7,6 +7,7 @@ date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: generate_seq1_photo.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-generateseq1post", "generate_seq1.Rmd"), text = "Download .Rmd here")`
@@ -18,6 +19,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+
+seq(from=1,to=100,by=1)
 ```
 
 ## KS3: Generating Sequences Part 1
@@ -47,6 +50,7 @@ You can run your R code chunk in the Markdown file by clicking on the little arr
 First we will tell R to generate a sequence.
 
 This is how you generate a sequence of numbers from 1 to 100 where the terms increase by 1.
+
 ```{r chunk1}
 seq(from=1,to=100,by=1)
 ```
@@ -63,16 +67,19 @@ Q1 Generate a sequence from 1 to 100 where the terms increase by 10
 ```
 
 Q2 Generate a sequence from 5 to 95 where the terms increase by 5.
+
 ```{r chunk3}
 
 ```
 
 Q3 Generate a sequence from 3 to 399 where the terms increase by 4.
+
 ```{r chunk4}
 
 ```
 
 Q4 Generate a sequence from 1 to 9 where the terms increase by 3.
+
 ```{r chunk5}
 
 ```
@@ -82,6 +89,7 @@ Q4 Generate a sequence from 1 to 9 where the terms increase by 3.
 Now we will generate a sequence that starts from a number and goes up to the nth term, where the nth term is for example 10.
 
 For example a sequence from 1 where the terms go up by 1 till the 10th term.
+
 ```{r chunk6}
 seq(from=1, length.out=10, by=1)
 ```
@@ -98,11 +106,13 @@ Q1 Generate a sequence from 1 where the terms go up by 4 up to the 100th term
 ```
 
 Q2 Generate a sequence from 5 where the terms go up by 10 up to the 89th term
+
 ```{r chunk8}
 
 ```
 
 Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term
+
 ```{r chunk9}
 
 ```
@@ -125,16 +135,19 @@ Knit your document after each question to check your sequence is correct.
 ## Activity 3 Questions
 
 Q1 Generate a sequence that goes down from 50 to 0 where the terms go down by 5.
+
 ```{r chunk11}
 
 ```
 
 Q2 Generate a sequence from 10 to -10 where the terms go down by 1.
+
 ```{r chunk12}
 
 ```
 
 Q3 Generate a sequence that goes down from 20 to 10 where the terms go down by 2.
+
 ```{r chunk14}
 
 ```

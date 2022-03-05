@@ -63,16 +63,19 @@ Now use the above example R code in chunk1 to find the difference between the te
 Knit the document after each question to see the answer.  Check your answer.
 
 Q1  2,7,12,17,22
+
 ```{r chunk2}
 
 ```
 
 Q2  3,9,15,21,27
+
 ```{r chunk3}
 
 ```
 
 Q3 1,4,10,19,31
+
 ```{r chunk4}
 
 ```
@@ -105,6 +108,7 @@ Q1 Generate the first 100 terms of the sequence 3,7,11,15 and see if the numbers
 
 
 ```
+
 Answer:
 
 ## Worked Example 3
@@ -113,6 +117,7 @@ Now we will find the missing number in a sequence.  Our sequence is 4, ?, 16, 22
 ```{r chunk7}
 seq(from=4, to=22, by=6)
 ```
+
 Answer: The missing term is 10.
 
 Use the above example R code to answer the following questions.
@@ -125,6 +130,7 @@ Q1 What is the missing term in the sequence 3,12,?,30.
 ```{r chunk8}
 
 ```
+
 Answer:
 
 KNIT YOUR DOCUMENT for the final time.  This will be the version your teacher will mark

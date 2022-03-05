@@ -1,5 +1,5 @@
 ---
-title: "Rates of Reaction 2"
+title: "Rate of reaction chemistry practical - monitoring a change in turbidity"
 author: "Type your name here"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document

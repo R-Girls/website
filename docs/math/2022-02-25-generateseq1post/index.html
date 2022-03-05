@@ -112,12 +112,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Generating Sequences Part 1"]},{"type":"character","attributes":{},"value":["This lesson demonstrates how to generate sequences using R code and then provides activities for further practise."]},{"type":"character","attributes":{},"value":["2022-02-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","preview"]}},"value":[{"type":"character","attributes":{},"value":["Generating Sequences Part 1"]},{"type":"character","attributes":{},"value":["This lesson demonstrates how to generate sequences using R code and then provides activities for further practise."]},{"type":"character","attributes":{},"value":["2022-02-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["generate_seq1_photo.png"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["generate_seq1.docx","generate_seq1.pdf"]}
+  {"type":"character","attributes":{},"value":["generate_seq1.docx","generate_seq1.pdf","generate_seq1_photo.png","generateseq1post_files/anchor-4.2.2/anchor.min.js","generateseq1post_files/bowser-1.9.3/bowser.min.js","generateseq1post_files/distill-2.2.21/template.v2.js","generateseq1post_files/header-attrs-2.11/header-attrs.js","generateseq1post_files/jquery-3.6.0/jquery-3.6.0.js","generateseq1post_files/jquery-3.6.0/jquery-3.6.0.min.js","generateseq1post_files/jquery-3.6.0/jquery-3.6.0.min.map","generateseq1post_files/popper-2.6.0/popper.min.js","generateseq1post_files/tippy-6.2.7/tippy-bundle.umd.min.js","generateseq1post_files/tippy-6.2.7/tippy-light-border.css","generateseq1post_files/tippy-6.2.7/tippy.css","generateseq1post_files/tippy-6.2.7/tippy.umd.min.js","generateseq1post_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2257,6 +2257,12 @@ p {
 
 .d-flex.flex-column.col{
     overflow-y: hidden !important;
+}
+
+.timeline-Widget{
+  width: 40%;
+  min-width: 200px;
+  max-width: 500px;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2457,8 +2463,8 @@ Lesson Plans
 <div class="nav-dropdown-content">
 <a href="../../math_lessons.html">Math Lessons</a>
 <a href="../../science_lessons.html">Science Lessons</a>
-<a href="../../r_lessons.html">R Lessons</a>
 <a href="../../geography_lessons.html">Geography Lessons</a>
+<a href="../../r_lessons.html">R Lessons</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2500,7 +2506,7 @@ Lesson Plans
 <p>You can run your R code chunk in the Markdown file by clicking on the little arrow on the right of the chunk.</p>
 <h2 id="worked-example-1">Worked Example 1</h2>
 <p>First we will tell R to generate a sequence.</p>
-This is how you generate a sequence of numbers from 1 to 100 where the terms increase by 1.
+<p>This is how you generate a sequence of numbers from 1 to 100 where the terms increase by 1.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>1</span>,to<span class='op'>=</span><span class='fl'>100</span>,by<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
@@ -2521,21 +2527,21 @@ This is how you generate a sequence of numbers from 1 to 100 where the terms inc
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q2 Generate a sequence from 5 to 95 where the terms increase by 5.
+<p>Q2 Generate a sequence from 5 to 95 where the terms increase by 5.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q3 Generate a sequence from 3 to 399 where the terms increase by 4.
+<p>Q3 Generate a sequence from 3 to 399 where the terms increase by 4.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q4 Generate a sequence from 1 to 9 where the terms increase by 3.
+<p>Q4 Generate a sequence from 1 to 9 where the terms increase by 3.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <h2 id="worked-example-2">Worked Example 2</h2>
 <p>Now we will generate a sequence that starts from a number and goes up to the nth term, where the nth term is for example 10.</p>
-For example a sequence from 1 where the terms go up by 1 till the 10th term.
+<p>For example a sequence from 1 where the terms go up by 1 till the 10th term.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>1</span>, length.out<span class='op'>=</span><span class='fl'>10</span>, by<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
@@ -2550,11 +2556,11 @@ For example a sequence from 1 where the terms go up by 1 till the 10th term.
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q2 Generate a sequence from 5 where the terms go up by 10 up to the 89th term
+<p>Q2 Generate a sequence from 5 where the terms go up by 10 up to the 89th term</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term
+<p>Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -2577,15 +2583,15 @@ Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term
 <p>Use the above example R code in chunk10 to answer the following questions.</p>
 <p>Knit your document after each question to check your sequence is correct.</p>
 <h2 id="activity-3-questions">Activity 3 Questions</h2>
-Q1 Generate a sequence that goes down from 50 to 0 where the terms go down by 5.
+<p>Q1 Generate a sequence that goes down from 50 to 0 where the terms go down by 5.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q2 Generate a sequence from 10 to -10 where the terms go down by 1.
+<p>Q2 Generate a sequence from 10 to -10 where the terms go down by 1.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-Q3 Generate a sequence that goes down from 20 to 10 where the terms go down by 2.
+<p>Q3 Generate a sequence that goes down from 20 to 10 where the terms go down by 2.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
