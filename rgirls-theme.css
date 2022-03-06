@@ -71,7 +71,7 @@ d-appendix {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
   --hover-color:      white;
-  --bkgd-color:       #0F2E3D;
+  --bkgd-color:       #01161E;
 }
 
 /*-- Additional custom styles --*/
@@ -112,7 +112,7 @@ p {
 }
 
 .rounded {
-  height: 25rem !important; /*make logo larger*/
+  height: 15rem !important; /*make logo larger*/
 }
 
 /*remove search function*/
@@ -131,10 +131,17 @@ p {
 .nav-right {
   padding: 0.35em;
 }
-
-.d-flex.flex-column.col{
-    overflow-y: hidden !important;
+/*
+.align-self-center{
+  align-self: start !important;
 }
+
+.d-flex{
+  height: 500px !important;
+  overflow-y: hidden !important;
+  margin-top: 5% !important;
+}
+*/
 
 .timeline-Widget{
   width: 40%;

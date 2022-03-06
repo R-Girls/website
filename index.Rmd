@@ -14,25 +14,6 @@ output:
   postcards::trestles
 site: distill::distill_website
 ---
-<!-- <div style="display:flex;"> -->
-
-<!--   <div> -->
-<!-- # Welcome! -->
-<!--   <br> -->
-
-<!--   We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls. -->
-<!--   <br> -->
-
-<!--   This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack. -->
-
-<!--   </div> -->
-
-<!--   <div style="display:flex; justify-content:center; float:right"> -->
-
-<!--   <a class="twitter-timeline" data-width="400px" data-height="500px" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a>   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-<!--   </div> -->
-
-<!-- </div> -->
 
 
 </div>
@@ -40,24 +21,5 @@ site: distill::distill_website
 We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.
 
 This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack.
-
-<div style="display:flex; justify-content:center">
-
-<a class="twitter-timeline" data-width="650px" data-height="250px" href="https://twitter.com/R_Girls_School?ref_src=twsrc%5Etfw">Tweets by R_Girls_School</a>   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-</div>
-
-
-<div style="display:flex; justify-content:center;">
-
-  <div style="float:left; text-align: center;">
-  *This website was built completely in R using the `distill` package* 
-  </div>
-  
-  <div style="float:right; text-align: center">
-  <a class="green-oaks" style="font-size:18px; font-family:Amaranth" href="https://greenoak.bham.sch.uk/">Founded by Green Oak <img src='images/greenoak_logo.png' width="62%" /></a>
-
-  
-  </div>
   
 </div>
