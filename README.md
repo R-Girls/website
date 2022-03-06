@@ -4,6 +4,8 @@ R Girls Website
 This is a website I designed using the distill package in R. The package builds the basics of the website and has several default settings.
 You can see the website here: https://r-girls.github.io/website/
 
+The index file is the homepage.
+
 Current issues:
 - On the homepage, there is so much extra white space that I can't figure out how to get rid of. I want the content to be in the center of the screen but not with all the extra white space. 
 - Ideally, everything on the homepage would fit on one screen and there would be no scroll bars
