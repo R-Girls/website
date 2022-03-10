@@ -2228,10 +2228,24 @@ p {
   font-size: 22px;
 }
 
-
+/*
 .btn {
-  background-color: #C34A79 !important; /*dark pink with white writting*/
-  color: #FFFFFF;
+  background-color: #C34A79 !important; 
+  color: #FFFFFF; 
+} 
+*/
+
+.btn-outline-dark {
+    background-color: transparent; 
+    color: rgba(195, 74, 121);
+    border: 1px solid;
+    border-color: rgba(195, 74, 121);
+}
+
+.btn-outline-dark:hover {
+    background-color: rgba(195, 74, 121);
+    border-color: rgba(195, 74, 121);
+    color: white;
 }
 
 .rounded {
@@ -2265,11 +2279,20 @@ p {
   margin-top: 5% !important;
 }
 */
+.d-flex{
+  overflow-y: hidden !important;
+}
 
 .timeline-Widget{
   width: 40%;
   min-width: 200px;
   max-width: 500px;
+}
+
+.green-oak{
+  width: 15% !important;
+  min-width: 150px;
+  max-width: 230px;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2460,7 +2483,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <div class="nav-right">
 <a href="../../getting_started.html">Getting Started</a>
-<a href="../../showcase.html">Showcase</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans
@@ -2610,11 +2632,10 @@ ggtitle</p>
 <div>
 
 
-R Girls School Network â¢ 2022 â¢  <a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy <img src="../../images/greenoak_logo.png" width="15%"></a>
+<a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy </a> â¢ R Girls School Network â¢ 2022   
 
-<br>
 
-This website was built completely in R using the distill package 
+<br><img class="green-oak" src="../../images/greenoak_logo.png">
 </div>
 </div>
 <!--/radix_placeholder_navigation_after_body-->

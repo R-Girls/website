@@ -21,5 +21,8 @@ site: distill::distill_website
 We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.
 
 This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack.
+
+<br><br>
+*This website was built completely in **R** using the `distill` package*  `r emo::ji("smile")`
   
 </div>

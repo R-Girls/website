@@ -815,10 +815,24 @@
             font-size: 22px;
           }
 
-
+          /*
           .btn {
-            background-color: #C34A79 !important; /*dark pink with white writting*/
-            color: #FFFFFF;
+            background-color: #C34A79 !important; 
+            color: #FFFFFF; 
+          } 
+          */
+
+          .btn-outline-dark {
+              background-color: transparent; 
+              color: rgba(195, 74, 121);
+              border: 1px solid;
+              border-color: rgba(195, 74, 121);
+          }
+
+          .btn-outline-dark:hover {
+              background-color: rgba(195, 74, 121);
+              border-color: rgba(195, 74, 121);
+              color: white;
           }
 
           .rounded {
@@ -852,11 +866,20 @@
             margin-top: 5% !important;
           }
           */
+          .d-flex{
+            overflow-y: hidden !important;
+          }
 
           .timeline-Widget{
             width: 40%;
             min-width: 200px;
             max-width: 500px;
+          }
+
+          .green-oak{
+            width: 15% !important;
+            min-width: 150px;
+            max-width: 230px;
           }</style>
           <style type="text/css">
           /* base style */
@@ -1027,7 +1050,6 @@
           </div>
           <div class="nav-right">
           <a href="getting_started.html">Getting Started</a>
-          <a href="showcase.html">Showcase</a>
           <div class="nav-dropdown">
           <button class="nav-dropbtn">
           Lesson Plans
@@ -1064,21 +1086,21 @@
               <div id="icon-list">
                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                    <a href=https://twitter.com/R_Girls_School target="_blank">
+                    <a href=https://twitter.com/R_Girls_School target=“_blank”>
                       <button type="button" class="btn btn-outline-dark mb-2">
                         <i class="fab fa-twitter"></i> Twitter
                       </button>
                     </a>
                   </li>
                                     <li class="list-inline-item">
-                    <a href=https://github.com/R-Girls target="_blank">
+                    <a href=https://github.com/R-Girls target=“_blank”>
                       <button type="button" class="btn btn-outline-dark mb-2">
                         <i class="fab fa-github"></i> GitHub
                       </button>
                     </a>
                   </li>
                                     <li class="list-inline-item">
-                    <a href=https://r-girls.slack.com target="_blank">
+                    <a href=https://r-girls.slack.com target=“_blank”>
                       <button type="button" class="btn btn-outline-dark mb-2">
                         <i class="fab fa-slack"></i> Join Us on Slack
                       </button>
@@ -1147,17 +1169,17 @@
             <div class="row justify-content-center align-items-center">
               <div class="col-8 p-1 text-center">
                 <div class="list-group">
-                                    <a href=https://twitter.com/R_Girls_School target="_blank">
+                                    <a href=https://twitter.com/R_Girls_School target=“_blank”>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <i class="fab fa-twitter"></i> Twitter
                     </button>
                   </a>
-                                    <a href=https://github.com/R-Girls target="_blank">
+                                    <a href=https://github.com/R-Girls target=“_blank”>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <i class="fab fa-github"></i> GitHub
                     </button>
                   </a>
-                                    <a href=https://r-girls.slack.com target="_blank">
+                                    <a href=https://r-girls.slack.com target=“_blank”>
                     <button type="button" class="list-group-item list-group-item-action my-1 rounded">
                       <i class="fab fa-slack"></i> Join Us on Slack
                     </button>
@@ -1217,11 +1239,11 @@
       <div>
 
 
-      R Girls School Network • 2022 •  <a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy <img src='images/greenoak_logo.png' width="15%" /></a>
+      <a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy </a> • R Girls School Network • 2022   
+
 
       <br>
-
-      This website was built completely in R using the distill package 
+      <img class="green-oak" src='images/greenoak_logo.png'; />
       </div>
       </div>
       <!--/radix_placeholder_navigation_after_body-->

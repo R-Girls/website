@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-03-06"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-03-06"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-03-10"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-03-10"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Home: Check out all of the awesome work by the R Girls community!"/>
@@ -109,7 +109,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Check out all of the awesome work by the R Girls community!"]},{"type":"character","attributes":{},"value":["2022-03-06"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Check out all of the awesome work by the R Girls community!"]},{"type":"character","attributes":{},"value":["2022-03-10"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2221,10 +2221,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: 22px;
   }
 
-
+  /*
   .btn {
-    background-color: #C34A79 !important; /*dark pink with white writting*/
-    color: #FFFFFF;
+    background-color: #C34A79 !important; 
+    color: #FFFFFF; 
+  } 
+  */
+
+  .btn-outline-dark {
+      background-color: transparent; 
+      color: rgba(195, 74, 121);
+      border: 1px solid;
+      border-color: rgba(195, 74, 121);
+  }
+
+  .btn-outline-dark:hover {
+      background-color: rgba(195, 74, 121);
+      border-color: rgba(195, 74, 121);
+      color: white;
   }
 
   .rounded {
@@ -2258,11 +2272,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 5% !important;
   }
   */
+  .d-flex{
+    overflow-y: hidden !important;
+  }
 
   .timeline-Widget{
     width: 40%;
     min-width: 200px;
     max-width: 500px;
+  }
+
+  .green-oak{
+    width: 15% !important;
+    min-width: 150px;
+    max-width: 230px;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2439,7 +2462,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Check out all of the awesome work by the R Girls community!","authors":[],"publishedDate":"2022-03-06T00:00:00.000-05:00"}
+{"title":"Check out all of the awesome work by the R Girls community!","authors":[],"publishedDate":"2022-03-10T00:00:00.000-05:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2452,7 +2475,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="getting_started.html">Getting Started</a>
-<a href="showcase.html">Showcase</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans
@@ -2503,11 +2525,11 @@ Lesson Plans
 <div>
 
 
-R Girls School Network • 2022 •  <a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy <img src='images/greenoak_logo.png' width="15%" /></a>
+<a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy </a> • R Girls School Network • 2022   
+
 
 <br>
-
-This website was built completely in R using the distill package 
+<img class="green-oak" src='images/greenoak_logo.png'; />
 </div>
 </div>
 <!--/radix_placeholder_navigation_after_body-->

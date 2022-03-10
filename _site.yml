@@ -12,8 +12,6 @@ navbar:
     #   href: about.html
     - text: "Getting Started"
       href: getting_started.html
-    - text: "Showcase"
-      href: showcase.html      
     - text: "Lesson Plans"
       menu:
         - text: "Math Lessons"
