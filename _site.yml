@@ -12,6 +12,8 @@ navbar:
     #   href: about.html
     - text: "Getting Started"
       href: getting_started.html
+    - text: "Contributors"
+      href: contributors.html  
     - text: "Lesson Plans"
       menu:
         - text: "Math Lessons"

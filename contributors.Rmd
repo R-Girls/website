@@ -1,0 +1,67 @@
+---
+title: "With thanks too..."
+# description: |
+#   A new article created using the Distill format.
+# author:
+#   - name: Nora Jones 
+#     url: https://example.com/norajones
+#     affiliation: Spacely Sprockets
+#     affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+#remotes::install_github("EllaKaye/distilltools")
+library(distilltools)
+```
+
+
+<div style="text-align:center">
+<a class="people_font" href="https://www.r-consortium.org/" >R Consortium</a>
+
+<img class="people_photo" src="images/r_consortium.png" />
+</div>
+
+<div style="text-align:center">
+<a class="people_font" href="https://www.mango-solutions.com/">Mango solutions</a>
+
+<img class="people_photo" src="images/mango_solutions.png" />
+</div>
+
+
+
+<div class="people_font2" style="text-align:center">
+
+<p class="people_font2" style="text-align:center"> Mawlana Maseehullah Patel <br> & Dr Razia Ghani </p>
+
+<!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
+
+```{r}
+icon_link("fas fa-home", NULL, "https://greenoak.bham.sch.uk/", style = "regular")
+# icon_link("github", NULL, "https://github.com/jennysloane")
+# icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/")
+# icon_link("twitter", NULL, "https://twitter.com/jfsloane")
+```
+
+<p class="p2" style="text-align:center">Mawlana is an Executive Head Teacher and Razia is a Head Teacher at Green Oak Academy, Birmingham UK </p>
+
+
+<p class="people_font2" style="text-align:center"> Jenny Sloane </p>
+
+<!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
+
+```{r}
+icon_link("fas fa-home", NULL, "https://jennysloane.netlify.app/", style = "regular")
+icon_link("github", NULL, "https://github.com/jennysloane")
+icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/")
+icon_link("twitter", NULL, "https://twitter.com/jfsloane")
+```
+
+<p class="p2" style="text-align:center">Jenny is a PhD candidate at UNSW studying the effects of interruptions on medical decision-making. Jenny is also the creator of the beautiful R Girls Website</p>
+
+</div>

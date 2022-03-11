@@ -2123,6 +2123,8 @@ d-appendix {
 </style>
 <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 /* base variables */
 
 /* Edit the CSS properties in this file to create a custom
@@ -2248,6 +2250,26 @@ p {
     color: white;
 }
 
+/* styling for icon-link buttons (see distilltools::icon_link()) */
+.icon-link {
+    background-color: transparent;
+    color: rgba(195, 74, 121);
+    border: 1px solid;
+    border-color: rgba(195, 74, 121);
+    padding: 5px .4rem 5px .4rem;
+    /*margin: 4px;*/
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    border-radius: 5px;  /*Rounded edges */
+}
+
+.icon-link:hover {
+    background-color: rgba(195, 74, 121);
+    border-color: rgba(195, 74, 121);
+    color: white;
+}
+
 .rounded {
   height: 15rem !important; /*make logo larger*/
 }
@@ -2293,6 +2315,42 @@ p {
   width: 15% !important;
   min-width: 150px;
   max-width: 230px;
+}
+
+/*position: fixed;
+
+.distill-site-footer {
+  bottom: 0;
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+}*/
+
+.people_photo{
+  width: 25% !important;
+  min-width: 150px;
+  max-width: 400px;
+}
+
+.people_font{
+  font-family: "Amaranth" !important;
+  font-size: 35px;
+  color: rgba(195, 74, 121);
+}
+
+.people_font2{
+  font-family: "Kalam" !important;
+  font-size: 35px;
+  color: rgba(195, 74, 121);
+}
+
+.p2{
+  font-family: "Open Sans" !important;
+  font-size: 20px;
+  color: #01161E;
+}
+
+.left {
+  float: left;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2493,6 +2551,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <div class="nav-right">
 <a href="../../getting_started.html">Getting Started</a>
+<a href="../../contributors.html">Contributors</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans

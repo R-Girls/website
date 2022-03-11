@@ -2113,6 +2113,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
   /* base variables */
 
   /* Edit the CSS properties in this file to create a custom
@@ -2238,6 +2240,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       color: white;
   }
 
+  /* styling for icon-link buttons (see distilltools::icon_link()) */
+  .icon-link {
+      background-color: transparent;
+      color: rgba(195, 74, 121);
+      border: 1px solid;
+      border-color: rgba(195, 74, 121);
+      padding: 5px .4rem 5px .4rem;
+      /*margin: 4px;*/
+      margin-top: 4px;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      border-radius: 5px;  /*Rounded edges */
+  }
+
+  .icon-link:hover {
+      background-color: rgba(195, 74, 121);
+      border-color: rgba(195, 74, 121);
+      color: white;
+  }
+
   .rounded {
     height: 15rem !important; /*make logo larger*/
   }
@@ -2283,6 +2305,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 15% !important;
     min-width: 150px;
     max-width: 230px;
+  }
+
+  /*position: fixed;
+
+  .distill-site-footer {
+    bottom: 0;
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+  }*/
+
+  .people_photo{
+    width: 25% !important;
+    min-width: 150px;
+    max-width: 400px;
+  }
+
+  .people_font{
+    font-family: "Amaranth" !important;
+    font-size: 35px;
+    color: rgba(195, 74, 121);
+  }
+
+  .people_font2{
+    font-family: "Kalam" !important;
+    font-size: 35px;
+    color: rgba(195, 74, 121);
+  }
+
+  .p2{
+    font-family: "Open Sans" !important;
+    font-size: 20px;
+    color: #01161E;
+  }
+
+  .left {
+    float: left;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2472,6 +2530,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="getting_started.html">Getting Started</a>
+<a href="contributors.html">Contributors</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans
@@ -2628,14 +2687,14 @@ function init_posts_list() {
 <div class="posts-container posts-apply-limit l-page">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Math Lessons">Math Lessons</h1>
-<a href="math/2022-02-25-boxplotspost/" class="post-preview">
+<a href="math/2022-03-11-boxplotpost/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":[]}</script>
 <div class="metadata">
-<div class="publishedDate">Feb. 25, 2022</div>
+<div class="publishedDate">March 11, 2022</div>
 <div class="dt-authors"></div>
 </div>
 <div class="thumbnail">
-<img src="math/2022-02-25-boxplotspost/testphoto.png"/>
+<img src="math/2022-03-11-boxplotpost/boxplotpost_files/figure-html5/chunk1-1.png"/>
 </div>
 <div class="description">
 <h2>Boxplots</h2>
