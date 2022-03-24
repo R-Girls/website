@@ -15,27 +15,4 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
-# RStudio Cloud
-In the workshops, we will use RStudio Cloud, which is a "lightweight, cloud-based solution that allows anyone to do, share, teach and learn data science online". This will allow us to share all of our code online and will make it easier for us to help answer all of your coding questions.
-
-This platform is completely free for you to use, but you will need to set up an account. To do so, please follow the instructions below:
-
-  1. Go to your email and find the invitation to RStudio Cloud and open the link (we will let you know when we've sent you the invite)
-  2. Click "Sign Up" and enter your details (email, create a password, name)
-  3. Once you do this, you'll have to go back to your email and verify your account/email address
-  4. Navigate back to the RStudio Cloud page and click "Continue"
-  5. You should be set! To confirm, go to the "Members" tab and search for your name on the members list and check that you have the role "contributor" 
-  6. Feel free to also check out the About tab 
-  7. If you have any issues, please let us know on Slack
-
-# R & RStudio
-RStudio Cloud is great for beginners and getting started with R, but you will eventually want to work on your own computers. So, after the first couple of workshops, we will show you how to transfer all of your files to your local computers (as opposed to working on the cloud). To do this, you will need to have both R and RStudio installed. 
-
-***Please have these installed/downloaded before Workshop #3***
-
-- You can install **R** from the [CRAN (Comprehensive R Archive Network) website](https://cran.r-project.org/). I suggest downloading the latest version, which (as of the time of writing this workshop) is R 4.1.1
-  - [R for Windows link](https://cran.r-project.org/bin/windows/base/)
-  - [R for Mac link](https://cran.r-project.org/)
-- You can download **RStudio** [here](https://www.rstudio.com/products/rstudio/download/)
-- Although you need to have R installed, you will mostly likely never need to open R because you can do everything you need in RStudio
+# will be updated soon!

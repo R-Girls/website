@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-03-11"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-03-11"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-03-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-03-24"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Home: Resources to help you begin your R coding journey"/>
@@ -109,7 +109,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2022-03-11"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2022-03-24"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2223,13 +2223,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: 22px;
   }
 
-  /*
-  .btn {
-    background-color: #C34A79 !important; 
-    color: #FFFFFF; 
-  } 
-  */
-
   .btn-outline-dark {
       background-color: transparent; 
       color: rgba(195, 74, 121);
@@ -2243,18 +2236,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       color: white;
   }
 
-  /* styling for icon-link buttons (see distilltools::icon_link()) */
+  /* styling for icon-link buttons (see distilltools::icon_link()) 
   .icon-link {
       background-color: transparent;
       color: rgba(195, 74, 121);
       border: 1px solid;
       border-color: rgba(195, 74, 121);
       padding: 5px .4rem 5px .4rem;
-      /*margin: 4px;*/
       margin-top: 4px;
       margin-right: 8px;
       margin-bottom: 4px;
-      border-radius: 5px;  /*Rounded edges */
+      border-radius: 5px; 
   }
 
   .icon-link:hover {
@@ -2262,9 +2254,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       border-color: rgba(195, 74, 121);
       color: white;
   }
+  */
 
+  /*make logo larger*/
   .rounded {
-    height: 15rem !important; /*make logo larger*/
+    height: 15rem !important; 
   }
 
   /*remove search function*/
@@ -2283,17 +2277,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .nav-right {
     padding: 0.35em;
   }
-  /*
-  .align-self-center{
-    align-self: start !important;
-  }
 
-  .d-flex{
-    height: 500px !important;
-    overflow-y: hidden !important;
-    margin-top: 5% !important;
-  }
-  */
   .d-flex{
     overflow-y: hidden !important;
   }
@@ -2310,30 +2294,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 230px;
   }
 
-  /*position: fixed;
-
-  .distill-site-footer {
-    bottom: 0;
-    position: fixed;
-    padding: 10px 10px 0px 10px;
-  }*/
-
-  .people_photo{
-    width: 25% !important;
-    min-width: 150px;
-    max-width: 400px;
-  }
-
   .people_font{
     font-family: "Amaranth" !important;
-    font-size: 35px;
+    font-size: 30px;
     color: rgba(195, 74, 121);
   }
 
   .people_font2{
-    font-family: "Kalam" !important;
-    font-size: 35px;
-    color: rgba(195, 74, 121);
+    font-family: "Open Sans" !important;
+    font-size: 22px;
+    color: #000000;
+  }
+
+  .people_font2_indent{
+    font-family: "Open Sans" !important;
+    font-size: 22px;
+    color: #000000;
+    margin-left: 25px;
   }
 
   .p2{
@@ -2344,6 +2321,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .left {
     float: left;
+  }
+
+  .distill-site-footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0 !important;
+    position: fixed !important;
+  }
+
+  .vh-100 {
+    height: 80vh!important;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2500,7 +2488,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2520,7 +2508,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2022-03-11T00:00:00.000-05:00"}
+{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2022-03-24T00:00:00.000+00:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2534,6 +2522,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
+<a href="learning_r.html">Learning R</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans
@@ -2564,30 +2553,7 @@ Lesson Plans
 
 
 <div class="d-article">
-<h1 id="rstudio-cloud">RStudio Cloud</h1>
-<p>In the workshops, we will use RStudio Cloud, which is a “lightweight, cloud-based solution that allows anyone to do, share, teach and learn data science online”. This will allow us to share all of our code online and will make it easier for us to help answer all of your coding questions.</p>
-<p>This platform is completely free for you to use, but you will need to set up an account. To do so, please follow the instructions below:</p>
-<ol type="1">
-<li>Go to your email and find the invitation to RStudio Cloud and open the link (we will let you know when we’ve sent you the invite)</li>
-<li>Click “Sign Up” and enter your details (email, create a password, name)</li>
-<li>Once you do this, you’ll have to go back to your email and verify your account/email address</li>
-<li>Navigate back to the RStudio Cloud page and click “Continue”</li>
-<li>You should be set! To confirm, go to the “Members” tab and search for your name on the members list and check that you have the role “contributor”</li>
-<li>Feel free to also check out the About tab</li>
-<li>If you have any issues, please let us know on Slack</li>
-</ol>
-<h1 id="r-rstudio">R &amp; RStudio</h1>
-<p>RStudio Cloud is great for beginners and getting started with R, but you will eventually want to work on your own computers. So, after the first couple of workshops, we will show you how to transfer all of your files to your local computers (as opposed to working on the cloud). To do this, you will need to have both R and RStudio installed.</p>
-<p><strong><em>Please have these installed/downloaded before Workshop #3</em></strong></p>
-<ul>
-<li>You can install <strong>R</strong> from the <a href="https://cran.r-project.org/">CRAN (Comprehensive R Archive Network) website</a>. I suggest downloading the latest version, which (as of the time of writing this workshop) is R 4.1.1
-<ul>
-<li><a href="https://cran.r-project.org/bin/windows/base/">R for Windows link</a></li>
-<li><a href="https://cran.r-project.org/">R for Mac link</a></li>
-</ul></li>
-<li>You can download <strong>RStudio</strong> <a href="https://www.rstudio.com/products/rstudio/download/">here</a></li>
-<li>Although you need to have R installed, you will mostly likely never need to open R because you can do everything you need in RStudio</li>
-</ul>
+<h1 id="will-be-updated-soon">will be updated soon!</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

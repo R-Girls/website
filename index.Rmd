@@ -22,7 +22,13 @@ We are delighted to announce that we are setting up a worldwide network to promo
 
 This site is aimed primarily at teachers who want to use R in their lessons.  See our example lesson plans and join us for a friendly chat on slack.
 
+
+<!-- <img src="images/home_photo.png"> -->
+
+<!-- <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rainbowr.gif"> -->
+
 <br><br>
 *This website was built completely in **R** using the `distill` package*  `r emo::ji("smile")`
+<br>
   
 </div>

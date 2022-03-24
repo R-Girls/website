@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["introrrstudiopost_files/anchor-4.2.2/anchor.min.js","introrrstudiopost_files/bowser-1.9.3/bowser.min.js","introrrstudiopost_files/distill-2.2.21/template.v2.js","introrrstudiopost_files/header-attrs-2.11/header-attrs.js","introrrstudiopost_files/jquery-3.6.0/jquery-3.6.0.js","introrrstudiopost_files/jquery-3.6.0/jquery-3.6.0.min.js","introrrstudiopost_files/jquery-3.6.0/jquery-3.6.0.min.map","introrrstudiopost_files/popper-2.6.0/popper.min.js","introrrstudiopost_files/tippy-6.2.7/tippy-bundle.umd.min.js","introrrstudiopost_files/tippy-6.2.7/tippy-light-border.css","introrrstudiopost_files/tippy-6.2.7/tippy.css","introrrstudiopost_files/tippy-6.2.7/tippy.umd.min.js","introrrstudiopost_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"NULL"}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2231,13 +2231,6 @@ p {
   font-size: 22px;
 }
 
-/*
-.btn {
-  background-color: #C34A79 !important; 
-  color: #FFFFFF; 
-} 
-*/
-
 .btn-outline-dark {
     background-color: transparent; 
     color: rgba(195, 74, 121);
@@ -2251,18 +2244,17 @@ p {
     color: white;
 }
 
-/* styling for icon-link buttons (see distilltools::icon_link()) */
+/* styling for icon-link buttons (see distilltools::icon_link()) 
 .icon-link {
     background-color: transparent;
     color: rgba(195, 74, 121);
     border: 1px solid;
     border-color: rgba(195, 74, 121);
     padding: 5px .4rem 5px .4rem;
-    /*margin: 4px;*/
     margin-top: 4px;
     margin-right: 8px;
     margin-bottom: 4px;
-    border-radius: 5px;  /*Rounded edges */
+    border-radius: 5px; 
 }
 
 .icon-link:hover {
@@ -2270,9 +2262,11 @@ p {
     border-color: rgba(195, 74, 121);
     color: white;
 }
+*/
 
+/*make logo larger*/
 .rounded {
-  height: 15rem !important; /*make logo larger*/
+  height: 15rem !important; 
 }
 
 /*remove search function*/
@@ -2291,17 +2285,7 @@ p {
 .nav-right {
   padding: 0.35em;
 }
-/*
-.align-self-center{
-  align-self: start !important;
-}
 
-.d-flex{
-  height: 500px !important;
-  overflow-y: hidden !important;
-  margin-top: 5% !important;
-}
-*/
 .d-flex{
   overflow-y: hidden !important;
 }
@@ -2318,30 +2302,24 @@ p {
   max-width: 230px;
 }
 
-/*position: fixed;
-
-.distill-site-footer {
-  bottom: 0;
-  position: fixed;
-  padding: 10px 10px 0px 10px;
-}*/
-
-.people_photo{
-  width: 25% !important;
-  min-width: 150px;
-  max-width: 400px;
-}
-
 .people_font{
   font-family: "Amaranth" !important;
-  font-size: 35px;
+  font-size: 30px;
   color: rgba(195, 74, 121);
 }
 
 .people_font2{
-  font-family: "Kalam" !important;
-  font-size: 35px;
-  color: rgba(195, 74, 121);
+  font-family: "Open Sans" !important;
+  font-size: 22px;
+  color: #000000;
+  padding-bottom: 25px;
+}
+
+.people_font2_indent{
+  font-family: "Open Sans" !important;
+  font-size: 22px;
+  color: #000000;
+  margin-left: 25px;
 }
 
 .p2{
@@ -2352,6 +2330,17 @@ p {
 
 .left {
   float: left;
+}
+
+.distill-site-footer{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: 0 !important;
+  position: fixed !important;
+}
+
+.vh-100 {
+  height: 80vh!important;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2529,7 +2518,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Introduction to R and RStudio","description":"This is a short introduction to R and RStudio video tutorial.","authors":[{"author":"Jenny Sloane","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-26T00:00:00.000-05:00","citationText":"Sloane, 2022"}
+{"title":"Introduction to R and RStudio","description":"This is a short introduction to R and RStudio video tutorial.","authors":[{"author":"Jenny Sloane","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-26T00:00:00.000+00:00","citationText":"Sloane, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2543,6 +2532,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="nav-right">
 <a href="../../getting_started.html">Getting Started</a>
 <a href="../../contributors.html">Contributors</a>
+<a href="../../learning_r.html">Learning R</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans

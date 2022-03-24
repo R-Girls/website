@@ -13,7 +13,9 @@ navbar:
     - text: "Getting Started"
       href: getting_started.html
     - text: "Contributors"
-      href: contributors.html  
+      href: contributors.html 
+    - text: "Learning R"
+      href: learning_r.html   
     - text: "Lesson Plans"
       menu:
         - text: "Math Lessons"

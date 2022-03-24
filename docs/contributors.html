@@ -87,29 +87,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Home: With thanks too...</title>
+  <title>Home: With thanks to:</title>
 
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-03-11"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-03-11"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-03-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-03-24"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Home: With thanks too..."/>
+  <meta property="og:title" content="Home: With thanks to:"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Home"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Home: With thanks too..."/>
+  <meta property="twitter:title" content="Home: With thanks to:"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["With thanks too..."]},{"type":"character","attributes":{},"value":["2022-03-11"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["With thanks to:"]},{"type":"character","attributes":{},"value":["2022-03-24"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2223,13 +2223,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-size: 22px;
   }
 
-  /*
-  .btn {
-    background-color: #C34A79 !important; 
-    color: #FFFFFF; 
-  } 
-  */
-
   .btn-outline-dark {
       background-color: transparent; 
       color: rgba(195, 74, 121);
@@ -2243,18 +2236,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       color: white;
   }
 
-  /* styling for icon-link buttons (see distilltools::icon_link()) */
+  /* styling for icon-link buttons (see distilltools::icon_link()) 
   .icon-link {
       background-color: transparent;
       color: rgba(195, 74, 121);
       border: 1px solid;
       border-color: rgba(195, 74, 121);
       padding: 5px .4rem 5px .4rem;
-      /*margin: 4px;*/
       margin-top: 4px;
       margin-right: 8px;
       margin-bottom: 4px;
-      border-radius: 5px;  /*Rounded edges */
+      border-radius: 5px; 
   }
 
   .icon-link:hover {
@@ -2262,9 +2254,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       border-color: rgba(195, 74, 121);
       color: white;
   }
+  */
 
+  /*make logo larger*/
   .rounded {
-    height: 15rem !important; /*make logo larger*/
+    height: 15rem !important; 
   }
 
   /*remove search function*/
@@ -2283,17 +2277,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .nav-right {
     padding: 0.35em;
   }
-  /*
-  .align-self-center{
-    align-self: start !important;
-  }
 
-  .d-flex{
-    height: 500px !important;
-    overflow-y: hidden !important;
-    margin-top: 5% !important;
-  }
-  */
   .d-flex{
     overflow-y: hidden !important;
   }
@@ -2310,30 +2294,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 230px;
   }
 
-  /*position: fixed;
-
-  .distill-site-footer {
-    bottom: 0;
-    position: fixed;
-    padding: 10px 10px 0px 10px;
-  }*/
-
-  .people_photo{
-    width: 25% !important;
-    min-width: 150px;
-    max-width: 400px;
-  }
-
   .people_font{
     font-family: "Amaranth" !important;
-    font-size: 35px;
+    font-size: 30px;
     color: rgba(195, 74, 121);
   }
 
   .people_font2{
-    font-family: "Kalam" !important;
-    font-size: 35px;
-    color: rgba(195, 74, 121);
+    font-family: "Open Sans" !important;
+    font-size: 22px;
+    color: #000000;
+    padding-bottom: 25px;
+  }
+
+  .people_font2_indent{
+    font-family: "Open Sans" !important;
+    font-size: 22px;
+    color: #000000;
+    margin-left: 25px;
   }
 
   .p2{
@@ -2344,6 +2322,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .left {
     float: left;
+  }
+
+  .distill-site-footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0 !important;
+    position: fixed !important;
+  }
+
+  .vh-100 {
+    height: 80vh!important;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2500,7 +2489,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2520,7 +2509,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"With thanks too...","authors":[],"publishedDate":"2022-03-11T00:00:00.000-05:00"}
+{"title":"With thanks to:","authors":[],"publishedDate":"2022-03-24T00:00:00.000+00:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2534,6 +2523,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
+<a href="learning_r.html">Learning R</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lesson Plans
@@ -2556,7 +2546,7 @@ Lesson Plans
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>With thanks too…</h1>
+<h1>With thanks to:</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2567,36 +2557,54 @@ Lesson Plans
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div style="text-align:center">
-<p><a class="people_font" href="https://www.r-consortium.org/" >R Consortium</a></p>
-<p><img class="people_photo" src="images/r_consortium.png" /></p>
+<div style="text-align:left">
+<p><a class="people_font" href="https://www.r-consortium.org/" target="_blank">R Consortium</a></p>
 </div>
-<div style="text-align:center">
-<p><a class="people_font" href="https://www.mango-solutions.com/">Mango solutions</a></p>
-<p><img class="people_photo" src="images/mango_solutions.png" /></p>
+<div style="text-align:left">
+<p><a class="people_font" href="https://www.mango-solutions.com/" target="_blank">Mango solutions</a></p>
 </div>
-<div class="people_font2" style="text-align:center">
-<p class="people_font2" style="text-align:center">
-Mawlana Maseehullah Patel <br> &amp; Dr Razia Ghani
-</p>
-<!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
-<div class="layout-chunk" data-layout="l-body">
-<p><a href="https://greenoak.bham.sch.uk/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-home"></i> </a></p>
+<div style="text-align:left">
+<a class="people_font" href="https://greenoak.bham.sch.uk/" target="_blank">Green Oak Academy</a> <br><br>
+<ul>
+<li class="people_font2_indent">
+Maulana Maseehullah Patel (Executive Head Teacher)
+</li>
+<li class="people_font2_indent">
+Dr Razia Ghani (Head Teacher) Green Oak Academy
+</li>
+</ul>
 </div>
-<p class="p2" style="text-align:center">
-Mawlana is an Executive Head Teacher and Razia is a Head Teacher at Green Oak Academy, Birmingham UK
-</p>
-<p class="people_font2" style="text-align:center">
-Jenny Sloane
-</p>
-<!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
-<div class="layout-chunk" data-layout="l-body">
-<p><a href="https://jennysloane.netlify.app/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-home"></i> </a><a href="https://github.com/jennysloane" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> </a><a href="https://www.linkedin.com/in/jenny-sloane/" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> </a><a href="https://twitter.com/jfsloane" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> </a></p>
+<div class="people_font2" style="text-align:left">
+<p>Ms A Nawaz (for designing R Girls logo) <br><br> <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br> Batool Almarzouq <br><br> Iman Al-Hasani <br><br> Nasrin Fathollahzadeh Attar <br><br></p>
 </div>
-<p class="p2" style="text-align:center">
-Jenny is a PhD candidate at UNSW studying the effects of interruptions on medical decision-making. Jenny is also the creator of the beautiful R Girls Website
-</p>
-</div>
+<!-- <div style="text-align:center"> -->
+<!-- <a class="people_font" href="https://www.r-consortium.org/" >R Consortium</a> -->
+<!-- <img class="people_photo" src="images/r_consortium.png" /> -->
+<!-- </div> -->
+<!-- <div style="text-align:center"> -->
+<!-- <a class="people_font" href="https://www.mango-solutions.com/">Mango solutions</a> -->
+<!-- <img class="people_photo" src="images/mango_solutions.png" /> -->
+<!-- </div> -->
+<!-- <div class="people_font2" style="text-align:center"> -->
+<!-- <p class="people_font2" style="text-align:center"> Mawlana Maseehullah Patel <br> & Dr Razia Ghani </p> -->
+<!-- <!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
+<!-- ```{r} -->
+<!-- icon_link("fas fa-home", NULL, "https://greenoak.bham.sch.uk/", style = "regular") -->
+<!-- # icon_link("github", NULL, "https://github.com/jennysloane") -->
+<!-- # icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/") -->
+<!-- # icon_link("twitter", NULL, "https://twitter.com/jfsloane") -->
+<!-- ``` -->
+<!-- <p class="p2" style="text-align:center">Mawlana is an Executive Head Teacher and Razia is a Head Teacher at Green Oak Academy, Birmingham UK </p> -->
+<!-- <p class="people_font2" style="text-align:center"> Jenny Sloane </p> -->
+<!-- <!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
+<!-- ```{r} -->
+<!-- icon_link("fas fa-home", NULL, "https://jennysloane.netlify.app/", style = "regular") -->
+<!-- icon_link("github", NULL, "https://github.com/jennysloane") -->
+<!-- icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/") -->
+<!-- icon_link("twitter", NULL, "https://twitter.com/jfsloane") -->
+<!-- ``` -->
+<!-- <p class="p2" style="text-align:center">Jenny is a PhD candidate at UNSW studying the effects of interruptions on medical decision-making. Jenny is also the creator of the beautiful R Girls Website</p> -->
+<!-- </div> -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

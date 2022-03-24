@@ -817,13 +817,6 @@
             font-size: 22px;
           }
 
-          /*
-          .btn {
-            background-color: #C34A79 !important; 
-            color: #FFFFFF; 
-          } 
-          */
-
           .btn-outline-dark {
               background-color: transparent; 
               color: rgba(195, 74, 121);
@@ -837,18 +830,17 @@
               color: white;
           }
 
-          /* styling for icon-link buttons (see distilltools::icon_link()) */
+          /* styling for icon-link buttons (see distilltools::icon_link()) 
           .icon-link {
               background-color: transparent;
               color: rgba(195, 74, 121);
               border: 1px solid;
               border-color: rgba(195, 74, 121);
               padding: 5px .4rem 5px .4rem;
-              /*margin: 4px;*/
               margin-top: 4px;
               margin-right: 8px;
               margin-bottom: 4px;
-              border-radius: 5px;  /*Rounded edges */
+              border-radius: 5px; 
           }
 
           .icon-link:hover {
@@ -856,9 +848,11 @@
               border-color: rgba(195, 74, 121);
               color: white;
           }
+          */
 
+          /*make logo larger*/
           .rounded {
-            height: 15rem !important; /*make logo larger*/
+            height: 15rem !important; 
           }
 
           /*remove search function*/
@@ -877,17 +871,7 @@
           .nav-right {
             padding: 0.35em;
           }
-          /*
-          .align-self-center{
-            align-self: start !important;
-          }
 
-          .d-flex{
-            height: 500px !important;
-            overflow-y: hidden !important;
-            margin-top: 5% !important;
-          }
-          */
           .d-flex{
             overflow-y: hidden !important;
           }
@@ -904,30 +888,23 @@
             max-width: 230px;
           }
 
-          /*position: fixed;
-
-          .distill-site-footer {
-            bottom: 0;
-            position: fixed;
-            padding: 10px 10px 0px 10px;
-          }*/
-
-          .people_photo{
-            width: 25% !important;
-            min-width: 150px;
-            max-width: 400px;
-          }
-
           .people_font{
             font-family: "Amaranth" !important;
-            font-size: 35px;
+            font-size: 30px;
             color: rgba(195, 74, 121);
           }
 
           .people_font2{
-            font-family: "Kalam" !important;
-            font-size: 35px;
-            color: rgba(195, 74, 121);
+            font-family: "Open Sans" !important;
+            font-size: 22px;
+            color: #000000;
+          }
+
+          .people_font2_indent{
+            font-family: "Open Sans" !important;
+            font-size: 22px;
+            color: #000000;
+            margin-left: 25px;
           }
 
           .p2{
@@ -938,6 +915,17 @@
 
           .left {
             float: left;
+          }
+
+          .distill-site-footer{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            bottom: 0 !important;
+            position: fixed !important;
+          }
+
+          .vh-100 {
+            height: 80vh!important;
           }</style>
           <style type="text/css">
           /* base style */
@@ -1093,7 +1081,7 @@
           .distill-site-footer a:hover {
             color: var(--hover-color, white);
           }</style>
-          <script src="C:\Users\jfslo\OneDrive\MAINDO~1\DOCUME~1\R\WIN-LI~1\4.1\RMARKD~1\rmd\h\pandoc\HEADER~1.JS"></script>
+          <script src="C:\Users\jfslo\Documents\R\win-library\4.1\rmarkdown\rmd\h\pandoc\header-attrs.js"></script>
     
     
   </head>
@@ -1109,6 +1097,7 @@
           <div class="nav-right">
           <a href="getting_started.html">Getting Started</a>
           <a href="contributors.html">Contributors</a>
+          <a href="learning_r.html">Learning R</a>
           <div class="nav-dropdown">
           <button class="nav-dropbtn">
           Lesson Plans
@@ -1135,7 +1124,7 @@
         <div class="d-flex flex-column col-5 align-items-center text-center align-self-center">
           <div class="mx-auto text-center">
             <div class="p-3">
-              <img src=images/rgirls_logo.jpg style="height:15rem" class="rounded">
+              <img src="images/rgirls_logo.jpg" style="height:15rem" class="rounded">
             </div>
             <div class="p-2">
               <h1>R Girls Website</h1>
@@ -1218,7 +1207,7 @@
         <div class="d-flex flex-col">
           <div class="mx-auto">
             <div class="p-3 mt-3 text-center">
-              <img src=images/rgirls_logo.jpg style="height:15rem" class="rounded">
+              <img src="images/rgirls_logo.jpg" style="height:15rem" class="rounded">
             </div>
             <div class="p-2 text-center">
               <h1>R Girls Website</h1>
