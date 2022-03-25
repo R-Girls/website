@@ -87,638 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Home: With thanks to:</title>
+  <title>Plotting rainfall data from Australian cities</title>
 
+  <meta property="description" itemprop="description" content="In this lesson, you&#39;ll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot."/>
 
 
   <!--  https://schema.org/Article -->
   <meta property="article:published" itemprop="datePublished" content="2022-03-25"/>
   <meta property="article:created" itemprop="dateCreated" content="2022-03-25"/>
+  <meta name="article:author" content="Jenny Sloane"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Home: With thanks to:"/>
+  <meta property="og:title" content="Plotting rainfall data from Australian cities"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="In this lesson, you&#39;ll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Home"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Home: With thanks to:"/>
+  <meta property="twitter:title" content="Plotting rainfall data from Australian cities"/>
+  <meta property="twitter:description" content="In this lesson, you&#39;ll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["With thanks to:"]},{"type":"character","attributes":{},"value":["2022-03-25"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview"]}},"value":[{"type":"character","attributes":{},"value":["Plotting rainfall data from Australian cities"]},{"type":"character","attributes":{},"value":["In this lesson, you'll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jenny Sloane"]}]}]},{"type":"character","attributes":{},"value":["2022-03-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["rainfall_plot.png"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["rainfall_clean.csv","rainfall_clean.zip","rainfall_plot.png","rainfalldatapost_files/anchor-4.2.2/anchor.min.js","rainfalldatapost_files/bowser-1.9.3/bowser.min.js","rainfalldatapost_files/distill-2.2.21/template.v2.js","rainfalldatapost_files/figure-html5/plot1-1.png","rainfalldatapost_files/figure-html5/plot2-1.png","rainfalldatapost_files/figure-html5/plot3-1.png","rainfalldatapost_files/header-attrs-2.11/header-attrs.js","rainfalldatapost_files/jquery-3.6.0/jquery-3.6.0.js","rainfalldatapost_files/jquery-3.6.0/jquery-3.6.0.min.js","rainfalldatapost_files/jquery-3.6.0/jquery-3.6.0.min.map","rainfalldatapost_files/popper-2.6.0/popper.min.js","rainfalldatapost_files/tippy-6.2.7/tippy-bundle.umd.min.js","rainfalldatapost_files/tippy-6.2.7/tippy-light-border.css","rainfalldatapost_files/tippy-6.2.7/tippy.css","rainfalldatapost_files/tippy-6.2.7/tippy.umd.min.js","rainfalldatapost_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2036,468 +1437,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      40px;
-    --body-size:       18px;
-    --code-size:       16px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #01161E;
-    --header-color:    #01161E;
-    --body-color:      #01161E;
-    --aside-color:     #01161E;
-    --fig-cap-color:   #01161E;
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    Amaranth;
-    --mono-font:       monospace;
-    --body-font:       "Open Sans";
-    --navbar-font:     Amaranth;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       28px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        25px;
-    --hover-color:      white;
-    --bkgd-color:       #C34A79;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #01161E;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-
-
-  h1 {
-    color: #C34A79;
-    font-size: 38px;
-  }
-
-  h2 {
-    color: #C34A79;
-    font-size: 34px;
-  }
-
-  h3 {
-    color: #F2B6C1;
-    font-size: 30px;
-  }
-
-  /*change body color*/
-
-  body {
-    color: #01161E;
-    font-size: 22px;
-  }
-
-  p {
-    color: #01161E;
-    font-size: 22px;
-  }
-
-  .btn-outline-dark {
-      background-color: transparent; 
-      color: rgba(195, 74, 121);
-      border: 1px solid;
-      border-color: rgba(195, 74, 121);
-  }
-
-  .btn-outline-dark:hover {
-      background-color: rgba(195, 74, 121);
-      border-color: rgba(195, 74, 121);
-      color: white;
-  }
-
-  /* styling for icon-link buttons (see distilltools::icon_link()) 
-  .icon-link {
-      background-color: transparent;
-      color: rgba(195, 74, 121);
-      border: 1px solid;
-      border-color: rgba(195, 74, 121);
-      padding: 5px .4rem 5px .4rem;
-      margin-top: 4px;
-      margin-right: 8px;
-      margin-bottom: 4px;
-      border-radius: 5px; 
-  }
-
-  .icon-link:hover {
-      background-color: rgba(195, 74, 121);
-      border-color: rgba(195, 74, 121);
-      color: white;
-  }
-  */
-
-  /*make logo larger*/
-  .rounded {
-    height: 15rem !important; 
-  }
-
-  /*remove search function*/
-  .nav-search {
-    display: none !important;
-  }
-
-  .algolia-autocomplete {
-    display: none !important;
-  }
-
-  .nav-left {
-    padding: 0.35em;
-  }
-
-  .nav-right {
-    padding: 0.35em;
-  }
-
-  .d-flex{
-    overflow-y: hidden !important;
-  }
-
-  .timeline-Widget{
-    width: 40%;
-    min-width: 200px;
-    max-width: 500px;
-  }
-
-  .green-oak{
-    width: 15% !important;
-    min-width: 150px;
-    max-width: 230px;
-  }
-
-  .people_font{
-    font-family: "Amaranth" !important;
-    font-size: 30px;
-    color: rgba(195, 74, 121);
-  }
-
-  .people_font2{
-    font-family: "Open Sans" !important;
-    font-size: 22px;
-    color: #000000;
-    padding-bottom: 25px;
-  }
-
-  .people_font2_indent{
-    font-family: "Open Sans" !important;
-    font-size: 22px;
-    color: #000000;
-    margin-left: 25px;
-  }
-
-  .p2{
-    font-family: "Open Sans" !important;
-    font-size: 20px;
-    color: #01161E;
-  }
-
-  .left {
-    float: left;
-  }
-
-  .distill-site-footer{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    bottom: 0 !important;
-    position: fixed !important;
-  }
-
-  .vh-100 {
-    height: 80vh!important;
-  }</style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="rainfalldatapost_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="rainfalldatapost_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="rainfalldatapost_files/popper-2.6.0/popper.min.js"></script>
+  <link href="rainfalldatapost_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="rainfalldatapost_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="rainfalldatapost_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="rainfalldatapost_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="rainfalldatapost_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="rainfalldatapost_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="rainfalldatapost_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -2509,103 +1459,193 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"With thanks to:","authors":[],"publishedDate":"2022-03-25T00:00:00.000+00:00"}
+{"title":"Plotting rainfall data from Australian cities","description":"In this lesson, you'll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot.","authors":[{"author":"Jenny Sloane","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-03-25T00:00:00.000+00:00","citationText":"Sloane, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Home</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="getting_started.html">Getting Started</a>
-<a href="contributors.html">Contributors</a>
-<a href="learning_r.html">Learning R</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-Lesson Plans
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="math_lessons.html">Math Lessons</a>
-<a href="science_lessons.html">Science Lessons</a>
-<a href="geography_lessons.html">Geography Lessons</a>
-<a href="r_lessons.html">R Lessons</a>
-</div>
-</div>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>With thanks to:</h1>
+<h1>Plotting rainfall data from Australian cities</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>In this lesson, you’ll learn how to read in and explore a dataset on average rainfall in Australia and create beautiful plots with ggplot.</p></p>
 </div>
 
+<div class="d-byline">
+  
+  Jenny Sloane
+  
+<br/>2022-03-25
+</div>
 
 <div class="d-article">
+<p><a href="data:application/zip;base64,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" download="rainfall_clean.zip">Download zip file here</a></p>
+<h2 id="downloading-files">Downloading files</h2>
+<p>In this lesson, you will need the .Rmd script and the .csv file which contains the data. Download the zip file above and save the zip folder on your desktop (or anywhere on your computer).</p>
+<p>To unzip the files:</p>
+<ul>
+<li>On windows, you can right click on the zip folder and select “extract all”</li>
+<li>On a mac…have to check??</li>
+</ul>
+<p>Then, open the folder and open up the R Project file (this looks like a blue R cube). This will automatically open up Rstudio and all of the files will be loaded in. To start working through the lesson, simply open up the <code>rainfall_data.Rmd</code> file.</p>
+<p>Before we start add you name to the “author” argument in the YAML on line 3 where it says “write your name here”. Also, make sure to run the first R chunk above (by pushing the green arrow) to load in our libraries.</p>
+<h2 id="lesson-objectives">Lesson Objectives</h2>
+<ul>
+<li>To learn how to read in data</li>
+<li>To practice viewing and exploring your data</li>
+<li>To identify R commands needed to plot a line graph</li>
+<li>To learn about a package called <code>ggeasy</code> that will help us create beautiful plots</li>
+</ul>
+<h2 id="success-criteria">Success Criteria:</h2>
+<ul>
+<li>I can identify where my data is located and what type of file it is</li>
+<li>I can view my data in a new R window</li>
+<li>I can see all of the different variables within my dataset</li>
+<li>I have a better understanding of what “packages” are</li>
+<li>I can produce a line plot using ggplot</li>
+</ul>
+<h2 id="keywords">Keywords:</h2>
+<ul>
+<li>csv files</li>
+<li>packages</li>
+<li>functions</li>
+<li>arguments</li>
+</ul>
+<h2 id="our-data">Our data</h2>
+<p>In this lesson, we’re going to create a line graph to show the average rainfall (in mm) for different cities in Australia over the past 20 years. The data is freely available on <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-01-07/readme.md">github</a>. However, for this lesson, I’ve cleaned the data to make it easier for us to work with.</p>
+<p>The data is saved in a file called <code>rainfall_clean.csv</code> and this is the dataset we’ll be working with. Outside of R, you can try opening this file and you’ll be able to open it directly in excel. Of course, we will be working mostly in RStudio, but this will just give you a quick glimpse of the data before we get started.</p>
+<p>csv stands for “comma separated value” which is a simple text file. Often, when working with programming languages data is stored in csv files. Although you can also read in other types of files, like excel (XLSX) or text (TXT) files.</p>
+<h2 id="reading-in-our-data">Reading in our data</h2>
+<p>First, take a look in the Files tab in RStudio and locate the <code>rainfall_clean.csv</code> file.</p>
+<p>To read in our data, we will use a <code>read_csv()</code>. In the console, type <code>?read_csv()</code> to see the help documentation about this function. No need to read through this entire Help file - I just wanted to point out how you can use the help documentation on essentially any function within RStudio.</p>
+<p>Copy the following line of R code into the read_data chunk.</p>
+<p>rainfall &lt;- read_csv(“rainfall_clean.csv”)</p>
+<p>Make sure to run the code in read_data chunk by pressing the green arrow pointing to the right.</p>
+<p>This line of code will read in our rainfall dataset and save it as a variable called <code>rainfall</code>. In the environment tab on the right, you should now be able to see the rainfall variable.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rainfall</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"rainfall_clean.csv"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="view-our-data">View our data</h2>
+<p>To view our data in a new tab, go to the Environment tab and click on <code>rainfall</code> - if you have a quick look at your console, you can see it automatically printed <code>View(rainfall)</code></p>
+<p>To view our data in the console, simply type <code>rainfall</code> and run the view_data chunk. Depending on your RMarkdown settings, running this line of code may print your data directly below your R chunk or in the console (either works!)</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rainfall</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 112 x 3
+   city_name  year avg_rainfall
+   &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Adelaide   2000        1.53 
+ 2 Adelaide   2001        1.71 
+ 3 Adelaide   2002        0.996
+ 4 Adelaide   2003        1.49 
+ 5 Adelaide   2004        1.41 
+ 6 Adelaide   2005        1.61 
+ 7 Adelaide   2006        0.757
+ 8 Adelaide   2007        1.27 
+ 9 Adelaide   2008        1.03 
+10 Adelaide   2009        1.34 
+# ... with 102 more rows</code></pre>
+</div>
+<h2 id="understanding-our-data">Understanding our data</h2>
+<p>Looking at the output, we see the first line printed says <code>A tibble: 112 x3</code>. A tibble is a type of dataframe that stores our data in a convenient way. For example, it tells us the dimensions of our dataset: we have 112 rows and 3 columns. The columns represent our different variables and the rows represent individual observations.</p>
+<p>What are the three variables?</p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<p>Underneath the column names, our tibble also tells us the types of variables we are dealing with. For example, under city_name it says <chr> which stands for a “character string”, or a string of letters. Under year it says <dbl> which stands for double, which contains numeric values that may have decimal places.</p>
+<p>If we look at the first row of our data, we learn that in the city of Adelaide in 2000 there was on average 1.53mm of rainfall.</p>
+<p>Type the following 2 lines of code in the explore_data chunk.</p>
+<p>unique(rainfall<span class="math inline">\(city_name) range(rainfall\)</span>year)</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>rainfall</span><span class='op'>$</span><span class='va'>city_name</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;Adelaide&quot;  &quot;Brisbane&quot;  &quot;Canberra&quot;  &quot;Melbourne&quot; &quot;Perth&quot;    
+[6] &quot;Sydney&quot;   </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='op'>(</span><span class='va'>rainfall</span><span class='op'>$</span><span class='va'>year</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 2000 2019</code></pre>
+</div>
+<p>The first line of code returns a list of the unique cities within our dataset. How many cities do we have in our data?</p>
+<p>The second line of code gives us the range of years. In other words, this tells us the minimum and maximum year. What is the range of years in our dataset?</p>
+<h2 id="create-a-line-graph">Create a line graph</h2>
+<h3 id="plot-1">Plot 1</h3>
+<p>Now, we’re ready to create a line graph! The goal of this graph is to plot the average mm of rainfall for each city in our dataset from the years 2000-2019.</p>
+<p>In the plot1 chunk copy the following 3 lines of code:</p>
+<p>plot1 &lt;- ggplot(rainfall, aes(x = year, y = avg_rainfall)) + geom_line() plot1</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>plot1</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>rainfall</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>avg_rainfall</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>plot1</span>
+</code></pre>
+</div>
+<p><img src="rainfalldatapost_files/figure-html5/plot1-1.png" width="624" /></p>
+</div>
+<h3 id="understanding-plot-1">Understanding Plot 1</h3>
+<p>We’re creating a plot using the ggplot function and our rainfall dataset. We’re plotting year on the x axis and average rainfall on the y axis. <code>geom_line()</code> is a function to tell R that we want to plot a line graph.</p>
+<p>However, this graph isn’t quite right yet. We only have 1 line for the entire dataset, but we really want 1 line for each of the 5 cities.</p>
+<h3 id="plot-2">Plot 2</h3>
+<p>In the plot2 chunk copy the following 3 lines of code:</p>
+<p>plot2 &lt;- ggplot(rainfall, aes(x = year, y = avg_rainfall, color = city_name)) + geom_line() plot2</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>plot2</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>rainfall</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>avg_rainfall</span>, color <span class='op'>=</span> <span class='va'>city_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>plot2</span>
+</code></pre>
+</div>
+<p><img src="rainfalldatapost_files/figure-html5/plot2-1.png" width="624" /></p>
+</div>
+<h3 id="understanding-plot-2">Understanding Plot 2</h3>
+<p>This looks much better!</p>
+<p>Here, we just added one <code>argument</code> called “color” and told R we want to color the lines by the different city names.</p>
+<p>However, we can add a few more lines of code to make our plot even prettier.</p>
+<h3 id="plot-3">Plot 3</h3>
+<p>In the plot3 chunk copy the following 7 lines of code:</p>
+<p>plot3 &lt;- ggplot(rainfall, aes(x = year, y = avg_rainfall, color = city_name)) + geom_line(size = 1) + labs(x = “Year”, y = “Average Rainfall (mm)”) + theme_bw() + easy_text_size(15) + easy_remove_legend_title() plot3</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>plot3</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>rainfall</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>avg_rainfall</span>, color <span class='op'>=</span> <span class='va'>city_name</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>, y <span class='op'>=</span> <span class='st'>"Average Rainfall (mm)"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_bw</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/ggeasy/man/easy_change_text.html'>easy_text_size</a></span><span class='op'>(</span><span class='fl'>15</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggeasy/man/easy_remove_legend_title.html'>easy_remove_legend_title</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>plot3</span>
+</code></pre>
+</div>
+<p><img src="rainfalldatapost_files/figure-html5/plot3-1.png" width="624" /></p>
+</div>
+<h3 id="understanding-plot-3">Understanding Plot 3</h3>
+<ul>
+<li>The first line of our code is the same as plot 2</li>
+<li>Within <code>geom_line()</code> we added the <code>size</code> argument to make the lines on our graph a little bit thicker and easier to see</li>
+<li>The <code>labs()</code> function allows us to easily change the labels on the x and y axes</li>
+<li><code>theme_bw()</code> is one of ggplot’s default themes, which is my personal favorite. It makes the plot a little bit cleaner</li>
+<li><code>easy_text_size()</code> and <code>easy_remove_legend_title()</code> are two functions from the ggeasy package that allow us to easily adjust the text size and remove the legend title. In order to use these functions, you need to remember to call the <code>ggeasy</code> library first (like we did at the top of our script)</li>
+</ul>
+<p>Finally, in the plot4 chunk try changing the code from plot3 so the text size is set to 25 and the theme is set to theme_dark() instead of theme_bw() - can you see the differences?</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div style="text-align:left">
-<p><a class="people_font" href="https://www.r-consortium.org/" target="_blank">R Consortium</a></p>
-</div>
-<div style="text-align:left">
-<p><a class="people_font" href="https://www.mango-solutions.com/" target="_blank">Mango solutions</a></p>
-</div>
-<div style="text-align:left">
-<a class="people_font" href="https://greenoak.bham.sch.uk/" target="_blank">Green Oak Academy</a> <br><br>
-<ul>
-<li class="people_font2_indent">
-Maulana Maseehullah Patel (Executive Head Teacher)
-</li>
-<li class="people_font2_indent">
-Dr Razia Ghani (Head Teacher) Green Oak Academy
-</li>
-</ul>
-</div>
-<div class="people_font2" style="text-align:left">
-<p>Ms A Nawaz (for designing R Girls logo) <br><br> <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br> Batool Almarzouq <br><br> Iman Al-Hasani <br><br> Nasrin Fathollahzadeh Attar <br><br></p>
-</div>
-<!-- <div style="text-align:center"> -->
-<!-- <a class="people_font" href="https://www.r-consortium.org/" >R Consortium</a> -->
-<!-- <img class="people_photo" src="images/r_consortium.png" /> -->
-<!-- </div> -->
-<!-- <div style="text-align:center"> -->
-<!-- <a class="people_font" href="https://www.mango-solutions.com/">Mango solutions</a> -->
-<!-- <img class="people_photo" src="images/mango_solutions.png" /> -->
-<!-- </div> -->
-<!-- <div class="people_font2" style="text-align:center"> -->
-<!-- <p class="people_font2" style="text-align:center"> Mawlana Maseehullah Patel <br> & Dr Razia Ghani </p> -->
-<!-- <!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
-<!-- ```{r} -->
-<!-- icon_link("fas fa-home", NULL, "https://greenoak.bham.sch.uk/", style = "regular") -->
-<!-- # icon_link("github", NULL, "https://github.com/jennysloane") -->
-<!-- # icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/") -->
-<!-- # icon_link("twitter", NULL, "https://twitter.com/jfsloane") -->
-<!-- ``` -->
-<!-- <p class="p2" style="text-align:center">Mawlana is an Executive Head Teacher and Razia is a Head Teacher at Green Oak Academy, Birmingham UK </p> -->
-<!-- <p class="people_font2" style="text-align:center"> Jenny Sloane </p> -->
-<!-- <!-- <img class="people_photo" src="images/jenny_photo.png" /> -->
-<!-- ```{r} -->
-<!-- icon_link("fas fa-home", NULL, "https://jennysloane.netlify.app/", style = "regular") -->
-<!-- icon_link("github", NULL, "https://github.com/jennysloane") -->
-<!-- icon_link("fab fa-linkedin-in", NULL, "https://www.linkedin.com/in/jenny-sloane/") -->
-<!-- icon_link("twitter", NULL, "https://twitter.com/jfsloane") -->
-<!-- ``` -->
-<!-- <p class="p2" style="text-align:center">Jenny is a PhD candidate at UNSW studying the effects of interruptions on medical decision-making. Jenny is also the creator of the beautiful R Girls Website</p> -->
-<!-- </div> -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Finally, knit your document to see all of your beautiful plots.</p>
+<h2 id="the-end">The END</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2613,6 +1653,15 @@ Dr Razia Ghani (Head Teacher) Green Oak Academy
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
@@ -2620,19 +1669,7 @@ Dr Razia Ghani (Head Teacher) Green Oak Academy
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
-<div class="distill-site-nav distill-site-footer">
-<div>
-
-
-<a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy </a> • R Girls School Network • 2022   
-
-
-<br>
-<img class="green-oak" src='images/greenoak_logo.png'; />
-</div>
-</div>
 <!--/radix_placeholder_navigation_after_body-->
-
 
 </body>
 
