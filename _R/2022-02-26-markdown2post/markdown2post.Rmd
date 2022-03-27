@@ -9,7 +9,7 @@ output:
     self_contained: false
 ---
 
-<div style="text-align: center">
+<!-- <div style="text-align: center"> -->
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.Rmd"), text = "Download .Rmd here")`
 
@@ -17,12 +17,12 @@ output:
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown2post", "markdown2.docx"), text = "Download pdf here")`
 
-</div>
+<!-- </div> -->
 
 
 <div style="text-align: center">
 
-<img src="markdown2_feedback.jpg" width="600px" min-width="300px" max-width="300px" />
+<img src="feedback_second_markdown2.jpg" width="600px" min-width="300px" max-width="300px" />
 
 </div>
 
