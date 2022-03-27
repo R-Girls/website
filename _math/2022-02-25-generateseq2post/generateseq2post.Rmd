@@ -7,6 +7,7 @@ date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: seq2_photo.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-generateseq2post", "generate_seq2.Rmd"), text = "Download .Rmd here")`

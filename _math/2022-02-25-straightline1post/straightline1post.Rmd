@@ -3,10 +3,11 @@ title: "Equations of Straight Line Graphs - Part 1"
 description: |
   This lesson is part 1 of 2 and demonstrates how to use R to plot straight line graphs (y=mx+c) and to observe what happens when the value of m changes
 # author: []
-# date: 2022-02-25
+date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: straightline1_photo.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-straightline1post", "equation_straight_line1.Rmd"), text = "Download .Rmd here")`

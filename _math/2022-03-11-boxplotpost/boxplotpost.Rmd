@@ -3,7 +3,7 @@ title: "Boxplots"
 description: |
   This lesson starts with an example showing how to use R code to draw a box plot and calculate the 5 number summary followed by an activity where the student produces their own.
 # author: []
-date: 2022-03-11
+date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false

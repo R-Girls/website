@@ -7,6 +7,7 @@ date: 2022-02-25
 output:
   distill::distill_article:
     self_contained: false
+preview: straightline2_photo.png
 ---
 
 `r xfun::embed_file(here::here("_math", "2022-02-25-straightline2post", "equation_straight_line2.Rmd"), text = "Download .Rmd here")`
