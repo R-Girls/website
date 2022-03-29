@@ -4,7 +4,6 @@ description: |
   R Girls Website
 output_dir: "docs"
 theme: rgirls-theme.css
-google_analytics: "G-93KHV17RG5"
 navbar:
   right:
     # - text: "Home"
@@ -27,4 +26,5 @@ navbar:
           href: geography_lessons.html 
         - text: "R Lessons"
           href: r_lessons.html  
+google_analytics: "G-93KHV17RG5"
 output: distill::distill_article
