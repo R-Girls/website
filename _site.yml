@@ -26,5 +26,5 @@ navbar:
           href: geography_lessons.html 
         - text: "R Lessons"
           href: r_lessons.html  
-google_analytics: "G-87225WC259"
+google_analytics: "G-93KHV17RG5"
 output: distill::distill_article
