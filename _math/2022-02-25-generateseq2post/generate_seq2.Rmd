@@ -15,6 +15,10 @@ library(tidyverse)
 ### Lesson objectives
 Investigating sequences
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ### Success criteria
 * Find the relationship between the terms
 * Does a number lie in a sequence

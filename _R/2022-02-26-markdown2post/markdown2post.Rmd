@@ -61,6 +61,10 @@ To practice editing the R code
 To identify R commands needed to plot a bar chart
 To produce an output file of my work using the 'knit' command
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success Criteria:
 
 I can identify free text in the Markdown file

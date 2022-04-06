@@ -36,6 +36,10 @@ To become familiar with the layout of an R Markdown document
 To practice typing in the code chunk
 To produce an output file of my work using the 'knit' command
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success Criteria:
 
 I can write my name on my R Markdown document

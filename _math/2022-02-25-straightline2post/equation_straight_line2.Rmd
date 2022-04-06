@@ -15,6 +15,10 @@ library(tidyverse)
 ### Lesson objectives
 Plotting and finding the equations of straight line graphs y=mx+c
 
+### Packages used in this lesson:
+
+- `tidyverse`
+
 ### Success criteria
 * Plot a straight line graph y = mx+c
 * Plot straight line graphs y = mx+c with different intercepts

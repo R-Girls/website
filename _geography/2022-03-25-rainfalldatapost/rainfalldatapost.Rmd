@@ -18,7 +18,7 @@ In this lesson, you will need the .Rmd script and the .csv file which contains t
 To unzip the files:
 
 - On windows, you can right click on the zip folder and select "extract all"
-- On a mac...have to check?? 
+- On a mac double click on the folder 
 
 Then, open the folder and open up the R Project file (this looks like a blue R cube). This will automatically open up Rstudio and all of the files will be loaded in. To start working through the lesson, simply open up the `rainfall_data.Rmd` file. 
 
@@ -37,6 +37,11 @@ Before we start add you name to the "author" argument in the YAML on line 3 wher
 - To practice viewing and exploring your data 
 - To identify R commands needed to plot a line graph
 - To learn about a package called `ggeasy` that will help us create beautiful plots
+
+## Packages used in this lesson:
+
+- `tidyverse`
+- `ggeasy`
 
 ## Success Criteria:
 

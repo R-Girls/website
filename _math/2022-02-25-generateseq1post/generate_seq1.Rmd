@@ -10,21 +10,25 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-### KS3: Generating Sequences Part 1
+## KS3: Generating Sequences Part 1
 
-### Lesson objectives
+## Lesson objectives
 Generating sequences using R code
 
-### Success criteria
+## Packages used in this lesson:
+
+- `tidyverse`
+
+## Success criteria
 * Generate different sequences using R code
 
-### Keywords
+## Keywords
 * sequence
 * term = the numbers in the sequence
 * nth term
 
 
-### Remember
+## Remember
 Knit your R markdown document frequently.  Knit for the final time when you have completed the lesson.  This final output file will be the one your teacher marks.
 
 Write your code in the code chunks.
@@ -32,7 +36,7 @@ Write your code in the code chunks.
 You can run your R code chunk in the Markdown file by clicking on the little arrow on the right of the chunk.
 
 
-#### Worked Example 1
+### Worked Example 1
 
 First we will tell R to generate a sequence.
 
@@ -45,7 +49,7 @@ Use the above example R code in chunk1 to generate the following sequences.  Rem
 
 Knit your document after each question to check your sequence.
 
-##### Activity 1 Questions
+#### Activity 1 Questions
 Q1 Generate a sequence from 1 to 100 where the terms increase by 10
 
 ```{r chunk2}
@@ -68,7 +72,7 @@ Q4 Generate a sequence from 1 to 9 where the terms increase by 3.
 ```
 
 
-#### Worked Example 2
+### Worked Example 2
 Now we will generate a sequence that starts from a number and goes up to the nth term, where the nth term is for example 10.
 
 For example a sequence from 1 where the terms go up by 1 till the 10th term.
@@ -80,7 +84,7 @@ Use the above example R code in chunk6 to generate the following sequences.
 
 Knit your document after each question to check your sequence.
 
-##### Activity 2 Questions
+#### Activity 2 Questions
 Q1 Generate a sequence from 1 where the terms go up by 4 up to the 100th term
 
 ```{r chunk7}
@@ -98,7 +102,7 @@ Q3 Generate a sequence from 3 where the terms go up by 3 up to the 33rd term
 ```
 
 
-#### Worked Example 3
+### Worked Example 3
 So the terms have increased by a particular number, but we can also decrease by a number and produce a backward sequence.
 
 For example, we can sequence from 100 to 1 by -1
@@ -112,7 +116,7 @@ Use the above example R code in chunk10 to answer the following questions.
 
 Knit your document after each question to check your sequence is correct.
 
-##### Activity 3 Questions
+#### Activity 3 Questions
 
 Q1 Generate a sequence that goes down from 50 to 0 where the terms go down by 5.
 ```{r chunk11}

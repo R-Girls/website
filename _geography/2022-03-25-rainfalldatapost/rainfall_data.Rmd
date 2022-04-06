@@ -21,6 +21,11 @@ Before we start add you name to the "author" argument in the YAML on line 3 wher
 - To identify R commands needed to plot a line graph
 - To learn about a package called `ggeasy` that will help us create beautiful plots
 
+## Packages used in this lesson:
+
+- `tidyverse`
+- `ggeasy`
+
 ## Success Criteria:
 
 - I can identify where my data is located and what type of file it is

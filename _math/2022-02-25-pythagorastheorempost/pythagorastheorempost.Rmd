@@ -27,6 +27,10 @@ library(tidyverse)
 
 Use Pythagoras' Theorem to find the lengths of missing sides of a right angle triangle
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success criteria
 
 Write the R code to work out the missing side

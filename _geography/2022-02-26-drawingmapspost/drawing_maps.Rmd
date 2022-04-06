@@ -18,6 +18,11 @@ library(leaflet)
 
 To draw a map in R using coordinates
 
+## Packages used in this lesson:
+
+- `tidyverse`
+- `leaflet`
+
 ### Success criteria
 
 I can find the coordinates from googlemaps and use them to draw the map in R

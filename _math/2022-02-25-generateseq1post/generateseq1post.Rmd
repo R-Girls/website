@@ -28,6 +28,10 @@ seq(from=1,to=100,by=1)
 ## Lesson objectives
 Generating sequences using R code
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success criteria
 * Generate different sequences using R code
 

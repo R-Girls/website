@@ -26,6 +26,10 @@ library(tidyverse)
 ## Lesson objectives
 Plotting straight line graphs y=mx+c
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success criteria
 * Plot a straight line graph y = mx+c
 * Compare graphs

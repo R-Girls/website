@@ -28,6 +28,10 @@ library(tidyverse)
 
 - To use the graph to interpret your results
 
+## Packages used in this lesson:
+
+- `tidyverse`
+
 ## Success criteria
 
 - I can use R to calculate means

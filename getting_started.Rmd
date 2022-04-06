@@ -16,3 +16,10 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # will be updated soon!
+
+## Packages used in all the lesson:
+
+- `tidyverse`
+- `leaflet`
+- `ggeasy`
+- `astsa`

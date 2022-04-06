@@ -20,6 +20,10 @@ To understand how to visualise the shape of data using box plots\
 To produce box plots and the related five number summary\
 To interpret box plots\
 
+### Packages used in this lesson:
+
+- `tidyverse`
+- `astsa`
 
 ### Success criteria
 * Draw a box plot using R code
