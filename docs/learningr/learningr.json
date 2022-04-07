@@ -1,8 +1,8 @@
 [
   {
-    "path": "learningR/2022-04-07-introtor/",
-    "title": "Introduction to R and RStudio",
-    "description": "This is a short introduction to R and RStudio video tutorial.",
+    "path": "learningr/2022-04-07-introtor/",
+    "title": "intro_to_r",
+    "description": "TEST",
     "author": [
       {
         "name": "Jenny Sloane",
@@ -11,9 +11,9 @@
     ],
     "date": "2022-04-07",
     "categories": [],
-    "contents": "\r\nTEST\r\n\r\n\r\n\r\n\r\n",
+    "contents": "\r\nTEST\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2022-04-07T16:32:51+01:00",
+    "last_modified": "2022-04-07T16:41:52+01:00",
     "input_file": {}
   }
 ]
