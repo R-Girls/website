@@ -3,7 +3,7 @@ title: "Introduction to R and RStudio"
 description: |
   This is a short introduction to R and RStudio video tutorial.
 author: Jenny Sloane
-date: 2022-02-26
+date: 2022-04-07
 output:
   distill::distill_article:
     self_contained: false
@@ -14,5 +14,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-<iframe width="560" height="400" src="https://www.youtube.com/embed/vx4SPeNvols" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+# TEST 
+<!-- <iframe width="560" height="400" src="https://www.youtube.com/embed/vx4SPeNvols" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
