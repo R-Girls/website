@@ -1,0 +1,14 @@
+---
+title: "Introduction to R and RStudio"
+description: |
+  This is a short introduction to R and RStudio video tutorial.
+author: Jenny Sloane
+date: 2022-02-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+<iframe width="560" height="400" src="https://www.youtube.com/embed/vx4SPeNvols" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+

@@ -15,5 +15,22 @@
     "preview": {},
     "last_modified": "2022-04-07T15:53:26+01:00",
     "input_file": {}
+  },
+  {
+    "path": "learningR/2022-04-07-introtor/",
+    "title": "Introduction to R and RStudio",
+    "description": "This is a short introduction to R and RStudio video tutorial.",
+    "author": [
+      {
+        "name": "Jenny Sloane",
+        "url": {}
+      }
+    ],
+    "date": "2022-02-26",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-04-07T16:03:03+01:00",
+    "input_file": {}
   }
 ]
