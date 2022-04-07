@@ -1,7 +1,7 @@
 ---
-title: "intro_to_r"
+title: "Introduction to R and RStudio"
 description: |
-  TEST
+  This is a short introduction to R and RStudio video tutorial.
 author:
   - name: Jenny Sloane
 date: 2022-04-07

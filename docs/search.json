@@ -6,7 +6,7 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:08+01:00"
+      "last_modified": "2022-04-07T16:50:09+01:00"
     },
     {
       "path": "contributors.html",
@@ -14,14 +14,14 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\r\n\r\n\r\n\r\n\r\nR Consortium\r\n\r\n\r\nMango solutions\r\n\r\n\r\nGreen Oak Academy \r\nMaulana Maseehullah Patel (Executive Head Teacher)\r\n\r\n\r\nDr Razia Ghani (Head Teacher) Green Oak Academy\r\n\r\n\r\n\r\nMs A Nawaz (for designing R Girls logo) Jenny Sloane (for developing R Girls website)  Batool Almarzouq  Iman Al-Hasani  Nasrin Fathollahzadeh Attar  Mrs M Nawaz \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:09+01:00"
+      "last_modified": "2022-04-07T16:50:10+01:00"
     },
     {
       "path": "geography_lessons.html",
       "title": "Geography Lessons",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:09+01:00"
+      "last_modified": "2022-04-07T16:50:11+01:00"
     },
     {
       "path": "getting_started.html",
@@ -29,49 +29,49 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\r\nwill be updated soon!\r\nPackages used in all the lesson:\r\ntidyverse\r\nleaflet\r\nggeasy\r\nastsa\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:10+01:00"
+      "last_modified": "2022-04-07T16:50:12+01:00"
     },
     {
       "path": "home_old.html",
       "title": "R Girls Website",
       "author": [],
       "contents": "\r\n\r\n          \r\n          \r\n          Home\r\n          \r\n          \r\n          Getting Started\r\n          Contributors\r\n          Learning R\r\n          \r\n          \r\n          Lesson Plans\r\n           \r\n          ▾\r\n          \r\n          \r\n          Math Lessons\r\n          Science Lessons\r\n          Geography Lessons\r\n          R Lessons\r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              R Girls Website\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                         Twitter\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Join Us on Slack\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Contact Us\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            Welcome!\r\n            We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.\r\n            This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.\r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              R Girls Website\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                       Twitter\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Join Us on Slack\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Contact Us\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              Welcome!\r\n              We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.\r\n              This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.\r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    \r\n      \r\n\r\n\r\n      Founded by Green Oak Academy  | R Girls School Network | 2022   \r\n\r\n\r\n      \r\n      \r\n      \r\n\r\n  \r\n  ",
-      "last_modified": "2022-04-07T16:42:10+01:00"
+      "last_modified": "2022-04-07T16:50:13+01:00"
     },
     {
       "path": "index.html",
       "title": "R Girls Website",
       "author": [],
       "contents": "\r\n\r\n          \r\n          \r\n          Home\r\n          \r\n          \r\n          Getting Started\r\n          Contributors\r\n          Learning R\r\n          \r\n          \r\n          Lesson Plans\r\n           \r\n          ▾\r\n          \r\n          \r\n          Math Lessons\r\n          Science Lessons\r\n          Geography Lessons\r\n          R Lessons\r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              R Girls Website\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                         Twitter\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Join Us on Slack\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Contact Us\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            \r\n            Welcome!\r\n            We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.\r\n            This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.\r\n            \r\n            \r\n            This website was built completely in R using the distill package 😄 \r\n            \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              R Girls Website\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                       Twitter\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Join Us on Slack\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Contact Us\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              \r\n              Welcome!\r\n              We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.\r\n              This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.\r\n              \r\n              \r\n              This website was built completely in R using the distill package 😄 \r\n              \r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    \r\n      \r\n\r\n\r\n      Founded by Green Oak Academy  | R Girls School Network | 2022   \r\n\r\n\r\n      \r\n      \r\n      \r\n\r\n  \r\n  ",
-      "last_modified": "2022-04-07T16:42:10+01:00"
+      "last_modified": "2022-04-07T16:50:13+01:00"
     },
     {
       "path": "learning_r.html",
       "title": "Learning R",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:11+01:00"
+      "last_modified": "2022-04-07T16:50:14+01:00"
     },
     {
       "path": "math_lessons.html",
       "title": "Math Lessons",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:12+01:00"
+      "last_modified": "2022-04-07T16:50:16+01:00"
     },
     {
       "path": "r_lessons.html",
       "title": "R Lessons",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:13+01:00"
+      "last_modified": "2022-04-07T16:50:17+01:00"
     },
     {
       "path": "science_lessons.html",
       "title": "Science Lessons",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-07T16:42:15+01:00"
+      "last_modified": "2022-04-07T16:50:18+01:00"
     }
   ],
   "collections": ["geography/geography.json", "learningr/learningr.json", "math/math.json", "R/R.json", "science/science.json"]
