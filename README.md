@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/463350518.svg)](https://zenodo.org/badge/latestdoi/463350518)
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)
+
 # Welcome to the R Girls Website!
 
 https://r-girls.github.io/website/
