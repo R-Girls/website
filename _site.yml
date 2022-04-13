@@ -4,6 +4,7 @@ description: |
   R Girls Website
 output_dir: "docs"
 theme: rgirls-theme.css
+favicon: logo.png
 navbar:
   right:
     # - text: "Home"
