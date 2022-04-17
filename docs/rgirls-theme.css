@@ -173,15 +173,21 @@ p {
 }
 
 .green-oak{
-  width: 15% !important;
-  min-width: 150px;
-  max-width: 230px;
+  width: 10% !important;
+  min-width: 120px;
+  max-width: 200px;
 }
 
-.people_font{
+.people_font {
   font-family: "Amaranth" !important;
   font-size: 30px;
-  color: rgba(195, 74, 121);
+  color: rgba(195, 74, 121) !important;
+}
+
+people_font a {
+  font-family: "Amaranth" !important;
+  font-size: 30px;
+  color: rgba(195, 74, 121) !important;
 }
 
 .people_font2{
@@ -223,6 +229,12 @@ d-article {
     padding-top: 2.5rem !important;
     padding-bottom: 6rem !important;
 }
+
+/* Change link appearance */
+d-article a {
+  color: rgba(195, 74, 121) !important;
+}
+
 
 /*
 d-article iframe {

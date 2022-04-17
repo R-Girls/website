@@ -11,11 +11,16 @@ output:
 preview: markdown1_photo.png
 ---
 
+**License and Citation:** You can use, modify, and adapt this lesson, but please include the following attribution: *RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. [https://doi.org/10.5281/zenodo.6436861](https://doi.org/10.5281/zenodo.6436861)*
+
+
+<div class="people_font">
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown1post", "markdown1.Rmd"), text = "Download .Rmd here")`
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown1post", "markdown1.docx"), text = "Download word document here")`
 
 `r xfun::embed_file(here::here("_R", "2022-02-26-markdown1post", "markdown1.docx"), text = "Download pdf here")`
+</div>
 
 <div style="text-align: center">
 
