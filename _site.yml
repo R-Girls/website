@@ -16,8 +16,10 @@ navbar:
     - text: "Contributors"
       href: contributors.html 
     - text: "Learning R"
-      href: learning_r.html   
-    - text: "Lesson Plans"
+      href: learning_r.html
+    - text: "Interactive Lessons"
+      href: https://batoolmm.shinyapps.io/tutorials/#section-welcome 
+    - text: "Lessons"
       menu:
         - text: "Math Lessons"
           href: math_lessons.html
