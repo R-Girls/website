@@ -15,8 +15,7 @@ This site is aimed primarily at teachers who want to use R in their lessons. See
 
 ## License
 
-This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
+This work is licensed under Creative Commons Attribution 4.0 International License
 
 ## Citation:
 > RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. https://doi.org/10.5281/zenodo.6436861
