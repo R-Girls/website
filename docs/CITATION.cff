@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: R-Girls Lessons
+message: >-
+  If you use these lessons, please cite them using
+  the following metadata
+type: lessons
+authors:
+  - given-names: R-Girls Community
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.6436860.
+repository-code: 'https://github.com/R-Girls/website'
+url: 'https://r-girls.github.io/website/'
+abstract: >+
+  We are delighted to announce that we are setting up
+  a worldwide network to promote the use of R -in
+  secondary schools for girls.
+
+  This site is aimed primarily at teachers who want
+  to use R in their lessons. See our example lesson
+  plans and join us for a friendly chat on slack.
+
+keywords:
+  - Rstats
+  - lessons
+  - code
+license: CC-BY-4.0
+date-released: '2022-04-10'
