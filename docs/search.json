@@ -28,8 +28,8 @@
       "title": "Resources to help you begin your R coding journey",
       "author": [],
       "date": "`r Sys.Date()`",
-      "contents": "\r\n\r\n\r\nPackages used in all the lesson:\r\ntidyverse\r\nleaflet\r\nggeasy\r\nastsa\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-04-19T15:14:38+01:00"
+      "contents": "\r\n\r\n\r\nPackages used in all the lessons:\r\ntidyverse\r\nleaflet\r\nggeasy\r\nastsa\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-04-19T15:20:10+01:00"
     },
     {
       "path": "home_old.html",
