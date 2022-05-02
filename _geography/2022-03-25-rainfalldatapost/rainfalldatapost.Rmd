@@ -17,15 +17,6 @@ preview: rainfall_plot.png
 `r xfun::embed_file(here::here("_geography", "2022-03-25-rainfalldatapost", "rainfall_clean.zip"), text = "Download zip file here")`
 </div>
 
-## Downloading files
-In this lesson, you will need the .Rmd script and the .csv file which contains the data. Download the zip file above and save the zip folder on your desktop (or anywhere on your computer). 
-
-To unzip the files:
-
-- On windows, you can right click on the zip folder and select "extract all"
-- On a mac double click on the folder 
-
-Then, open the folder and open up the R Project file (this looks like a blue R cube). This will automatically open up Rstudio and all of the files will be loaded in. To start working through the lesson, simply open up the `rainfall_data.Rmd` file. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
@@ -85,7 +76,13 @@ Make sure to run the code in read_data chunk by pressing the green arrow pointin
 
 This line of code will read in our rainfall dataset and save it as a variable called `rainfall`. In the environment tab on the right, you should now be able to see the rainfall variable.
 
-```{r read_data}
+```{r, include=FALSE}
+library(here)
+rainfall <- read_csv(here("_geography", "2022-03-25-rainfalldatapost", "rainfall_clean.csv"))
+```
+
+
+```{r read_data, eval=FALSE}
 rainfall <- read_csv("rainfall_clean.csv")
 ```
 
@@ -213,4 +210,4 @@ Finally, in the plot4 chunk try changing the code from plot3 so the text size is
 
 Finally, knit your document to see all of your beautiful plots. 
 
-## The END
+## THE END
