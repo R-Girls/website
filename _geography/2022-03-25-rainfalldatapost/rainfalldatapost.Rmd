@@ -51,7 +51,7 @@ Before we start add you name to the "author" argument in the YAML on line 3 wher
 ## Success Criteria:
 
 - I can identify where my data is located and what type of file it is
-- I can view my data in a new R window 
+- I can view my data in a new RStudio window 
 - I can see all of the different variables within my dataset
 - I have a better understanding of what "packages" are
 - I can produce a line plot using ggplot

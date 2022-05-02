@@ -29,7 +29,7 @@ Before we start add you name to the "author" argument in the YAML on line 3 wher
 ## Success Criteria:
 
 - I can identify where my data is located and what type of file it is
-- I can view my data in a new R window 
+- I can view my data in a new RStudio window 
 - I can see all of the different variables within my dataset
 - I have a better understanding of what "packages" are
 - I can produce a line plot using ggplot
@@ -175,6 +175,8 @@ plot3
 - The `labs()` function allows us to easily change the labels on the x and y axes
 - `theme_bw()` is one of ggplot's default themes, which is my personal favorite. It makes the plot a little bit cleaner 
 - `easy_text_size()` and `easy_remove_legend_title()` are two functions from the ggeasy package that allow us to easily adjust the text size and remove the legend title. In order to use these functions, you need to remember to call the `ggeasy` library first (like we did at the top of our script)
+
+## Extension
 
 Finally, in the plot4 chunk try changing the code from plot3 so the text size is set to 25 and the theme is set to theme_dark() instead of theme_bw() - can you see the differences?
 
