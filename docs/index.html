@@ -812,6 +812,16 @@
             font-size: 30px;
           }
 
+          /*change url color */
+          a {
+            color: #C34A79;
+          }
+
+          a:hover {
+            color: #007bff;
+          }
+
+
           /*change body color*/
 
           body {
@@ -824,6 +834,7 @@
             font-size: 22px;
           }
 
+          /*change buttons on homepage*/
           .btn-outline-dark {
               background-color: transparent; 
               color: rgba(195, 74, 121);
@@ -837,25 +848,6 @@
               color: white;
           }
 
-          /* styling for icon-link buttons (see distilltools::icon_link()) 
-          .icon-link {
-              background-color: transparent;
-              color: rgba(195, 74, 121);
-              border: 1px solid;
-              border-color: rgba(195, 74, 121);
-              padding: 5px .4rem 5px .4rem;
-              margin-top: 4px;
-              margin-right: 8px;
-              margin-bottom: 4px;
-              border-radius: 5px; 
-          }
-
-          .icon-link:hover {
-              background-color: rgba(195, 74, 121);
-              border-color: rgba(195, 74, 121);
-              color: white;
-          }
-          */
 
           /*make logo larger*/
           .rounded {
@@ -879,6 +871,7 @@
             padding: 0.35em;
           }
 
+          /* remove scroll bar on right hand side */
           .d-flex{
             overflow-y: hidden !important;
           }
@@ -889,75 +882,49 @@
             max-width: 500px;
           }
 
+          /*
           .green-oak{
             width: 10% !important;
             min-width: 120px;
             max-width: 200px;
           }
+          */
 
-          .people_font {
+          .contributor_org {
             font-family: "Amaranth" !important;
             font-size: 30px;
-            color: rgba(195, 74, 121) !important;
+            text-decoration: none;
+            background-color: transparent;
           }
 
-          people_font a {
-            font-family: "Amaranth" !important;
-            font-size: 30px;
-            color: rgba(195, 74, 121) !important;
-          }
-
-          .people_font2{
+          .contributor_ppl{
             font-family: "Open Sans" !important;
             font-size: 22px;
-            color: #000000;
-            padding-bottom: 40px;
           }
 
-          .people_font2_indent{
-            font-family: "Open Sans" !important;
-            font-size: 22px;
-            color: #000000;
-            margin-left: 25px;
+          /* Change link appearance on contributor page */ 
+          d-article a {
+            color: #C34A79;
+            border-bottom: none;
           }
 
+
+          /*
           .p2{
             font-family: "Open Sans" !important;
             font-size: 20px;
             color: #01161E;
           }
+          */
 
           .left {
             float: left;
           }
 
-          .distill-site-footer{
-            padding-top: 10px;
-            padding-bottom: 10px;
-            bottom: 0 !important;
-            position: fixed !important;
-          }
-
+          /*do not delete - this removes the scroll bar on the right hand side*/
           .vh-100 {
             height: 80vh!important;
-          }
-
-          d-article {
-              padding-top: 2.5rem !important;
-              padding-bottom: 6rem !important;
-              margin-bottom: 3em !important;
-          }
-
-          /* Change link appearance */
-          d-article a {
-            color: rgba(195, 74, 121) !important;
-          }
-
-
-          /*
-          d-article iframe {
-              padding-bottom: 5rem !important;
-          }*/</style>
+          }</style>
           <style type="text/css">
           /* base style */
 
@@ -1193,6 +1160,13 @@
                       </button>
                     </a>
                   </li>
+                                    <li class="list-inline-item">
+                    <a href=https://greenoak.bham.sch.uk/r-girls-school-network/ target="_blank">
+                      <button type="button" class="btn btn-outline-dark mb-2">
+                        <i class="fas fa-home"></i> R Girls was founded by Green Oak Academy
+                      </button>
+                    </a>
+                  </li>
                                   </ul>
               </div>
             </div>
@@ -1205,10 +1179,16 @@
             <div id="welcome" class="section level1">
             <h1>Welcome!</h1>
             <p>We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.</p>
-            <p>This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.</p>
-            <!-- <img src="images/home_photo.png"> -->
-            <!-- <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rainbowr.gif"> -->
-            <p><br><br> <em>This website was built completely in <strong>R</strong> using the <code>distill</code> package</em> 😄 <br></p>
+            <p>This site is aimed primarily at teachers who want to use R in their lessons. On this website, you can find details on:</p>
+            <ul>
+            <li><a href="https://r-girls.github.io/website/getting_started.html">Getting Started</a></li>
+            <li>Ready made <a href="https://r-girls.github.io/website/math_lessons.html">Math</a>, <a href="https://r-girls.github.io/website/science_lessons.html">Science</a>, <a href="https://r-girls.github.io/website/geography_lessons.html">Geography</a>, and <a href="https://r-girls.github.io/website/r_lessons.html">R</a> lessons.</li>
+            <li>Or, join us for a friendly chat on slack</li>
+            </ul>
+            <p>This website was built completely in <strong>R</strong> using the <code>distill</code> package 😄</p>
+            <p style="font-size:14px; margin-left:50px; margin-right:60px;">
+            <strong>License and Citation:</strong> You can use, modify, and adapt any of the lessons, but please include the following attribution: <em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em>
+            </p>
             </div>
             </div>
           </div>
@@ -1251,6 +1231,11 @@
                       <i class="fas fa-envelope"></i> Contact Us
                     </button>
                   </a>
+                                    <a href=https://greenoak.bham.sch.uk/r-girls-school-network/ target="_blank">
+                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
+                      <i class="fas fa-home"></i> R Girls was founded by Green Oak Academy
+                    </button>
+                  </a>
                                   </div>
               </div>
             </div>
@@ -1259,10 +1244,16 @@
               <div id="welcome" class="section level1">
               <h1>Welcome!</h1>
               <p>We are delighted to announce that we are setting up a worldwide network to promote the use of R - a leading data science programming language - in secondary schools for girls.</p>
-              <p>This site is aimed primarily at teachers who want to use R in their lessons. See our example lesson plans and join us for a friendly chat on slack.</p>
-              <!-- <img src="images/home_photo.png"> -->
-              <!-- <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rainbowr.gif"> -->
-              <p><br><br> <em>This website was built completely in <strong>R</strong> using the <code>distill</code> package</em> 😄 <br></p>
+              <p>This site is aimed primarily at teachers who want to use R in their lessons. On this website, you can find details on:</p>
+              <ul>
+              <li><a href="https://r-girls.github.io/website/getting_started.html">Getting Started</a></li>
+              <li>Ready made <a href="https://r-girls.github.io/website/math_lessons.html">Math</a>, <a href="https://r-girls.github.io/website/science_lessons.html">Science</a>, <a href="https://r-girls.github.io/website/geography_lessons.html">Geography</a>, and <a href="https://r-girls.github.io/website/r_lessons.html">R</a> lessons.</li>
+              <li>Or, join us for a friendly chat on slack</li>
+              </ul>
+              <p>This website was built completely in <strong>R</strong> using the <code>distill</code> package 😄</p>
+              <p style="font-size:14px; margin-left:50px; margin-right:60px;">
+              <strong>License and Citation:</strong> You can use, modify, and adapt any of the lessons, but please include the following attribution: <em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em>
+              </p>
               </div>
               </div>
             </div>
@@ -1279,21 +1270,7 @@
       <!--radix_placeholder_site_after_body-->
       <!--/radix_placeholder_site_after_body-->
       <!--radix_placeholder_navigation_after_body-->
-      <div class="distill-site-nav distill-site-footer">
-      <div>
-
-
-      <a href="https://greenoak.bham.sch.uk/r-girls-school-network/">Founded by Green Oak Academy </a> | R Girls School Network | 2022   
-
-      <br>
-      <strong>License and Citation:</strong> All materials are licensed under a Creative Commons Attribution (CC BY 4.0)
-
-      <br>
-      <img class="green-oak" src='images/greenoak_logo.png'; />
-      </div>
-      </div>
       <!--/radix_placeholder_navigation_after_body-->
-
   
   </body>
 </html>
