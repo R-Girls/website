@@ -32,9 +32,9 @@ This site is aimed primarily at teachers who want to use R in their lessons. On 
 
 This website was built completely in **R** using the `distill` package  `r emo::ji("smile")`
 
-<p style="font-size:14px; margin-left:50px; margin-right:60px;">
+<div class="license">
 **License and Citation:** You can use, modify, and adapt any of the lessons, but please include the following attribution: *RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. [https://doi.org/10.5281/zenodo.6436861](https://doi.org/10.5281/zenodo.6436861)* 
-</p>
+</div>
 
   
 </div>

@@ -2,11 +2,6 @@
 title: "Resources to help you begin your R coding journey"
 # description: |
 #   A new article created using the Distill format.
-# author:
-#   - name: Nora Jones 
-#     url: https://example.com/norajones
-#     affiliation: Spacely Sprockets
-#     affiliation_url: https://example.com/spacelysprokets
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -15,11 +10,30 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
+# Taster 
+Check out 3 online, interactive lessons to see the cool things you can do with R (these lessons use the `learnr` package)
+
+- Draw boxplots
+- [Generate sequences](https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1)
+- [Draw maps or a line graph](https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots)
+
+# Using R in the classroom
+
+## Setting up RStudio Cloud
+
 <iframe width="560" height="400" src="https://www.youtube.com/embed/L2KT0ls_oIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Packages used in all the lessons:
+- Packages used in all the lessons: `tidyverse`, `leaflet`, `ggeasy`, `astsa`
 
-- `tidyverse`
-- `leaflet`
-- `ggeasy`
-- `astsa`
+## Creating a new R Project (RStudio Cloud & Desktop)
+
+<iframe width="560" height="400" src="https://www.youtube.com/embed/8P9E9Ut0xhQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## My first R lessons using R Markdown 
+- [Lesson #1: Introduction to R markdown](https://r-girls.github.io/website/R/2022-02-26-markdown1post/)
+- [Lesson #2: Baby steps in coding R](https://r-girls.github.io/website/R/2022-02-26-markdown2post/)
+
+# Progressing Further
+- Access our ready made R Lessons
+- Develop your own R lessons: We suggest you first send us a summary of your lesson plan on slack and then we can provide feedback and support.

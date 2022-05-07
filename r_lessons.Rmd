@@ -1,4 +1,0 @@
----
-title: "R Lessons"
-listing: R
----

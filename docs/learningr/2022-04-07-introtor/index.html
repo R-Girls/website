@@ -2144,7 +2144,7 @@ d-appendix {
 html {
   /*-- Main font sizes --*/
   --title-size:      40px;
-  --body-size:       18px;
+  --body-size:       22px;
   --code-size:       16px;
   --aside-size:      12px;
   --fig-cap-size:    13px;
@@ -2211,12 +2211,27 @@ h1 {
 }
 
 h2 {
-  color: #C34A79;
+  color: #124559;
   font-size: 34px;
 }
 
 h3 {
-  color: #F2B6C1;
+  color: #124559;
+  font-size: 30px;
+}
+
+d-article h1 {
+  color: #C34A79 !important;
+  font-size: 38px;
+}
+
+d-article h2 {
+  color: #124559 !important;
+  font-size: 34px;
+}
+
+d-article h3 {
+  color: #124559 !important;
   font-size: 30px;
 }
 
@@ -2234,12 +2249,23 @@ a:hover {
 
 body {
   color: #01161E;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 p {
   color: #01161E;
-  font-size: 22px;
+}
+
+.license {
+  color: #01161E;
+  font-size: 14px !important;
+  margin-left: 50px;
+  margin-right: 60px;
+}
+
+/*single space for the lists*/
+d-article li {
+    margin-bottom: 0em;
 }
 
 /*change buttons on homepage*/
@@ -2300,14 +2326,14 @@ p {
 
 .contributor_org {
   font-family: "Amaranth" !important;
-  font-size: 30px;
+  font-size: 25px;
   text-decoration: none;
   background-color: transparent;
 }
 
 .contributor_ppl{
   font-family: "Open Sans" !important;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /* Change link appearance on contributor page */ 
@@ -2528,10 +2554,9 @@ gtag('config', 'G-93KHV17RG5');
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
+<a href="../../rmarkdown1.html">Blogs</a>
 <a href="../../getting_started.html">Getting Started</a>
 <a href="../../contributors.html">Contributors</a>
-<a href="../../learning_r.html">Learning R</a>
-<a href="https://batoolmm.shinyapps.io/tutorials/#section-welcome">Interactive Lessons</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lessons
@@ -2539,10 +2564,11 @@ Lessons
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
+<a href="../../rmarkdown1.html">My 1st R Markdown Lesson</a>
+<a href="../../rmarkdown2.html">My 2nd R Markdown Lesson</a>
 <a href="../../math_lessons.html">Math Lessons</a>
 <a href="../../science_lessons.html">Science Lessons</a>
 <a href="../../geography_lessons.html">Geography Lessons</a>
-<a href="../../r_lessons.html">R Lessons</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>

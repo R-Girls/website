@@ -19,7 +19,7 @@
 html {
   /*-- Main font sizes --*/
   --title-size:      40px;
-  --body-size:       18px;
+  --body-size:       22px;
   --code-size:       16px;
   --aside-size:      12px;
   --fig-cap-size:    13px;
@@ -86,12 +86,27 @@ h1 {
 }
 
 h2 {
-  color: #C34A79;
+  color: #124559;
   font-size: 34px;
 }
 
 h3 {
-  color: #F2B6C1;
+  color: #124559;
+  font-size: 30px;
+}
+
+d-article h1 {
+  color: #C34A79 !important;
+  font-size: 38px;
+}
+
+d-article h2 {
+  color: #124559 !important;
+  font-size: 34px;
+}
+
+d-article h3 {
+  color: #124559 !important;
   font-size: 30px;
 }
 
@@ -109,12 +124,23 @@ a:hover {
 
 body {
   color: #01161E;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 p {
   color: #01161E;
-  font-size: 22px;
+}
+
+.license {
+  color: #01161E;
+  font-size: 14px !important;
+  margin-left: 50px;
+  margin-right: 60px;
+}
+
+/*single space for the lists*/
+d-article li {
+    margin-bottom: 0em;
 }
 
 /*change buttons on homepage*/
@@ -175,14 +201,14 @@ p {
 
 .contributor_org {
   font-family: "Amaranth" !important;
-  font-size: 30px;
+  font-size: 25px;
   text-decoration: none;
   background-color: transparent;
 }
 
 .contributor_ppl{
   font-family: "Open Sans" !important;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /* Change link appearance on contributor page */ 

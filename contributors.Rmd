@@ -21,8 +21,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-<div style="text-align:left">
-<a class="contributor_org" href="https://nhsrcommunity.com/" target="_blank">NHS-R Community (Professor Mohammed A Mohammed)</a>
+<div class="contributor_ppl" style="text-align:left">
+<a class="contributor_org" href="https://nhsrcommunity.com/" target="_blank">NHS-R Community </a> (Professor Mohammed A Mohammed)
 </div>
 
 
@@ -31,7 +31,8 @@ knitr::opts_chunk$set(echo = FALSE)
 <br><br>
 <ul >
 <li class="contributor_ppl" style="margin-left: 25px"> Maulana Maseehullah Patel (Executive Head Teacher) </li>
-<li class="contributor_ppl" style="margin-left: 25px"> Dr Razia Ghani (Head Teacher) Green Oak Academy </li>
+<li class="contributor_ppl" style="margin-left: 25px"> Dr Razia Ghani (Head Teacher) </li>
+<li class="contributor_ppl" style="margin-left: 25px"> Ms A Nawaz (for designing R Girls logo) </li>
 </ul>
 </div>
 
@@ -48,9 +49,9 @@ knitr::opts_chunk$set(echo = FALSE)
 Ms A Nawaz (for designing R Girls logo) <br><br>
 <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br>
 <a href="https://batool-almarzouq.netlify.app/" target="_blank">Batool Almarzouq</a> (for developing the interactive learnr lessons) <br><br>
-Iman Al-Hasani <br><br>
 Nasrin Fathollahzadeh Attar <br><br>
-Mrs M Nawaz <br><br>
+Iman Al-Hasani <br><br>
+
 
 
 *This is a world wide community project for girls and if you wish to contribute please get in touch via slack, twitter or email*

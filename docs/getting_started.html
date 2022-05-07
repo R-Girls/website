@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <link rel="icon" type="image/png" href="images/favicon.png"/>
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-05-06"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-05-06"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-05-07"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-07"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Home: Resources to help you begin your R coding journey"/>
@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2022-05-06"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2022-05-07"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2136,7 +2136,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   html {
     /*-- Main font sizes --*/
     --title-size:      40px;
-    --body-size:       18px;
+    --body-size:       22px;
     --code-size:       16px;
     --aside-size:      12px;
     --fig-cap-size:    13px;
@@ -2203,12 +2203,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   h2 {
-    color: #C34A79;
+    color: #124559;
     font-size: 34px;
   }
 
   h3 {
-    color: #F2B6C1;
+    color: #124559;
+    font-size: 30px;
+  }
+
+  d-article h1 {
+    color: #C34A79 !important;
+    font-size: 38px;
+  }
+
+  d-article h2 {
+    color: #124559 !important;
+    font-size: 34px;
+  }
+
+  d-article h3 {
+    color: #124559 !important;
     font-size: 30px;
   }
 
@@ -2226,12 +2241,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   body {
     color: #01161E;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   p {
     color: #01161E;
-    font-size: 22px;
+  }
+
+  .license {
+    color: #01161E;
+    font-size: 14px !important;
+    margin-left: 50px;
+    margin-right: 60px;
+  }
+
+  /*single space for the lists*/
+  d-article li {
+      margin-bottom: 0em;
   }
 
   /*change buttons on homepage*/
@@ -2292,14 +2318,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .contributor_org {
     font-family: "Amaranth" !important;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     background-color: transparent;
   }
 
   .contributor_ppl{
     font-family: "Open Sans" !important;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   /* Change link appearance on contributor page */ 
@@ -2507,7 +2533,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2022-05-06T00:00:00.000+01:00"}
+{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2022-05-07T00:00:00.000+01:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2519,10 +2545,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
+<a href="rmarkdown1.html">Blogs</a>
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
-<a href="learning_r.html">Learning R</a>
-<a href="https://batoolmm.shinyapps.io/tutorials/#section-welcome">Interactive Lessons</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lessons
@@ -2530,10 +2555,11 @@ Lessons
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
+<a href="rmarkdown1.html">My 1st R Markdown Lesson</a>
+<a href="rmarkdown2.html">My 2nd R Markdown Lesson</a>
 <a href="math_lessons.html">Math Lessons</a>
 <a href="science_lessons.html">Science Lessons</a>
 <a href="geography_lessons.html">Geography Lessons</a>
-<a href="r_lessons.html">R Lessons</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2553,14 +2579,32 @@ Lessons
 
 
 <div class="d-article">
+<h1 id="taster">Taster</h1>
+<p>Check out 3 online, interactive lessons to see the cool things you can do with R (these lessons use the <code>learnr</code> package)</p>
+<ul>
+<li>Draw boxplots</li>
+<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1">Generate sequences</a></li>
+<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots">Draw maps or a line graph</a></li>
+</ul>
+<h1 id="using-r-in-the-classroom">Using R in the classroom</h1>
+<h2 id="setting-up-rstudio-cloud">Setting up RStudio Cloud</h2>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/L2KT0ls_oIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<h2 id="packages-used-in-all-the-lessons">Packages used in all the lessons:</h2>
 <ul>
-<li><code>tidyverse</code></li>
-<li><code>leaflet</code></li>
-<li><code>ggeasy</code></li>
-<li><code>astsa</code></li>
+<li>Packages used in all the lessons: <code>tidyverse</code>, <code>leaflet</code>, <code>ggeasy</code>, <code>astsa</code></li>
+</ul>
+<h2 id="creating-a-new-r-project-rstudio-cloud-desktop">Creating a new R Project (RStudio Cloud &amp; Desktop)</h2>
+<iframe width="560" height="400" src="https://www.youtube.com/embed/8P9E9Ut0xhQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h2 id="my-first-r-lessons-using-r-markdown">My first R lessons using R Markdown</h2>
+<ul>
+<li><a href="https://r-girls.github.io/website/R/2022-02-26-markdown1post/">Lesson #1: Introduction to R markdown</a></li>
+<li><a href="https://r-girls.github.io/website/R/2022-02-26-markdown2post/">Lesson #2: Baby steps in coding R</a></li>
+</ul>
+<h1 id="progressing-further">Progressing Further</h1>
+<ul>
+<li>Access our ready made R Lessons</li>
+<li>Develop your own R lessons: We suggest you first send us a summary of your lesson plan on slack and then we can provide feedback and support.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

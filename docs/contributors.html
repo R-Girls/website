@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <link rel="icon" type="image/png" href="images/favicon.png"/>
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-05-06"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-05-06"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-05-07"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-07"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Home: With thanks to:"/>
@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["With thanks to:"]},{"type":"character","attributes":{},"value":["2022-05-06"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["With thanks to:"]},{"type":"character","attributes":{},"value":["2022-05-07"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2136,7 +2136,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   html {
     /*-- Main font sizes --*/
     --title-size:      40px;
-    --body-size:       18px;
+    --body-size:       22px;
     --code-size:       16px;
     --aside-size:      12px;
     --fig-cap-size:    13px;
@@ -2203,12 +2203,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   h2 {
-    color: #C34A79;
+    color: #124559;
     font-size: 34px;
   }
 
   h3 {
-    color: #F2B6C1;
+    color: #124559;
+    font-size: 30px;
+  }
+
+  d-article h1 {
+    color: #C34A79 !important;
+    font-size: 38px;
+  }
+
+  d-article h2 {
+    color: #124559 !important;
+    font-size: 34px;
+  }
+
+  d-article h3 {
+    color: #124559 !important;
     font-size: 30px;
   }
 
@@ -2226,12 +2241,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   body {
     color: #01161E;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   p {
     color: #01161E;
-    font-size: 22px;
+  }
+
+  .license {
+    color: #01161E;
+    font-size: 14px !important;
+    margin-left: 50px;
+    margin-right: 60px;
+  }
+
+  /*single space for the lists*/
+  d-article li {
+      margin-bottom: 0em;
   }
 
   /*change buttons on homepage*/
@@ -2292,14 +2318,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .contributor_org {
     font-family: "Amaranth" !important;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     background-color: transparent;
   }
 
   .contributor_ppl{
     font-family: "Open Sans" !important;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   /* Change link appearance on contributor page */ 
@@ -2507,7 +2533,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"With thanks to:","authors":[],"publishedDate":"2022-05-06T00:00:00.000+01:00"}
+{"title":"With thanks to:","authors":[],"publishedDate":"2022-05-07T00:00:00.000+01:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2519,10 +2545,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
+<a href="rmarkdown1.html">Blogs</a>
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
-<a href="learning_r.html">Learning R</a>
-<a href="https://batoolmm.shinyapps.io/tutorials/#section-welcome">Interactive Lessons</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Lessons
@@ -2530,10 +2555,11 @@ Lessons
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
+<a href="rmarkdown1.html">My 1st R Markdown Lesson</a>
+<a href="rmarkdown2.html">My 2nd R Markdown Lesson</a>
 <a href="math_lessons.html">Math Lessons</a>
 <a href="science_lessons.html">Science Lessons</a>
 <a href="geography_lessons.html">Geography Lessons</a>
-<a href="r_lessons.html">R Lessons</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2556,8 +2582,8 @@ Lessons
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div style="text-align:left">
-<p><a class="contributor_org" href="https://nhsrcommunity.com/" target="_blank">NHS-R Community (Professor Mohammed A Mohammed)</a></p>
+<div class="contributor_ppl" style="text-align:left">
+<p><a class="contributor_org" href="https://nhsrcommunity.com/" target="_blank">NHS-R Community </a> (Professor Mohammed A Mohammed)</p>
 </div>
 <div style="text-align:left">
 <a class="contributor_org" href="https://greenoak.bham.sch.uk/" target="_blank">Green Oak Academy</a> <br><br>
@@ -2566,7 +2592,10 @@ Lessons
 Maulana Maseehullah Patel (Executive Head Teacher)
 </li>
 <li class="contributor_ppl" style="margin-left: 25px">
-Dr Razia Ghani (Head Teacher) Green Oak Academy
+Dr Razia Ghani (Head Teacher)
+</li>
+<li class="contributor_ppl" style="margin-left: 25px">
+Ms A Nawaz (for designing R Girls logo)
 </li>
 </ul>
 </div>
@@ -2577,7 +2606,7 @@ Dr Razia Ghani (Head Teacher) Green Oak Academy
 <p><a class="contributor_org" href="https://www.mango-solutions.com/" target="_blank">Mango solutions</a></p>
 </div>
 <div class="contributor_ppl" style="text-align:left" style="padding-bottom: 0px;">
-<p>Ms A Nawaz (for designing R Girls logo) <br><br> <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br> <a href="https://batool-almarzouq.netlify.app/" target="_blank">Batool Almarzouq</a> (for developing the interactive learnr lessons) <br><br> Iman Al-Hasani <br><br> Nasrin Fathollahzadeh Attar <br><br> Mrs M Nawaz <br><br></p>
+<p>Ms A Nawaz (for designing R Girls logo) <br><br> <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br> <a href="https://batool-almarzouq.netlify.app/" target="_blank">Batool Almarzouq</a> (for developing the interactive learnr lessons) <br><br> Nasrin Fathollahzadeh Attar <br><br> Iman Al-Hasani <br><br></p>
 <p><em>This is a world wide community project for girls and if you wish to contribute please get in touch via slack, twitter or email</em></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
