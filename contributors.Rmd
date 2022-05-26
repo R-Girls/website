@@ -46,7 +46,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <div style="text-align:left" class="contributor_ppl" style="padding-bottom: 0px;">
-Ms A Nawaz (for designing R Girls logo) <br><br>
 <a href="https://jennysloane.netlify.app/" target="_blank">Jenny Sloane</a> (for developing R Girls website) <br><br>
 <a href="https://batool-almarzouq.netlify.app/" target="_blank">Batool Almarzouq</a> (for developing the interactive learnr lessons) <br><br>
 Nasrin Fathollahzadeh Attar <br><br>
@@ -54,6 +53,6 @@ Iman Al-Hasani <br><br>
 
 
 
-*This is a world wide community project for girls and if you wish to contribute please get in touch via slack, twitter or email*
+*This is a world wide community project for girls and if you wish to contribute please get in touch via <a href="https://r-girls.slack.com" target="_blank">Slack</a>, <a href="https://twitter.com/R_Girls_School" target="_blank">twitter</a> or <a href="mailto:rgirlsschool@gmail.com" target="_blank">email</a>*
 
 </div>
