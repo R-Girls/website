@@ -1,5 +1,5 @@
 ---
-title: "R Girls Website"
+title: "R-Girls Website"
 image: "images/rgirls_logo.jpg"
 links:
   - label: '<i class="fab fa-twitter"></i> Twitter'
@@ -10,7 +10,7 @@ links:
     url: 'https://r-girls.slack.com target="_blank"'    
   - label: '<i class="fas fa-envelope"></i> Contact Us'
     url: "mailto:rgirlsschool@gmail.com" 
-  - label: '<i class="fas fa-home"></i> R Girls was founded by Green Oak Academy'
+  - label: '<i class="fas fa-home"></i> R-Girls was founded by Green Oak Academy'
     url: 'https://greenoak.bham.sch.uk/r-girls-school-network/ target="_blank"'  
 output:
   postcards::trestles

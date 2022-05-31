@@ -1,7 +1,7 @@
 name: "."
 title: "Home"
 description: |
-  R Girls Website
+  R-Girls Website
 output_dir: "docs"
 theme: rgirls-theme.css
 favicon: images/favicon.png
@@ -9,8 +9,8 @@ navbar:
   right:
     # - text: "Home"
     #   href: index.html
-    - text: "Blogs"
-      href: rmarkdown1.html
+    - text: "Blog"
+      href: blog.html
     - text: "Getting Started"
       href: getting_started.html
     - text: "Contributors"

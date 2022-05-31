@@ -19,7 +19,7 @@
 html {
   /*-- Main font sizes --*/
   --title-size:      40px;
-  --body-size:       22px;
+  --body-size:       18px;
   --code-size:       16px;
   --aside-size:      12px;
   --fig-cap-size:    13px;
@@ -82,17 +82,17 @@ d-appendix {
 
 h1 {
   color: #C34A79;
-  font-size: 38px;
+  font-size: 36px;
 }
 
 h2 {
   color: #124559;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 h3 {
   color: #124559;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 d-article h1 {

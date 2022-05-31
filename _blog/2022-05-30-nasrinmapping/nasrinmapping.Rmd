@@ -1,0 +1,25 @@
+---
+title: "Creating Awesome Maps with the R-Girls Mapping Lesson"
+# description: |
+#   A short description of the post.
+author:
+  - name: Nasrin F. Attar
+date: 2022-05-30
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+My name is Nasrin F. Attar. I have a Ph.D. in water resources engineering and I am currently working as a university lecturer at UUT (Urmia University of Technology) and guest professor at UU (Urmia University) teaching lessons on “water resources engineering”, “water resources projects” and “water structures”.
+
+For the water structure lesson, I teach my students about hydraulic structures such as dams, weirs, spillways, etc. For dams, I ask each of my students to consider a country and search for its dams. This year I used the R-Girls ready made Mapping lesson in my classroom. Students found the dams on GoogleEarth and showed the dam types and their 3D location and then used R code which is currently posted on the [RGirlsschool website](https://r-girls.github.io/website/geography/2022-02-26-drawingmapspost/).
+
+It is a fantastic, informative code used to teach school girls how to find a place in the world by its longitude and latitude coordinates. As not all the students were familiar with R, I gave them some tips to get started and then asked them to find the dam locations using R code. It was nice to see how quickly all the students progressed with this task and see their enjoyment.
+
+R-Girls-Schools is a worldwide network to promote the use of R — a leading data science programming language — in secondary schools for girls, founded by Green Oak Academy, Birmingham UK. This site consists of different coding examples for teen girls. It was a great experience for me to use their ready made lessons in my teaching.

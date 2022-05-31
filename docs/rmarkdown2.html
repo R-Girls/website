@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1034,10 +1035,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1867,6 +1864,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1881,6 +1884,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1980,6 +2008,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -2002,7 +2032,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2139,7 +2169,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   html {
     /*-- Main font sizes --*/
     --title-size:      40px;
-    --body-size:       22px;
+    --body-size:       18px;
     --code-size:       16px;
     --aside-size:      12px;
     --fig-cap-size:    13px;
@@ -2202,17 +2232,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   h1 {
     color: #C34A79;
-    font-size: 38px;
+    font-size: 36px;
   }
 
   h2 {
     color: #124559;
-    font-size: 34px;
+    font-size: 32px;
   }
 
   h3 {
     color: #124559;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   d-article h1 {
@@ -2509,7 +2539,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2536,7 +2566,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Baby Steps in Coding R","description":"This lesson follows on from ‘My First R Lesson using R Markdown’ where students were introduced to the layout of an R Markdown document. In this lesson we start to look at the R code itself and to identify the commands needed to draw a bar chart.","authors":[],"publishedDate":"2022-02-26T00:00:00.000-06:00"}
+{"title":"Baby Steps in Coding R","description":"This lesson follows on from ‘My First R Lesson using R Markdown’ where students were introduced to the layout of an R Markdown document. In this lesson we start to look at the R code itself and to identify the commands needed to draw a bar chart.","authors":[],"publishedDate":"2022-02-26T00:00:00.000-05:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2548,7 +2578,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="rmarkdown1.html">Blogs</a>
+<a href="blog.html">Blog</a>
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
 <div class="nav-dropdown">
@@ -2577,7 +2607,10 @@ Lessons
 <h1>Baby Steps in Coding R</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>This lesson follows on from ‘My First R Lesson using R Markdown’ where students were introduced to the layout of an R Markdown document. In this lesson we start to look at the R code itself and to identify the commands needed to draw a bar chart.</p></p>
+<p><p>This lesson follows on from ‘My First R Lesson using R Markdown’
+where students were introduced to the layout of an R Markdown document.
+In this lesson we start to look at the R code itself and to identify the
+commands needed to draw a bar chart.</p></p>
 </div>
 
 
@@ -2592,16 +2625,22 @@ Lessons
 <div style="text-align: center">
 <p><img src="rmarkdown2/feedback_second_markdown2.jpg" width="600px" min-width="300px" max-width="300px" /></p>
 </div>
-<p>Before we start the lesson, type your name where it says “write your name here” on line 3. Make sure you type between the speech marks.</p>
-<p>Knit the file. Can you see your name at the top of the output file? Close the output file by clicking on the X</p>
+<p>Before we start the lesson, type your name where it says “write your
+name here” on line 3. Make sure you type between the speech marks.</p>
+<p>Knit the file. Can you see your name at the top of the output file?
+Close the output file by clicking on the X</p>
 <h2 id="lesson-objectives">Lesson Objectives</h2>
-<p>To become familiar with the layout of an R Markdown file To practice editing the R code To identify R commands needed to plot a bar chart To produce an output file of my work using the ‘knit’ command</p>
+<p>To become familiar with the layout of an R Markdown file To practice
+editing the R code To identify R commands needed to plot a bar chart To
+produce an output file of my work using the ‘knit’ command</p>
 <h2 id="packages-used-in-this-lesson">Packages used in this lesson:</h2>
 <ul>
 <li><code>tidyverse</code></li>
 </ul>
 <h2 id="success-criteria">Success Criteria:</h2>
-<p>I can identify free text in the Markdown file I can identify where to type the R code in the Markdown file I can use some R commands to plot a bar chart<br />
+<p>I can identify free text in the Markdown file I can identify where to
+type the R code in the Markdown file I can use some R commands to plot a
+bar chart<br />
 I can produce an output file of my work</p>
 <h2 id="keywords">Keywords:</h2>
 <ul>
@@ -2610,12 +2649,30 @@ I can produce an output file of my work</p>
 <li>knit</li>
 <li>variable</li>
 </ul>
-<h2 id="practising-editing-the-code-in-r-markdown">Practising editing the code in R Markdown</h2>
-<p>We are going to draw a bar chart showing the percentage of different blood groups in the UK population. Then we are going to practice writing the title and the labels to explain the bar chart. Finally, we are also going to practice changing the colour of the bars. After making each change, click on the ‘knit’ command at the top of the pane. After a short wait you will see the output file of your work. Check that the changes you made to the code have come out on the output file as you wanted them. eg You may have added a title for your bar chart in the code chunk in the R Markdown file, but perhaps the title has not been printed in the output file. Go back to the R Markdown file to check you put speech marks around it.</p>
+<h2 id="practising-editing-the-code-in-r-markdown">Practising editing
+the code in R Markdown</h2>
+<p>We are going to draw a bar chart showing the percentage of different
+blood groups in the UK population. Then we are going to practice writing
+the title and the labels to explain the bar chart. Finally, we are also
+going to practice changing the colour of the bars. After making each
+change, click on the ‘knit’ command at the top of the pane. After a
+short wait you will see the output file of your work. Check that the
+changes you made to the code have come out on the output file as you
+wanted them. eg You may have added a title for your bar chart in the
+code chunk in the R Markdown file, but perhaps the title has not been
+printed in the output file. Go back to the R Markdown file to check you
+put speech marks around it.</p>
 <h2 id="our-data">Our data</h2>
 <p>This is the data we are going to use for the bar chart</p>
 <table style="width:99%;">
-<caption>Table 1: Percentage of population with each blood group Now we will find out how to enter the data from the above table into R. Copy the following two lines of R code into chunk1 below. Make sure you paste the text between the top and bottom 3 back ticks. blood_group &lt;- c(‘O’,‘A’,‘B’,‘AB’) pop_percentage &lt;- c(44,42,10,4) The first line tells R to store these letters in a variable called blood_group The second line tells R to store the percentages in a variable called pop_percentage.</caption>
+<caption>Table 1: Percentage of population with each blood group Now we
+will find out how to enter the data from the above table into R. Copy
+the following two lines of R code into chunk1 below. Make sure you paste
+the text between the top and bottom 3 back ticks. blood_group &lt;-
+c(‘O’,‘A’,‘B’,‘AB’) pop_percentage &lt;- c(44,42,10,4) The first line
+tells R to store these letters in a variable called blood_group The
+second line tells R to store the percentages in a variable called
+pop_percentage.</caption>
 <colgroup>
 <col style="width: 37%" />
 <col style="width: 15%" />
@@ -2649,7 +2706,10 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>To check what R has stored in the variable blood_group, type blood_group inside code chunk2 and select the arrow on the far right of the chunk. R will tell you what it has stored. It should be the four blood groups</p>
+<p>To check what R has stored in the variable blood_group, type
+blood_group inside code chunk2 and select the arrow on the far right of
+the chunk. R will tell you what it has stored. It should be the four
+blood groups</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2657,7 +2717,10 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Now check what R has stored in the variable pop_percentage by typing pop_percentage in code chunk3. Click on the arrow on the far right of the chunk. R will tell you what it has stored. It should be the four percentage numbers.</p>
+<p>Now check what R has stored in the variable pop_percentage by typing
+pop_percentage in code chunk3. Click on the arrow on the far right of
+the chunk. R will tell you what it has stored. It should be the four
+percentage numbers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2665,7 +2728,9 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Let’s check the percentage numbers add up to 100. Copy sum(pop_percentage) into code chunk 4 and click on the little arrow on the right of the chunk. What number does R print for you? Is it 100?</p>
+<p>Let’s check the percentage numbers add up to 100. Copy
+sum(pop_percentage) into code chunk 4 and click on the little arrow on
+the right of the chunk. What number does R print for you? Is it 100?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2673,7 +2738,10 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Now we will save the blood group and percentages data in a table (known as a tibble in R) called ‘mydata’. This is so that the two variables can be combined into a single data table. Copy the following code into R chunk5. mydata &lt;- tibble(blood_group, pop_percentage)</p>
+<p>Now we will save the blood group and percentages data in a table
+(known as a tibble in R) called ‘mydata’. This is so that the two
+variables can be combined into a single data table. Copy the following
+code into R chunk5. mydata &lt;- tibble(blood_group, pop_percentage)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2681,7 +2749,10 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Lets check that ‘mydata’ has the correct information in it. Type mydata into code chunk6 and then click on the arrow on the right. Does the computer show you a little table with the correct information in?</p>
+<p>Lets check that ‘mydata’ has the correct information in it. Type
+mydata into code chunk6 and then click on the arrow on the right. Does
+the computer show you a little table with the correct information
+in?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2689,17 +2760,24 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<h2 id="drawing-a-bar-chart-using-our-blood-group-data">Drawing a bar chart using our blood group data</h2>
-<p>Now we have entered the data and checked that the data is correct we can tell R to plot a bar chart using these data. Copy and paste the three lines of R code into chunk7 and click on the little arrow on the right. ggplot(mydata) + aes(x=blood_group, y=pop_percentage) + geom_bar(stat = ‘identity’)</p>
+<h2 id="drawing-a-bar-chart-using-our-blood-group-data">Drawing a bar
+chart using our blood group data</h2>
+<p>Now we have entered the data and checked that the data is correct we
+can tell R to plot a bar chart using these data. Copy and paste the
+three lines of R code into chunk7 and click on the little arrow on the
+right. ggplot(mydata) + aes(x=blood_group, y=pop_percentage) +
+geom_bar(stat = ‘identity’)</p>
 <h2 id="what-does-this-code-mean">What does this code mean?</h2>
 <ul>
 <li>ggplot means ‘draw me a graph’</li>
 <li>mydata means ‘use the numbers in the mydata tibble’</li>
 <li>aes is short for aesthetics and means ‘what I want to see is…’</li>
 <li>x=blood_group means ‘plot blood group on the x axis’</li>
-<li>y=pop_percentage means ‘plot percentage of people on the y axis’</li>
+<li>y=pop_percentage means ‘plot percentage of people on the y
+axis’</li>
 <li>geom_bar means ‘the graph I want is a bar chart’</li>
-<li>stat = ‘identity’ means ‘make the bars as tall as the y values in the tibble’</li>
+<li>stat = ‘identity’ means ‘make the bars as tall as the y values in
+the tibble’</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2710,7 +2788,16 @@ I can produce an output file of my work</p>
 </div>
 <p>Check your bar chart. Are the bars black?</p>
 <h2 id="writing-labels-and-title">Writing labels and title</h2>
-<p>Now lets alter the labels and add a title so that the bar chart is clearer. Copy and paste the following R code into chunk8 then click on the little arrow on the right. ggplot(mydata) + aes(x=blood_group, y=pop_percentage) + geom_bar(stat = ‘identity’)+ ylab(‘Percentage of the population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood Groups’) You have added some more instructions for R. What do they mean? ylab(‘Percentage of the population’) means ‘make this the label for the y axis’ xlab(‘Blood group’) means ‘make this the label for the x axis’ ggtitle(‘UK Population Blood Groups’)means ‘make this the title for the barchart’ Note how there is a plus sign after each command</p>
+<p>Now lets alter the labels and add a title so that the bar chart is
+clearer. Copy and paste the following R code into chunk8 then click on
+the little arrow on the right. ggplot(mydata) + aes(x=blood_group,
+y=pop_percentage) + geom_bar(stat = ‘identity’)+ ylab(‘Percentage of the
+population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood Groups’)
+You have added some more instructions for R. What do they mean?
+ylab(‘Percentage of the population’) means ‘make this the label for the
+y axis’ xlab(‘Blood group’) means ‘make this the label for the x axis’
+ggtitle(‘UK Population Blood Groups’)means ‘make this the title for the
+barchart’ Note how there is a plus sign after each command</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2718,10 +2805,16 @@ I can produce an output file of my work</p>
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Check your bar chart. Are the labels correct? Is the title correct? Are the bars still black? Well done!</p>
-<h2 id="changing-the-colour-of-the-bars">Changing the colour of the bars</h2>
+<p>Check your bar chart. Are the labels correct? Is the title correct?
+Are the bars still black? Well done!</p>
+<h2 id="changing-the-colour-of-the-bars">Changing the colour of the
+bars</h2>
 <p>Let’s make it prettier. Let’s make the bars red.<br />
-Copy and paste the R code below into chunk9 and click on the little arrow on the right ggplot(mydata) + aes(x=blood_group, y=pop_percentage) + geom_bar(stat = ‘identity’, fill = ‘red’)+ ylab(‘Percentage of the population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood Groups’)</p>
+Copy and paste the R code below into chunk9 and click on the little
+arrow on the right ggplot(mydata) + aes(x=blood_group, y=pop_percentage)
++ geom_bar(stat = ‘identity’, fill = ‘red’)+ ylab(‘Percentage of the
+population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood
+Groups’)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2729,7 +2822,12 @@ Copy and paste the R code below into chunk9 and click on the little arrow on the
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Are the bars red? Suggest what part of the code told R to make the bars red. Let’s make it even prettier. Copy and paste the following code into chunk10 ggplot(mydata) + aes(x=blood_group, y=pop_percentage, fill = blood_group) + geom_bar(stat = ‘identity’)+ ylab(‘Percentage of the population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood Groups’)</p>
+<p>Are the bars red? Suggest what part of the code told R to make the
+bars red. Let’s make it even prettier. Copy and paste the following code
+into chunk10 ggplot(mydata) + aes(x=blood_group, y=pop_percentage, fill
+= blood_group) + geom_bar(stat = ‘identity’)+ ylab(‘Percentage of the
+population’)+ xlab(‘Blood group’)+ ggtitle(‘UK Population Blood
+Groups’)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='cn'>FALSE</span>
@@ -2737,12 +2835,19 @@ Copy and paste the R code below into chunk9 and click on the little arrow on the
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>What happened? Suggest what part of the code told R to colour the bars. How did R colour the bars? Well done! You have successfully completed your second R lesson. Now KNIT YOUR DOCUMENT for the final time. This is the version of your work that your teacher will mark.</p>
+<p>What happened? Suggest what part of the code told R to colour the
+bars. How did R colour the bars? Well done! You have successfully
+completed your second R lesson. Now KNIT YOUR DOCUMENT for the final
+time. This is the version of your work that your teacher will mark.</p>
 <h2 id="the-end">THE END</h2>
 <div class="license">
-<p><strong>License and Citation:</strong> You can use, modify, and adapt any of the lessons, but please include the following attribution: <em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
+<p><strong>License and Citation:</strong> You can use, modify, and adapt
+any of the lessons, but please include the following attribution:
+<em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a
+href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

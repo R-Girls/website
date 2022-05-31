@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -1034,10 +1035,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 1.5em;
   }
 
-  .figure img {
-    width: 100%;
-  }
-
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
@@ -1867,6 +1864,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1881,6 +1884,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1980,6 +2008,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -2002,7 +2032,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2139,7 +2169,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   html {
     /*-- Main font sizes --*/
     --title-size:      40px;
-    --body-size:       22px;
+    --body-size:       18px;
     --code-size:       16px;
     --aside-size:      12px;
     --fig-cap-size:    13px;
@@ -2202,17 +2232,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   h1 {
     color: #C34A79;
-    font-size: 38px;
+    font-size: 36px;
   }
 
   h2 {
     color: #124559;
-    font-size: 34px;
+    font-size: 32px;
   }
 
   h3 {
     color: #124559;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   d-article h1 {
@@ -2509,7 +2539,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2536,7 +2566,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Introduction to R Markdown","description":"An introduction to R using R Markdown aimed at secondary school students (age 11-16) and for complete novices.A complete lesson plan to introduce the R coding language using R Markdown to deliver instructions.","authors":[],"publishedDate":"2022-02-26T00:00:00.000-06:00"}
+{"title":"Introduction to R Markdown","description":"An introduction to R using R Markdown aimed at secondary school students (age 11-16) and for complete novices.A complete lesson plan to introduce the R coding language using R Markdown to deliver instructions.","authors":[],"publishedDate":"2022-02-26T00:00:00.000-05:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2548,7 +2578,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="rmarkdown1.html">Blogs</a>
+<a href="blog.html">Blog</a>
 <a href="getting_started.html">Getting Started</a>
 <a href="contributors.html">Contributors</a>
 <div class="nav-dropdown">
@@ -2577,7 +2607,10 @@ Lessons
 <h1>Introduction to R Markdown</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>An introduction to R using R Markdown aimed at secondary school students (age 11-16) and for complete novices.A complete lesson plan to introduce the R coding language using R Markdown to deliver instructions.</p></p>
+<p><p>An introduction to R using R Markdown aimed at secondary school
+students (age 11-16) and for complete novices.A complete lesson plan to
+introduce the R coding language using R Markdown to deliver
+instructions.</p></p>
 </div>
 
 
@@ -2592,37 +2625,58 @@ Lessons
 </div>
 <h2 id="introduction-to-r-markdown">Introduction to R Markdown</h2>
 <h2 id="lesson-objectives">Lesson Objectives</h2>
-<p>To become familiar with the layout of an R Markdown document To practice typing in the code chunk To produce an output file of my work using the ‘knit’ command</p>
+<p>To become familiar with the layout of an R Markdown document To
+practice typing in the code chunk To produce an output file of my work
+using the ‘knit’ command</p>
 <h2 id="packages-used-in-this-lesson">Packages used in this lesson:</h2>
 <ul>
 <li><code>tidyverse</code></li>
 </ul>
 <h2 id="success-criteria">Success Criteria:</h2>
-<p>I can write my name on my R Markdown document I can write in the code chunk I can produce an output file of my work</p>
+<p>I can write my name on my R Markdown document I can write in the code
+chunk I can produce an output file of my work</p>
 <h2 id="keywords">Keywords:</h2>
 <ul>
 <li>R code chunk</li>
 <li>knit</li>
 </ul>
-<h2 id="how-to-write-your-name-on-your-r-markdown-document">How to write your name on your R Markdown document</h2>
-<p>On line 3, replace where it says ‘write your name here’ with your full name. Make sure you don’t delete or write over the speech marks.</p>
-<p>Click on the ‘knit’ command at the top of the pane. After a short wait you will see the output file of your work. Can you see your name on the output file?</p>
+<h2 id="how-to-write-your-name-on-your-r-markdown-document">How to write
+your name on your R Markdown document</h2>
+<p>On line 3, replace where it says ‘write your name here’ with your
+full name. Make sure you don’t delete or write over the speech
+marks.</p>
+<p>Click on the ‘knit’ command at the top of the pane. After a short
+wait you will see the output file of your work. Can you see your name on
+the output file?</p>
 <p>If you can see your name, close the output file by clicking on X.</p>
-<p>If you cannot see your name, drag the output file to the side so that you can see what you wrote in the Markdown file. Check you typed your name correctly. Check that there are speech marks around your name. Knit your Markdown document again. Has your name been printed? If so, close the output file by clicking on X.</p>
+<p>If you cannot see your name, drag the output file to the side so that
+you can see what you wrote in the Markdown file. Check you typed your
+name correctly. Check that there are speech marks around your name. Knit
+your Markdown document again. Has your name been printed? If so, close
+the output file by clicking on X.</p>
 <h2 id="typing-in-the-code-chunk">Typing in the code chunk</h2>
-<p>When you write code in the code chunk, R will carry out the commands. Code chunks are named r chunk1, r chunk2 etc. You must write your code in the lines between the top row of <code>and the bottom row of</code>.</p>
-<p>We will tell R to do a calculation for us. Type 10 + 2 into the code chunk. Click on the little arrow on the right of the code chunk to tell R to carry out the command.</p>
+<p>When you write code in the code chunk, R will carry out the commands.
+Code chunks are named r chunk1, r chunk2 etc. You must write your code
+in the lines between the top row of
+<code>and the bottom row of</code>.</p>
+<p>We will tell R to do a calculation for us. Type 10 + 2 into the code
+chunk. Click on the little arrow on the right of the code chunk to tell
+R to carry out the command.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <p>Did R give you the correct answer?</p>
-<p>Now you make up an addition sum and type it into code chunk2. Don’t forget to click on the arrow on the right to run your code.</p>
+<p>Now you make up an addition sum and type it into code chunk2. Don’t
+forget to click on the arrow on the right to run your code.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Now click on knit. Read through your output file to check that your sums are printed.</p>
+<p>Now click on knit. Read through your output file to check that your
+sums are printed.</p>
 <h2 id="extension">Extension</h2>
-<p>Try typing in some more calculations. Try a subtraction calculation or a multiplication calculation. (Use the symbol * for multiply). Type in code chunk3, chunk4 and chunk5 below.</p>
+<p>Try typing in some more calculations. Try a subtraction calculation
+or a multiplication calculation. (Use the symbol * for multiply). Type
+in code chunk3, chunk4 and chunk5 below.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -2634,18 +2688,27 @@ Lessons
 </div>
 <h2 id="mystery-code">Mystery code</h2>
 <p>I wonder what this code tells R to do.</p>
-<p>Carefully copy and paste the following lines of code into code chunk 6. Run the code. What do you see?</p>
-<p>x &lt;- seq(1,128,1) y &lt;- sin((x / 128.0) * pi) n &lt;- 7 color &lt;- rainbow(n, s = 1, v = 1, start = 0, end = max(1, n - 1)/n, alpha = 1) plot(x, y, type=“n”, ylim = c(0,10)) for(i in 1:7) {lines(x, y+i, col=color[i], lwd = 15)}</p>
+<p>Carefully copy and paste the following lines of code into code chunk
+6. Run the code. What do you see?</p>
+<p>x &lt;- seq(1,128,1) y &lt;- sin((x / 128.0) * pi) n &lt;- 7 color
+&lt;- rainbow(n, s = 1, v = 1, start = 0, end = max(1, n - 1)/n, alpha =
+1) plot(x, y, type=“n”, ylim = c(0,10)) for(i in 1:7) {lines(x, y+i,
+col=color[i], lwd = 15)}</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>KNIT YOUR DOCUMENT for the final time. This will be the version of your work that your teacher will check.</p>
+<p>KNIT YOUR DOCUMENT for the final time. This will be the version of
+your work that your teacher will check.</p>
 <p>Well done! You have completed your first R lesson.</p>
 <h2 id="the-end">THE END</h2>
 <div class="license">
-<p><strong>License and Citation:</strong> You can use, modify, and adapt any of the lessons, but please include the following attribution: <em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
+<p><strong>License and Citation:</strong> You can use, modify, and adapt
+any of the lessons, but please include the following attribution:
+<em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a
+href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
