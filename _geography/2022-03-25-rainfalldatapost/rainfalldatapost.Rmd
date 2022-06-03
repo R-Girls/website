@@ -14,6 +14,7 @@ preview: rainfall_plot.png
 `r xfun::embed_file(here::here("_geography", "2022-03-25-rainfalldatapost", "rainfall_clean.zip"), text = "Download zip file here")`
 </div>
 
+*For help getting this lesson set up either in RStudio Cloud or RStudio Desktop, check out the [Creating a New R Project video](https://r-girls.github.io/website/getting_started.html#creating-a-new-r-project-rstudio-cloud-desktop) in the Getting Started tab.*
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
