@@ -32,4 +32,10 @@ navbar:
         - text: "Geography Lessons"
           href: geography_lessons.html 
 google_analytics: "G-93KHV17RG5"
+cookie_consent:
+  style: headline #interstitial #headline
+  type: express #implied
+  palette: light #dark
+  lang: en
+  cookies_policy: url
 output: distill::distill_article
