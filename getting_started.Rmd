@@ -21,8 +21,8 @@ knitr::opts_chunk$set(echo = FALSE)
 Check out 3 online, interactive lessons to see the cool things you can do with R (these lessons use the `learnr` package)
 
 - Draw boxplots
-- [Generate sequences](https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1)
-- [Draw maps or a line graph](https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots)
+- <a href="https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1" target="_blank">Generate sequences</a>
+- <a href="https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots" target="_blank">Representing data with boxplots</a>
 
 # Using R in the classroom
 
