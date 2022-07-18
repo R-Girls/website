@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 </div>
 
 <div style="text-align:left">
-<a class="contributor_org" href="https://www.mango-solutions.com/" target="_blank">Mango solutions</a>
+<a class="contributor_org" href="https://www.ascent.io/" target="_blank">Ascent</a>
 </div>
 
 

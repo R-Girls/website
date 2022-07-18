@@ -16,7 +16,7 @@ preview: maps_photo.png
 
 `r xfun::embed_file(here::here("_geography", "2022-02-26-drawingmapspost", "drawing_maps.docx"), text = "Download word document here")`
 
-`r xfun::embed_file(here::here("_geography", "2022-02-26-drawingmapspost", "drawing_maps.docx"), text = "Download pdf here")`
+`r xfun::embed_file(here::here("_geography", "2022-02-26-drawingmapspost", "drawing_maps.pdf"), text = "Download pdf here")`
 </div>
 
 ```{r setup, include=FALSE}

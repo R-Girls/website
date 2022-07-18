@@ -17,7 +17,7 @@ output:
 
 `r xfun::embed_file(here::here("rmarkdown2", "markdown2.docx"), text = "Download word document here")`
 
-`r xfun::embed_file(here::here("rmarkdown2", "markdown2.docx"), text = "Download pdf here")`
+`r xfun::embed_file(here::here("rmarkdown2", "markdown2.pdf"), text = "Download pdf here")`
 </div>
 
 <!-- </div> -->
