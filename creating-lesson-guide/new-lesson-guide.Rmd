@@ -19,10 +19,13 @@ The very first thing you need to do is clone the GitHub Repository to your local
 
 2. Click the green code button and copy the URL
 
-![](images/guide-img1.png)
+![](images/guide-img1.png){width=40%}
+<br>
+
 3. Open RStudio and in the top right corner, click on the “Project” button and select New Project
 
-![](images/guide-img2.png)
+![](images/guide-img2.png){width=40%}
+<br>
 4. Then click Version Control -> Git -> and paste the URL that you copied from GitHub. a.	Make sure to click on browse to save your project where you want on your computer.
 
 # Create New Lesson Post
@@ -62,6 +65,7 @@ create_post(title = "test_post", collection = "math")
 - At the root of the directory, go to the "creating-lesson-guide" folder and open the lesson_template.Rmd file. As the name suggests, this is the template for creating a new lesson. 
 - You'll want to save this lesson template in the new folder you just created, so when you have the lesson_template.Rmd open go to Save As and navigate to your new folder and save the file with your lesson name (e.g., `test.Rmd`). 
 - At this point you should have a file called `testpost.Rmd` and `test.Rmd`. I know this is a little confusing, but to try to clarify:
+
   - The `test.Rmd` is your "clean" lesson that follows the lesson template. This will also be the .Rmd file that people can download directly from the website. 
   - The `testpost.Rmd` is similar because it will eventually also have the code to the lesson, but it will also have extra code that is necessary for the lesson plan to integrate with the website and display properly online. 
   
@@ -77,11 +81,12 @@ create_post(title = "test_post", collection = "math")
 
 8. Add any files for people to download directly from the website. For example, see the screenshot below of the Boxplot lesson plan - note that this lesson plan has an .Rmd, a word doc, and a pdf that you can download straight from the website. 
 
-![](images/guide-img3.png)
+![](images/guide-img3.png){width=40%}
+<br>
 
 - Directly under the YAML add the following lines of code (this code should **not** be placed inside an R chunk):
 
-
+```{r eval=FALSE}
 <div class="contributor_org">
 `r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")`
 
@@ -89,24 +94,23 @@ create_post(title = "test_post", collection = "math")
 
 `r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.pdf"), text = "Download pdf here")`
 </div>
-
+```
 
 Modify this code to make sure the `here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")` function has all of the correct information:
+
   - The first argument should be the correct collection (e.g., _math, _science, _geography)
   - The second argument should be the name of the folder that was created when you ran `create_post()` (e.g., "2022-03-11-boxplotpost")
   - The third argument should be the actual file you want to download. Make sure to have the files saved in this folder. At this point, you will only have the .Rmd file saved, so if you want to have a word doc of pdf, you'll need to save the files first. 
 
 Let's say you only have the .Rmd file that you want to make available to download. No problem! Only include the code:
 
-
-
+```{r eval=FALSE}
 <div class="contributor_org">
 `r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")`
 </div>
+```
 
-
-
-9. The rest of the `testpost.Rmd` file will contain your lesson plan. So, go to `test.Rmd` and copy all the code excluding the YAML and paste it under the </div> tag. 
+9. The rest of the `testpost.Rmd` file will contain your lesson plan. So, go to `test.Rmd` and copy all the code excluding the YAML and paste it under the `</div>` tag. 
 
 10. Finally, after the ##THE END of your lesson add the following code for information about the license and citation (again, do **not** put this in an R chunk).
 
