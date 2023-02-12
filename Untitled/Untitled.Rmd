@@ -1,0 +1,96 @@
+---
+title: "TEST TITLE"
+author: "Jenny"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  RGirls::rgirls_pdf:
+    toc: false
+    toc_depth: 2
+paged-footnotes: true
+toc-title: Contents
+knit: pagedown::chrome_print
+---
+
+<!-- include any additional libraries here -->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      dev = "ragg_png")
+
+library(tidyverse)
+```
+
+## Lesson Objectives
+
+- Bullet point 1
+- Bullet point 2
+- And another bullet point!
+
+## Packages used in this lesson:
+
+- `tidyverse` (note the \`s around the word in the Rmd file format the word as code)
+- 
+
+## Success Criteria:
+
+-
+-
+
+## Keywords:
+
+-
+-
+
+<center>
+![Here's how to include an image and caption - note no spaces around the equal sign!](https://media.timeout.com/images/105761560/image.jpg){width=33%}
+</center>
+
+
+\newpage
+<!-- include your lesson here -->
+
+## Here's a header 1
+
+### And here's a header 2
+
+Just in case you need it! 
+
+### Sometimes you need a numbered list
+
+1. You can
+2. do that
+3. also!
+
+### Quotes can also be good
+
+> Here's how to include one. You can add emphasis with **bold** or *italic* text.
+
+::: pink-emphasis
+And if you really want something to stand out, try the pink emphasis option!
+:::
+
+### Code chunks
+
+```{r}
+# Will look like this
+library(tidyverse)
+
+x <- 5
+x + 1
+
+```
+
+### What about columns?
+
+Here's how to do that!
+
+::: two-columns
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+:::
+
+## THE END
+
+*Don't forget to knit your document! Look for the Knit button at the top of this window. When you hit that button, you'll end up with two documents (one html and one pdf) in the same folder as this Rmd file.*
+
+
