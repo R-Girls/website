@@ -1,0 +1,163 @@
+---
+title: "Step by Step Guide to Creating New Lessons"
+output: html_document
+date: '2023-02-11'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(distill)
+```
+
+*Please note: you'll need to have Git installed on your computer and the distill package installed first*
+
+# Clone GitHub Repository
+
+The very first thing you need to do is clone the GitHub Repository to your local computer. This will allow you to work in RStudio on your computer and push updates to GitHub, which will in turn update the website. You will only need to do this step one time. Once you follow these steps and set up your R Project, you can add and modify as many lessons as you'd like.
+
+1. Navigate to the [GitHub Repository](https://github.com/R-Girls/website)
+
+2. Click the green code button and copy the URL
+
+![](images/guide-img1.png)
+3. Open RStudio and in the top right corner, click on the “Project” button and select New Project
+
+![](images/guide-img2.png)
+4. Then click Version Control -> Git -> and paste the URL that you copied from GitHub. a.	Make sure to click on browse to save your project where you want on your computer.
+
+# Create New Lesson Post
+
+**I recommend following along with my [YouTube Tutorial](https://www.youtube.com/watch?v=b7TLIX6z1JQ) starting at 10:03**
+
+1. In the console, use the `create_post()` function to create your new lesson. See code chunk below. 
+
+**I'll use the a "test" math lesson as an example throughout this guide**
+
+```{r eval=FALSE}
+library(distill)
+
+create_post(title = "lesson_title", collection = "lesson-category")
+
+# test math lesson:
+create_post(title = "test_post", collection = "math")
+```
+
+- The first argument you need to specify is the title. I recommend adding "_post" to your title as a way to remember this is the lesson post - I'll explain this more later.  
+
+- The second argument you need to specify is the collection. This will save your lesson to the correction location. Currently, the possible collections are:
+  - "math"
+  - "science"
+  - "geography"
+
+**To add a new category (aka collection), you can follow along with my [YouTube Tutorial](https://www.youtube.com/watch?v=b7TLIX6z1JQ) starting at 7:10.**
+
+2. Press enter to run this code in your console. 
+
+3. You'll see an .Rmd file (`testpost.Rmd`) will automatically pop up. This is the .Rmd file of your new lesson for the website! Don't worry about editing the content just yet, we'll come back to this .Rmd file in a bit.
+
+- You can also navigate to the folder of the category of your lesson (e.g., _math if you are creating a math lesson) and there will be a new folder with today's date and the title of your lesson. Click on the folder and you will see where the .Rmd file is saved. 
+
+4. Now that we have our folder created for our new lesson, let's actually create our lesson plan!
+
+- At the root of the directory, go to the "creating-lesson-guide" folder and open the lesson_template.Rmd file. As the name suggests, this is the template for creating a new lesson. 
+- You'll want to save this lesson template in the new folder you just created, so when you have the lesson_template.Rmd open go to Save As and navigate to your new folder and save the file with your lesson name (e.g., `test.Rmd`). 
+- At this point you should have a file called `testpost.Rmd` and `test.Rmd`. I know this is a little confusing, but to try to clarify:
+  - The `test.Rmd` is your "clean" lesson that follows the lesson template. This will also be the .Rmd file that people can download directly from the website. 
+  - The `testpost.Rmd` is similar because it will eventually also have the code to the lesson, but it will also have extra code that is necessary for the lesson plan to integrate with the website and display properly online. 
+  
+5. Open up your "clean" .Rmd (e.g., `test.Rmd`) and modify the code to add your lesson plan into this template. 
+
+6. Now that you have your clean lesson plan, we can update the `testpost.Rmd` file, so open up the `testpost.Rmd` file. 
+
+7. Edit the code in the YAML:
+
+- The code in between the --- at the top of the .Rmd file is called the YAML. Do not delete this code. 
+- Rather, modify it with the correct content. For example, add the title of your lesson plan and a brief description that you'll want to show up on the website. 
+- You can always comment out a line of code in the YAML if you do not want to include it. For example `#author: []` if you don't want to include an author. 
+
+8. Add any files for people to download directly from the website. For example, see the screenshot below of the Boxplot lesson plan - note that this lesson plan has an .Rmd, a word doc, and a pdf that you can download straight from the website. 
+
+![](images/guide-img3.png)
+
+- Directly under the YAML add the following lines of code (this code should **not** be placed inside an R chunk):
+
+
+<div class="contributor_org">
+`r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")`
+
+`r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.docx"), text = "Download word document here")`
+
+`r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.pdf"), text = "Download pdf here")`
+</div>
+
+
+Modify this code to make sure the `here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")` function has all of the correct information:
+  - The first argument should be the correct collection (e.g., _math, _science, _geography)
+  - The second argument should be the name of the folder that was created when you ran `create_post()` (e.g., "2022-03-11-boxplotpost")
+  - The third argument should be the actual file you want to download. Make sure to have the files saved in this folder. At this point, you will only have the .Rmd file saved, so if you want to have a word doc of pdf, you'll need to save the files first. 
+
+Let's say you only have the .Rmd file that you want to make available to download. No problem! Only include the code:
+
+
+
+<div class="contributor_org">
+`r xfun::embed_file(here::here("_math", "YYYY-MM-DD-testpost", "test.Rmd"), text = "Download .Rmd here")`
+</div>
+
+
+
+9. The rest of the `testpost.Rmd` file will contain your lesson plan. So, go to `test.Rmd` and copy all the code excluding the YAML and paste it under the </div> tag. 
+
+10. Finally, after the ##THE END of your lesson add the following code for information about the license and citation (again, do **not** put this in an R chunk).
+
+
+<div class="license">
+**License and Citation:** You can use, modify, and adapt any of the lessons, but please include the following attribution: *RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. [https://doi.org/10.5281/zenodo.6436861](https://doi.org/10.5281/zenodo.6436861)* 
+</div>
+
+
+11. Once you're happy with the content of your lesson plan, make sure to knit the file (the `testpost.Rmd` file). As soon as you knit your file, it will create a .html file of your lesson, which is necessary in order to add it to the website. 
+
+# See if everything worked
+
+1. It's a good sing if you were able to knit your file with no errors, but now let's try to build our website. 
+
+2. In the top right hand corner, go to the Build tab and click Build Website
+
+3. If the website pops up in the Viewer pane of RStudio click on the "show in new window" button directly next to the broom. 
+
+4. Go to the Math Lessons tab (or whichever category your new lesson falls under) and make sure your lesson is there. It should be at the top because it's ordered by date. 
+
+5. Click on your lesson plan and make sure everything looks good. 
+
+- Make sure the description is there
+- Make sure you can successfully download the files (if you included any to download)
+- Make sure the lesson plan is all there
+- Make sure the license and citation text is there
+
+6. If you don't see your lesson plan, go back to your `testpost.Rmd` and knit the file. And then try to build your site again and see if it works.
+
+# Push Changes to GitHub
+
+**You can follow along with my [YouTube Tutorial](https://www.youtube.com/watch?v=b7TLIX6z1JQ) starting at 20:05.**
+
+**If this is your first time connecting to GitHub from RStudio, you can following along with [this YouTube Tutorial](https://www.youtube.com/watch?v=NLU05CopNzU) starting at 15:40.**
+
+Now that we confirmed that the new lesson is working on our local computer, we need to push all the changes to GitHub so the actual website will be updated. 
+
+To do this we need to do three things: Stage, Commmit, and Push. 
+
+1. At the top bar, go to Tools -> Shell and type "git add -A" in the command line and push enter. This will stage all the changes, which means that we want to select ALL of the changes we made. You can close out of the shell now. 
+
+2. Back in the Git tab, click on Commmit
+
+- You'll see that all the boxes are now checked (because we staged everything)
+- You need to leave yourself a message under "commit message". For example, your message could be "added new boxplot lesson to math lessons". This is important for version control, so you know what changes you've made with each update. 
+
+3. Finally, click the green push button. 
+
+
+
+
+
+
