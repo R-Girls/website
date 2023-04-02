@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <link rel="icon" type="image/png" href="images/favicon.png"/>
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2023-02-12"/>
-  <meta property="article:created" itemprop="dateCreated" content="2023-02-12"/>
+  <meta property="article:published" itemprop="datePublished" content="2023-04-02"/>
+  <meta property="article:created" itemprop="dateCreated" content="2023-04-02"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Home: Resources to help you begin your R coding journey"/>
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2023-02-12"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Resources to help you begin your R coding journey"]},{"type":"character","attributes":{},"value":["2023-04-02"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -789,6 +789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1861,15 +1862,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2575,7 +2582,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2023-02-12T00:00:00.000-06:00"}
+{"title":"Resources to help you begin your R coding journey","authors":[],"publishedDate":"2023-04-02T00:00:00.000-05:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2628,58 +2635,42 @@ Lessons
 <li><a href="#taster">Taster</a></li>
 <li><a href="#using-r-in-the-classroom">Using R in the classroom</a>
 <ul>
-<li><a href="#setting-up-rstudio-cloud">Setting up RStudio
-Cloud</a></li>
-<li><a href="#creating-a-new-r-project-rstudio-cloud-desktop">Creating a
-new R Project (RStudio Cloud &amp; Desktop)</a></li>
-<li><a href="#my-first-r-lessons-using-r-markdown">My first R lessons
-using R Markdown</a></li>
+<li><a href="#setting-up-rstudio-cloud">Setting up RStudio Cloud</a></li>
+<li><a href="#creating-a-new-r-project-rstudio-cloud-desktop">Creating a new R Project (RStudio Cloud &amp; Desktop)</a></li>
+<li><a href="#my-first-r-lessons-using-r-markdown">My first R lessons using R Markdown</a></li>
 </ul></li>
 <li><a href="#progressing-further">Progressing Further</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="taster">Taster</h1>
-<p>Check out 3 online, interactive lessons to see the cool things you
-can do with R (these lessons use the <code>learnr</code> package)</p>
+<p>Check out 3 online, interactive lessons to see the cool things you can do with R (these lessons use the <code>learnr</code> package)</p>
 <ul>
 <li>Draw boxplots</li>
-<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1" target="_blank">Generate
-sequences</a></li>
-<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots" target="_blank">Representing
-data with boxplots</a></li>
+<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-generating-sequences-part-1" target="_blank">Generate sequences</a></li>
+<li><a href="https://batoolmm.shinyapps.io/tutorials/#section-representing-data-with-boxplots" target="_blank">Representing data with boxplots</a></li>
 </ul>
 <h1 id="using-r-in-the-classroom">Using R in the classroom</h1>
 <h2 id="setting-up-rstudio-cloud">Setting up RStudio Cloud</h2>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/L2KT0ls_oIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <ul>
-<li>Packages used in all the lessons: <code>tidyverse</code>,
-<code>leaflet</code>, <code>ggeasy</code>, <code>astsa</code></li>
+<li>Packages used in all the lessons: <code>tidyverse</code>, <code>leaflet</code>, <code>ggeasy</code>, <code>astsa</code></li>
 </ul>
-<h2 id="creating-a-new-r-project-rstudio-cloud-desktop">Creating a new R
-Project (RStudio Cloud &amp; Desktop)</h2>
+<h2 id="creating-a-new-r-project-rstudio-cloud-desktop">Creating a new R Project (RStudio Cloud &amp; Desktop)</h2>
 <iframe width="560" height="400" src="https://www.youtube.com/embed/8P9E9Ut0xhQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<h2 id="my-first-r-lessons-using-r-markdown">My first R lessons using R
-Markdown</h2>
+<h2 id="my-first-r-lessons-using-r-markdown">My first R lessons using R Markdown</h2>
 <ul>
-<li><a
-href="https://r-girls.github.io/website/R/2022-02-26-markdown1post/">Lesson
-#1: Introduction to R markdown</a></li>
-<li><a
-href="https://r-girls.github.io/website/R/2022-02-26-markdown2post/">Lesson
-#2: Baby steps in coding R</a></li>
+<li><a href="https://r-girls.github.io/website/R/2022-02-26-markdown1post/">Lesson #1: Introduction to R markdown</a></li>
+<li><a href="https://r-girls.github.io/website/R/2022-02-26-markdown2post/">Lesson #2: Baby steps in coding R</a></li>
 </ul>
 <h1 id="progressing-further">Progressing Further</h1>
 <ul>
 <li>Access our ready made R Lessons</li>
-<li>Develop your own R lessons: We suggest you first send us a summary
-of your lesson plan on slack and then we can provide feedback and
-support.</li>
+<li>Develop your own R lessons: We suggest you first send us a summary of your lesson plan on slack and then we can provide feedback and support.</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

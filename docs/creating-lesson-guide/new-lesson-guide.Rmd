@@ -1,7 +1,9 @@
 ---
 title: "Step by Step Guide to Creating New Lessons"
-output: html_document
 date: '2023-02-11'
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -182,11 +184,11 @@ Now that you have your beautiful lesson plan created and saved in the correct lo
 
 - In the top right hand corner, go to the Build tab and click Build Website
 
-- If the website pops up in the Viewer pane of RStudio click on the "show in new window" button directly next to the broom. 
+- If the website pops up in the Viewer pane of RStudio click on the "show in new window" button directly next to the broom 
 
 - Go to the Math Lessons tab (or whichever category your new lesson falls under) and make sure your lesson is there. It should be at the top because it's ordered by date. 
 
-- Click on your lesson plan and make sure everything looks good. 
+- Click on your lesson plan and make sure everything looks good. Things to check for:
 
   - Make sure the description is there
   - Make sure you can successfully download the files (if you included any to download)
@@ -203,16 +205,16 @@ Now that you have your beautiful lesson plan created and saved in the correct lo
 
 Now that we confirmed that the new lesson is working on our local computer, we need to push all the changes to GitHub so the actual website will be updated. 
 
-To do this we need to do three things: Stage, Commmit, and Push. 
+To do this we need to do three things: Stage, Commit, and Push. 
 
-1. At the top bar, go to Tools -> Shell and type "git add -A" in the command line and push enter. This will stage all the changes, which means that we want to select ALL of the changes we made. You can close out of the shell now. 
+1. Stage: at the top bar, go to Tools -> Shell and type "git add -A" in the command line and push enter. This will stage all the changes, which means that we want to select ALL of the changes we made. You can close out of the shell now. 
 
-2. Back in the Git tab, click on Commmit
+2. Commit: back in the Git tab, click on Commit
 
 - You'll see that all the boxes are now checked (because we staged everything)
 - You need to leave yourself a message under "commit message". For example, your message could be "added new boxplot lesson to math lessons". This is important for version control, so you know what changes you've made with each update. 
 
-3. Finally, click the green push button. 
+3. Push: finally, click the green push button. 
 
 
 

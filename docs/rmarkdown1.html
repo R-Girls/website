@@ -792,6 +792,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1864,15 +1865,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2619,10 +2626,7 @@ Lessons
 <h1>Introduction to R Markdown</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>An introduction to R using R Markdown aimed at secondary school
-students (age 11-16) and for complete novices.A complete lesson plan to
-introduce the R coding language using R Markdown to deliver
-instructions.</p></p>
+<p><p>An introduction to R using R Markdown aimed at secondary school students (age 11-16) and for complete novices.A complete lesson plan to introduce the R coding language using R Markdown to deliver instructions.</p></p>
 </div>
 
 
@@ -2637,58 +2641,41 @@ instructions.</p></p>
 </div>
 <h2 id="introduction-to-r-markdown">Introduction to R Markdown</h2>
 <h2 id="lesson-objectives">Lesson Objectives</h2>
-<p>To become familiar with the layout of an R Markdown document To
-practice typing in the code chunk To produce an output file of my work
-using the ‘knit’ command</p>
+<p>To become familiar with the layout of an R Markdown document
+To practice typing in the code chunk
+To produce an output file of my work using the ‘knit’ command</p>
 <h2 id="packages-used-in-this-lesson">Packages used in this lesson:</h2>
 <ul>
 <li><code>tidyverse</code></li>
 </ul>
 <h2 id="success-criteria">Success Criteria:</h2>
-<p>I can write my name on my R Markdown document I can write in the code
-chunk I can produce an output file of my work</p>
+<p>I can write my name on my R Markdown document
+I can write in the code chunk
+I can produce an output file of my work</p>
 <h2 id="keywords">Keywords:</h2>
 <ul>
 <li>R code chunk</li>
 <li>knit</li>
 </ul>
-<h2 id="how-to-write-your-name-on-your-r-markdown-document">How to write
-your name on your R Markdown document</h2>
-<p>On line 3, replace where it says ‘write your name here’ with your
-full name. Make sure you don’t delete or write over the speech
-marks.</p>
-<p>Click on the ‘knit’ command at the top of the pane. After a short
-wait you will see the output file of your work. Can you see your name on
-the output file?</p>
+<h2 id="how-to-write-your-name-on-your-r-markdown-document">How to write your name on your R Markdown document</h2>
+<p>On line 3, replace where it says ‘write your name here’ with your full name. Make sure you don’t delete or write over the speech marks.</p>
+<p>Click on the ‘knit’ command at the top of the pane. After a short wait you will see the output file of your work. Can you see your name on the output file?</p>
 <p>If you can see your name, close the output file by clicking on X.</p>
-<p>If you cannot see your name, drag the output file to the side so that
-you can see what you wrote in the Markdown file. Check you typed your
-name correctly. Check that there are speech marks around your name. Knit
-your Markdown document again. Has your name been printed? If so, close
-the output file by clicking on X.</p>
+<p>If you cannot see your name, drag the output file to the side so that you can see what you wrote in the Markdown file. Check you typed your name correctly. Check that there are speech marks around your name. Knit your Markdown document again. Has your name been printed? If so, close the output file by clicking on X.</p>
 <h2 id="typing-in-the-code-chunk">Typing in the code chunk</h2>
-<p>When you write code in the code chunk, R will carry out the commands.
-Code chunks are named r chunk1, r chunk2 etc. You must write your code
-in the lines between the top row of
-<code>and the bottom row of</code>.</p>
-<p>We will tell R to do a calculation for us. Type 10 + 2 into the code
-chunk. Click on the little arrow on the right of the code chunk to tell
-R to carry out the command.</p>
+<p>When you write code in the code chunk, R will carry out the commands. Code chunks are named r chunk1, r chunk2 etc. You must write your code in the lines between the top row of <code>and the bottom row of</code>.</p>
+<p>We will tell R to do a calculation for us. Type 10 + 2 into the code chunk. Click on the little arrow on the right of the code chunk to tell R to carry out the command.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <p>Did R give you the correct answer?</p>
-<p>Now you make up an addition sum and type it into code chunk2. Don’t
-forget to click on the arrow on the right to run your code.</p>
+<p>Now you make up an addition sum and type it into code chunk2. Don’t forget to click on the arrow on the right to run your code.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Now click on knit. Read through your output file to check that your
-sums are printed.</p>
+<p>Now click on knit. Read through your output file to check that your sums are printed.</p>
 <h2 id="extension">Extension</h2>
-<p>Try typing in some more calculations. Try a subtraction calculation
-or a multiplication calculation. (Use the symbol * for multiply). Type
-in code chunk3, chunk4 and chunk5 below.</p>
+<p>Try typing in some more calculations. Try a subtraction calculation or a multiplication calculation. (Use the symbol * for multiply). Type in code chunk3, chunk4 and chunk5 below.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -2700,27 +2687,23 @@ in code chunk3, chunk4 and chunk5 below.</p>
 </div>
 <h2 id="mystery-code">Mystery code</h2>
 <p>I wonder what this code tells R to do.</p>
-<p>Carefully copy and paste the following lines of code into code chunk
-6. Run the code. What do you see?</p>
-<p>x &lt;- seq(1,128,1) y &lt;- sin((x / 128.0) * pi) n &lt;- 7 color
-&lt;- rainbow(n, s = 1, v = 1, start = 0, end = max(1, n - 1)/n, alpha =
-1) plot(x, y, type=“n”, ylim = c(0,10)) for(i in 1:7) {lines(x, y+i,
-col=color[i], lwd = 15)}</p>
+<p>Carefully copy and paste the following lines of code into code chunk 6. Run the code. What do you see?</p>
+<p>x &lt;- seq(1,128,1)
+y &lt;- sin((x / 128.0) * pi)
+n &lt;- 7
+color &lt;- rainbow(n, s = 1, v = 1, start = 0, end = max(1, n - 1)/n, alpha = 1)
+plot(x, y, type=“n”, ylim = c(0,10))
+for(i in 1:7) {lines(x, y+i, col=color[i], lwd = 15)}</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>KNIT YOUR DOCUMENT for the final time. This will be the version of
-your work that your teacher will check.</p>
+<p>KNIT YOUR DOCUMENT for the final time. This will be the version of your work that your teacher will check.</p>
 <p>Well done! You have completed your first R lesson.</p>
 <h2 id="the-end">THE END</h2>
 <div class="license">
-<p><strong>License and Citation:</strong> You can use, modify, and adapt
-any of the lessons, but please include the following attribution:
-<em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a
-href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
+<p><strong>License and Citation:</strong> You can use, modify, and adapt any of the lessons, but please include the following attribution: <em>RGirls Community. (2022, April 10). RGirls Lessons. Zenodo. <a href="https://doi.org/10.5281/zenodo.6436861">https://doi.org/10.5281/zenodo.6436861</a></em></p>
 </div>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

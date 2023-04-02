@@ -1,17 +1,5 @@
 [
   {
-    "path": "math/2023-02-12-testpost/",
-    "title": "TEST",
-    "description": "test test test",
-    "author": [],
-    "date": "2023-02-12",
-    "categories": [],
-    "contents": "\r\n\r\nDownload .Rmd here`\r\n\r\n\r\nLesson Objectives\r\nBullet point 1\r\nBullet point 2\r\nAnd another bullet point!\r\nPackages used in this lesson:\r\ntidyverse (note the `s around the word in the Rmd file\r\nformat the word as code)\r\n\r\nSuccess Criteria:\r\n\r\n\r\nKeywords:\r\n\r\n\r\n\r\nHere’s how to include an image and\r\ncaption - note no spaces around the equal sign!\r\nLicense and Citation: You can use, modify, and adapt\r\nany of the lessons, but please include the following attribution:\r\nRGirls Community. (2022, April 10). RGirls Lessons. Zenodo. https://doi.org/10.5281/zenodo.6436861\r\n\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2023-02-12T08:37:04-06:00",
-    "input_file": {}
-  },
-  {
     "path": "math/2022-02-25-generateseq1post/",
     "title": "Generating Sequences Part 1",
     "description": "This lesson demonstrates how to generate sequences using R code and then provides activities for further practise.",
