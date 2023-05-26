@@ -40,6 +40,11 @@ knitr::opts_chunk$set(echo = FALSE)
 <a class="contributor_org" href="https://www.r-consortium.org/" target="_blank">R Consortium</a>
 </div>
 
+
+<div style="text-align:left">
+<a class="contributor_org" href="https://posit.co/" target="_blank">Posit</a>
+</div>
+
 <div style="text-align:left">
 <a class="contributor_org" href="https://www.ascent.io/" target="_blank">Ascent</a>
 </div>
