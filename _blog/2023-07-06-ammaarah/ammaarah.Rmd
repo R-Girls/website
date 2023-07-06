@@ -51,7 +51,7 @@ Inspired by the success of a similar undertaking, the NHS-R Community, Mohammed 
 
 One of the key motivators for Mohammed was to ‘impart the joy of learning R’ – spoken like a true educationalist! As professionals, he and Dr Ghani knew introducing R at a secondary educational stage held immense uncertainty along with immense value. Allowing the girls to get to grips with the coding world in a safe and familiar environment could only set them up for future success. And with R being open-source and free, it made it the perfect choice of educational software: easily accessible, with numerous resources, allowing the girls to access it not just within school premises, but at home and beyond, too. 
 
-However. Getting secondary school girls to understand why they now had another lesson on their already packed timetable was a different story entirely.
+However, getting secondary school girls to understand why they now had another lesson on their already packed timetable was a different story entirely.
 
 Which is why, in order to make this transition as easy and low-key as possible, we chose to include R within existing STEM subject lessons – ie. maths, science and geography – rather than introducing it as a separate lesson. In doing this, our hope was to ease the resistance to learning something as dry-sounding as ‘computer science’. Instead, the girls were taught how R could help them with their current work especially where this involved collecting and analysing data and producing graphs in a fun way. This decision also prompted us to use R Markdown from the outset as we wanted the girls to understand how data and report writing went hand in hand.
 
