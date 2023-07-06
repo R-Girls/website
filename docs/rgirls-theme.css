@@ -98,7 +98,9 @@ h3 {
 d-article h1 {
   color: #C34A79 !important;
   font-size: 38px;
+  line-height: 1em;
 }
+
 
 d-article h2 {
   color: #124559 !important;
