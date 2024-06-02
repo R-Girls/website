@@ -36,6 +36,17 @@ knitr::opts_chunk$set(echo = FALSE)
 </ul>
 </div>
 
+
+<div class="contributor_ppl" style="text-align:left">
+<a class="contributor_org" href="https://www.jumpingrivers.com" target="_blank">jumping rivers </a> 
+
+<div>
+<img style="display: inline; margin: 0 5px;" title="jumping_rivers_logo" src="images/jumping_rivers_logo.png" alt="" width="150" height="50" />
+</div>
+
+
+</div>
+
 <div style="text-align:left">
 <a class="contributor_org" href="https://www.r-consortium.org/" target="_blank">R Consortium</a>
 </div>
